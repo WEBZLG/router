@@ -1,0 +1,13 @@
+var myFilter = function (text) {
+  if (text) {
+    var pattern = "\\\\r";
+    var target = "\r";
+    var reg = getRegExp(pattern, "g");
+    return text.replace(reg, target);
+
+  }
+}
+
+module.exports = {
+  filter_N: myFilter,
+}

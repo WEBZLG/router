@@ -1,0 +1,85 @@
+<!--pages/retailPage/market/market.wxml-->
+<view class="body market">
+  <view class="fixed">
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="search-icon" catchtap="searchbtn">
+        <image src="../../../images/search.png"></image>
+      </view>
+      <input placeholder="输入关键词或供应商查找想要的旅游产品" bindinput="search"></input>
+    </view>
+    <view class="filtrate displayFlexBet">
+      <view class="displayFlex">
+        <view class="section">
+          <picker bindchange="bindCompanyChange" value="{{companyIdx}}" range="{{companyArray}}">
+            <view class="picker">
+              {{companyArray[companyIdx]}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker bindchange="bindTypeChange" value="{{typeIdx}}" range="{{typeArray}}">
+            <view class="picker">
+              {{typeArray[typeIdx]}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker bindchange="bindTimeChange" value="{{timeIdx}}" range="{{timeArray}}">
+            <view class="picker">
+              {{timeArray[timeIdx]}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker bindchange="bindPopularChange" value="{{popularIdx}}" range="{{popularArray}}">
+            <view class="picker">
+              {{popularArray[popularIdx]}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" wx:for="{{infoList}}" wx:key="index" data-id="{{item.id}}" catchtap="marketDetails">
+      <view class="information">
+        <view class="displayFlexBet">
+          <view>
+            <text>成人价￥{{item.man_price}}/人</text>
+            <text>儿童价￥{{item.children_price}}/人</text>
+          </view>
+          <view>{{item.add_time}}</view>
+        </view>
+        <view class="title">{{item.title}}</view>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{infoList.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无供应商产品</view>
+    </view>
+  </view>
+</view>

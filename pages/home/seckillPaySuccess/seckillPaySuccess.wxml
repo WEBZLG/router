@@ -1,0 +1,120 @@
+<!--pages/home/seckillPaySuccess/seckillPaySuccess.wxml-->
+<!--pages/router/paySuccess/paySuccess.wxml-->
+<view>
+  <view class="itembg">
+    <view class="total">合计费用</view>
+    <view class="totalMoney">￥{{dataList.price}}</view>
+    <view class="payInfo">
+      <view class="infoItem">
+        <view class="payStatus">等待发团</view>
+        <view class="payNotice">出行前请确认带齐证件和衣物</view>
+      </view>
+      <view class="infoItem">
+        <view class="startTime">距离出发时间</view>
+        <view>
+          <view class="day">{{dataList.countdown.day}}</view>天
+          <view class="hours">{{dataList.countdown.hour}}</view>小时
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="itembg information">
+      <view class="company">{{dataList.travelInfo.company}}
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+      <view class="typeInfo">
+        <view class="overImg">
+          <image src="../../../images/help.jpg"></image>
+        </view>
+        <view>
+          <view class="title">{{dataList.travelInfo.title}}</view>
+          <view class="price">
+            <view class="oldPrice">原价：￥{{dataList.travelInfo.ot_price}}/人</view>
+            <view class="nowPrice">秒杀价：￥{{dataList.travelInfo.price}}/人</view>
+          </view>
+        </view>
+      </view>
+      <view class="type">{{dataList.travelInfo.category}}</view>
+      <view class="contact">
+        <label>订单编号</label>
+        <view>{{dataList.travelInfo.order_no}}</view>
+      </view>
+      <view class="contact">
+        <label>订单状态</label>
+        <view>已支付</view>
+      </view>
+      <view class="contact">
+        <label>支付时间</label>
+        <view>{{dataList.travelInfo.pay_time}}</view>
+      </view>
+      <view class="contact">
+        <label>联系人</label>
+        <view>{{dataList.travelInfo.name}}</view>
+      </view>
+      <view class="contact">
+        <label>联系电话</label>
+        <view>{{dataList.travelInfo.phone}}</view>
+      </view>
+      <view class="btnbox">
+        <button class="share">分享赚佣金</button>
+        <button class="cancel">申请退款</button>
+        <button class="firmbtn">签到</button>
+      </view>
+    </view>
+  </view>
+  <view class="itembg goline">
+    <view class="address">
+      <view>{{dataList.travelInfo.place}}</view>
+      <view>{{dataList.travelInfo.return_address}}</view>
+    </view>
+    <view class="useTime">
+      <view>{{dataList.travelInfo.start_time}}</view>
+      <view>
+        <view class="number">导游{{dataList.travelInfo.guide}}</view>
+        <view class="line">
+          <image src="../../../images/line-blue.png"></image>
+        </view>
+      </view>
+      <view>{{dataList.travelInfo.return_time}}</view>
+    </view>
+    <view>出发日期：{{dataList.travelInfo.start_time}}</view>
+  </view>
+  <view class="itembg">
+    <view class="item" wx:for="{{dataList.members}}" wx:key="index">
+      <view class="person">
+        <view class="who">
+          <view class="name">{{item.name}}</view>
+          <view class="idcard">{{item.card_type}}</view>
+          <view class="peopleType">{{item.type}}</view>
+        </view>
+        <view class="who">
+          <view class="sex">{{item.sex}}</view>
+          <view class="cardnum">{{item.card_num}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="price">￥{{dataList.travelInfo.price}}/人</view>
+        <view class="desc">退订说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view>服务通知方式</view>
+    <view class="descConetent">支付、退订退款、出行等通知消息将通过您下单账号的手机 号，以手机短信的形式通知给您。</view>
+  </view>
+  <view class="mustItembg">
+    <view class="mustNotice insure">
+      <text>保险信息</text>
+      <view>自行购买</view>
+    </view>
+    <view class="mustNotice">
+      <text>预定须知</text>
+      <view>我已阅读并同意该条款</view>
+    </view>
+  </view>
+  <view class="questionNotice">
+    <view>*如有其它问题请联系“旅行社客服”</view>
+  </view>
+</view>
+

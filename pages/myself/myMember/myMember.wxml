@@ -1,0 +1,55 @@
+<!--pages/myself/myMember/myMember.wxml-->
+<!--pages/myself/myRetail/myRetail.wxml-->
+<view>
+  <view class="tabnav displayFlexBet">
+    <view class="myRetail {{tabShow==0?'active':''}}" catchtap="tabChange" data-tab="0">本期团员</view>
+    <view class="myFans {{tabShow==1?'active':''}}" catchtap="tabChange" data-tab="1">往期团员</view>
+  </view>
+  <view class="message">
+    <view class="title">团员数（人）</view>
+    <view class="num">{{tours}}</view>
+    <view class="trip">每日0:00更新数据</view>
+  </view>
+  <view class="retailList" hidden="{{tabShow==0?false:true}}">
+    <view class="list">
+      <view class="schedule" wx:if="{{infoList.pink_info!=''}}">
+        <view>线路名称：{{infoList.pink_info.title}}</view>
+        <view>团期：{{infoList.pink_info.num}}</view>
+      </view>
+      <view class="item displayFlexBet" catchtap="memberInfo" wx:for="{{infoList.member}}" wx:key="index" data-id="{{item.id}}">
+        <view>
+          <view class="headImg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          {{item.tourername}}
+        </view>
+        <view>
+          <text>{{item.sign_in==0?'未签到':'已签到'}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fansList" hidden="{{tabShow==1?false:true}}">
+    <view class="list">
+      <view wx:for="{{oldInfoList}}" wx:key="index">
+        <view class="schedule">
+          <view>线路名称：{{item.title}}</view>
+          <view>团期：{{item.id}}</view>
+        </view>
+        <view class="item displayFlexBet"  wx:for="{{item.member}}" wx:for-item="pitem" wx:key="index">
+          <view>
+            <view class="headImg">
+              <image src="{{pitem.headimgurl}}"></image>
+            </view>
+            {{pitem.tourername}}
+          </view>
+          <view>
+            <text>{{pitem.sign_in==0?'未签到':'已签到'}}</text>
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

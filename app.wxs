@@ -1,0 +1,7 @@
+var getTags = function (tag) {
+  var a = tag.split(",");
+  return a;
+}
+module.exports = {
+  getTags: getTags,
+}

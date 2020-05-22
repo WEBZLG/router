@@ -1,0 +1,94 @@
+/* pages/home/traderApplyCheck/traderApplyCheck.wxss */
+
+.title {
+  height: 70rpx;
+  width: 348rpx;
+  margin: 0rpx auto;
+  padding: 30rpx 0;
+}
+
+
+.register {
+  background-color: #322F40;
+  padding-bottom: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+
+.mark {
+  font-size: 24rpx;
+  padding: 0 40rpx;
+  line-height: 36rpx;
+  text-align: center;
+}
+
+
+
+.itemImg {
+  background-color: #322F40;
+}
+
+.caption {
+  padding:0rpx 40rpx;
+  line-height: 72rpx;
+  background-color: #030116;
+}
+
+.addImg {
+  height: 420rpx;
+  margin: 0 90rpx;
+  background-color: #d0d0d0;
+  position: relative;
+}
+
+
+.cardImg{
+  height: 328rpx;
+  margin: 0 110rpx;
+  background-color: #d0d0d0;
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.cameraBtn {
+  height: 159rpx;
+  width: 159rpx;
+  background-color: #5ac6ab;
+  border-radius: 50%;
+  position: absolute;
+  top: 117rpx;
+  left: 50%;
+  margin-left:-79.5rpx; 
+}
+
+.cardImg .cameraBtn{
+  top: 78rpx;
+}
+
+.cameraIcon{
+  width: 70rpx;
+  height: 60rpx;
+  margin: 50rpx auto;
+}
+
+.btnbox{
+  margin: 30rpx 75rpx;
+}
+
+button.submit{
+  width: 100% !important;
+  color: #ffffff;
+  font-size: 30rpx;
+  background-color: #FFC63B;
+  border-radius: 90rpx;
+}
+.information{
+  font-size: 24rpx;
+  line-height: 90rpx;
+  padding: 30rpx 40rpx;
+  background-color: #322F40;
+}
+.flex view{
+  flex: 1;
+}

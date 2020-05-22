@@ -1,0 +1,19 @@
+/* pages/router/changePeople/changePeople.wxss */
+/* pages/router/addPeople/addPeople.wxss */
+.title{
+  padding: 30rpx 40rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.item{
+  height: 90rpx;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+  color: #666666;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 90rpx;
+}

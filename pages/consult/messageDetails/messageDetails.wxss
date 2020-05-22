@@ -1,0 +1,27 @@
+/* pages/consult/messageDetails/messageDetails.wxss */
+.content{
+  padding: 40rpx;
+}
+.title{
+  font-size: 36rpx;
+  margin-bottom: 40rpx;
+}
+.message{
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 48rpx;
+  min-height: 300rpx;
+}
+
+.down{
+  margin-top:40rpx;
+  text-align: right;
+  line-height: 48rpx;
+}
+
+.author{
+font-size: 30rpx;
+}
+.time{
+  color: #999999;
+}

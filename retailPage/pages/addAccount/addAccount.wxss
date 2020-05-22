@@ -1,0 +1,25 @@
+/* retailPage/addAccount/addAccount.wxss */
+.notice{
+  border-top: 1px solid #CCCCCC;
+  line-height: 90rpx;
+  text-align: center;
+  color: #999999;
+  margin: 64rpx 30rpx 0;
+}
+.placeholder{
+  color: #ffffff;
+}
+
+input,
+.type{
+  background-color: #322F40;
+  border-bottom: 1px solid #030116;
+  height:90rpx;
+  padding: 0 40rpx;
+}
+picker{
+  flex: 1
+}
+.btnbox{
+  margin: 340rpx 75rpx 0;
+}

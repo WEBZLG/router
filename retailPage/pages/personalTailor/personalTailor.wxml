@@ -1,0 +1,138 @@
+<view class="body">
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../../images/search.png"></image>
+    </view>
+    <input placeholder="输入关键词或供应商查找想要的旅游产品" bindinput="search"></input>
+  </view>
+  <view class="information topContent">
+    <view class="displayFlexBet">
+      <view class="item">
+        <view class="title">待出方案的订单</view>
+        <view class="number">{{dataList.count}}</view>
+      </view>
+      <view class="item">
+        <view class="title">剩余时效时间</view>
+        <view class="time" wx:if="{{dataList.nearest.day>0}}">
+          <view class="timebg">{{dataList.countdown.day}}</view>
+          <text>天</text>
+          <view class="timebg">{{dataList.countdown.hour}}</view>
+          <text>小时</text>
+        </view>
+
+        <view class="time" wx:if="{{dataList.nearest.day<1}}">
+          <view class="timebg">{{dataList.countdown.hour}}</view>
+          <text>小时</text>
+          <view class="timebg">{{dataList.countdown.minute}}</view>
+          <text>分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nav">
+    <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">待处理</view>
+    <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">已成交</view>
+    <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">已结束</view>
+  </view>
+  <view class="details">
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+      <view class="list">
+        <view class="item displayFlexBet" catchtap="customizaDetails" wx:for="{{dataList.list}}" wx:key="index" data-id="{{item.id}}">
+          <view class="headimg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          <view class="displayFlexBet message">
+            <view class="message">
+              <view class="displayFlex ">
+                <view class="nickName">{{item.contacts}}</view>
+                <view class="time">{{item.phone}}</view>
+                <text class="time">{{item.add_time}}</text>
+              </view>
+              <view class="displayFlex">
+                <view>
+                  <icon class="iconfont iconyonghu_shuangren"></icon>4
+                </view>
+                <view class="time">{{item.sart_off}}-{{item.destination}}</view>
+              </view>
+            </view>
+            <view>
+              <icon class="iconfont iconyoucejiantou"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.list.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无数据</view>
+      </view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+      <view class="list">
+        <view class="item displayFlexBet" catchtap="customizaDetails" wx:for="{{dataList.list}}" wx:key="index" data-id="{{item.id}}">
+          <view class="headimg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          <view class="displayFlexBet message">
+            <view class="message">
+              <view class="displayFlex ">
+                <view class="nickName">{{item.contacts}}</view>
+                <view class="time">{{item.phone}}</view>
+                <text class="time">{{item.add_time}}</text>
+              </view>
+              <view class="displayFlex">
+                <view>
+                  <icon class="iconfont iconyonghu_shuangren"></icon>4
+                </view>
+                <view class="time">{{item.sart_off}}-{{item.destination}}</view>
+              </view>
+            </view>
+            <view>
+              <icon class="iconfont iconyoucejiantou"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.list.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无数据</view>
+      </view>
+    </view>
+    <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+      <view class="list">
+        <view class="item displayFlexBet" catchtap="customizaDetails" wx:for="{{dataList.list}}" wx:key="index" data-id="{{item.id}}">
+          <view class="headimg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          <view class="displayFlexBet message">
+            <view class="message">
+              <view class="displayFlex ">
+                <view class="nickName">{{item.contacts}}</view>
+                <view class="time">{{item.phone}}</view>
+                <text class="time">{{item.add_time}}</text>
+              </view>
+              <view class="displayFlex">
+                <view>
+                  <icon class="iconfont iconyonghu_shuangren"></icon>4
+                </view>
+                <view class="time">{{item.sart_off}}-{{item.destination}}</view>
+              </view>
+            </view>
+            <view>
+              <icon class="iconfont iconyoucejiantou"></icon>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.list.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无数据</view>
+      </view>
+    </view>
+  </view>
+</view>

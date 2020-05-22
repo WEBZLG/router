@@ -1,0 +1,122 @@
+/* pages/consult/consultDialog/consultDialog.wxss */
+.list{
+  font-size: 24rpx;
+  padding: 30rpx 40rpx;
+  margin-bottom: 750rpx;
+}
+
+.headImg{
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color:#D38E8E;
+  display: inline-block;
+  vertical-align: top;
+}
+.dialog{
+  display: inline-block;
+  max-width: 444rpx;
+  line-height: 48rpx;
+  background-color: #fff;
+  padding: 30rpx 0;
+}
+.dialog2{
+  display: inline-block;
+  max-width: 444rpx;
+  line-height: 48rpx;
+  background-color: #01BF6C;
+  padding: 30rpx 0;
+}
+.leftWord{
+  float: left;
+  margin-bottom: 30rpx;
+}
+
+.leftWord .headImg{
+  margin-right: 24rpx;
+}
+
+.rightWord .headImg{
+  margin-left: 24rpx;
+}
+.rightWord{
+  float: right;
+  margin-bottom: 30rpx;
+}
+
+.name {
+  color: #999;
+  font-size: 20rpx;
+  padding-left: 30rpx;
+}
+.time {
+  color: #999;
+  font-size: 20rpx;
+  padding-right: 30rpx;
+}
+.name2 {
+  color: #ffffff;
+  font-size: 20rpx;
+  padding-left: 30rpx;
+}
+.time2 {
+  color: #ffffff;
+  font-size: 20rpx;
+  padding-right: 30rpx;
+}
+.content{
+  color: #333;
+  padding: 0 30rpx;
+  text-align: left;
+}
+.content2{
+  color: #fff;
+  padding: 0 30rpx;
+  text-align: left;
+}
+.lastdate{
+  color: #999;
+  font-size: 24rpx;
+  text-align: center;
+  padding: 30rpx 0;
+}
+textarea{
+  background-color: #ffffff;
+  padding: 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.textarea{
+  margin: 0 40rpx 30rpx;
+}
+.btnbox{
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+button{
+  height: 60rpx;
+  width: 200rpx !important;
+  padding: 0;
+  margin: 0;
+  font-size: 30rpx;
+  font-weight: 400;
+  border-radius: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #ffffff;
+  min-height: inherit !important;
+  background-color: #06BB6E;
+}
+.cancel{
+  background-color: #CFCCCF;
+}
+.iptbox{
+position: fixed;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #eee;
+}

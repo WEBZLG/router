@@ -1,0 +1,30 @@
+<!--pages/myself/unitCertification /unitCertification .wxml-->
+<view>
+  <view class="head">
+    <image src="../../../images/unit.png"></image>
+  </view>
+  <view class="desc">
+    <view> 认证旅行社导游身份</view>
+    <view>线上轻松分房，管理团员信息</view>
+  </view>
+  <view class="search">
+    <text>所在单位：</text>
+    <view class="searchipt">
+      <input placeholder="输入关键词搜索单位" id="searchInput" bindinput="bindKeyInput" value="{{inputValue}}" data-statu="open"></input>
+      <view class=" down-icon">
+        <icon class="iconfont icondaosanjiaoxing-"></icon>
+      </view>
+      <view class="scrollview" wx:if="{{showInputStatus}}">
+        <view wx:for="{{bindSource}}" wx:key="index">
+          <view id="{{item.id}}" data-name="{{item.name}}" class="itemview" bindtap="itemtap" data-statu="close" wx:if="{{showInputStatus}}">
+            {{item.name}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="input_screen" bindtap="bindKeyInput" data-state="close" wx:if="{{showInputStatus}}"></view>
+  </view>
+  <view class="btnbox">
+    <button class="submit" catchtap="submit">提交</button>
+  </view>
+</view>

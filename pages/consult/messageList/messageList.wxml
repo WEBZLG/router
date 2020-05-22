@@ -1,0 +1,18 @@
+<!--pages/consult/messageList/messageList.wxml-->
+<view class="list">
+  <view class="msgItem displayFlexBet" wx:for="{{dataList}}" wx:key="index" data-id="{{item.id}}" catchtap="messageDetail">
+    <view>
+      <view class="title">{{item.message}}</view>
+      <view class="time">{{item.add_time}}</view>
+    </view>
+    <view>
+      <icon class="iconfont iconyoucejiantou"></icon>
+    </view>
+  </view>
+  <view class="nodata" wx:if="{{dataList.length<1}}">
+    <view class="noDataIcon">
+      <image src="../../../images/nodata.png"></image>
+    </view>
+    <view>暂无数据</view>
+  </view>
+</view>

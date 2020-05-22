@@ -1,0 +1,27 @@
+<!--pages/retailHome/toAudit/toAudit.wxml-->
+<view class="body">
+  <view class="caption">
+    <icon class="iconfont iconwode-chuhangdingdan"></icon>
+    <text>秒杀记录</text>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" catchtap="seckillDetails" wx:for="{{dataList.list}}" wx:key="index" data-id="{{item.id}}">
+      <view class="company">
+        {{item.title}}
+      </view>
+      <view class="displayFlex">
+        <text class="time">{{item.pay_time}}</text>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无秒杀记录</view>
+    </view>
+  </view>
+
+</view>

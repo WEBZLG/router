@@ -1,0 +1,17 @@
+<!--pages/home/interest/interest.wxml-->
+<view class="body">
+  <view class="person">已有10人感兴趣</view>
+  <view class="peopleList">
+    <view class="item">
+      <view>
+        <view class="headimg">
+          <image src=""></image>
+        </view>
+        <text class="name">了小兔</text>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </view>
+</view>

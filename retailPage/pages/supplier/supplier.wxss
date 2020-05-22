@@ -1,0 +1,54 @@
+/* pages/retailPage/market/market.wxss */
+
+.company,
+.market .filtrate {
+  background-color: #322f40;
+  line-height: 90rpx;
+  padding: 0 40rpx;
+}
+.caption{
+    line-height: 80rpx;
+  padding: 0 40rpx;
+}
+.market .icondaosanjiaoxing- {
+  font-size: 13rpx;
+  margin-left: 20rpx;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.information {
+  flex: 1;
+}
+
+.market .list {
+  padding-top: 290rpx;
+}
+
+.market .item {
+  line-height: 48rpx;
+  padding: 22rpx 40rpx;
+  background-color: #322f40;
+  margin-bottom: 30rpx;
+}
+
+.market .title {
+  font-size: 30rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+max-width: 580rpx;
+}
+
+.section {
+  max-width: 130rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

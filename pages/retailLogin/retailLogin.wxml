@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="logbd">
+    <view class="welcome">
+      <image src="../../images/login4@2x.png"></image>
+    </view>
+    <view class="coin-icon">
+      <image src="../../images/login1@2x.png"></image>
+      <view class="register">
+        <image src="../../images/login5@2x.png"></image>
+        <view class="register-text" bindtap="goRegister">立即注册</view>
+      </view>
+    </view>
+    <view class="line">
+      <image src="../../images/login2@2x.png"></image>
+      <view class="inline">
+        <image src="../../images/login3@2x.png"></image>
+      </view>
+    </view>
+    <view class="loginbox">
+      <view class="title">
+        <view class="title-icon">
+          <image src="../../images/login7@2x.png"></image>
+        </view>
+        分销商登录
+      </view>
+      <view class="iptbox">
+        <view class="ipt-item">
+          <input placeholder="请输入手机号或微信直接登录" bindinput='getPhoneValue' value='{{phone}}'></input>
+          <view class="user-icon">
+            <image src="../../images/user7@2x.png"></image>
+          </view>
+        </view>
+        <view class="ipt-item">
+          <input placeholder="输入收到的验证码" bindinput='getCodeValue' value='{{code}}'></input>
+          <view class="getcode" bindtap='getVerificationCode' disabled='{{disabled}}'>{{codename}}</view>
+        </view>
+        <view>
+          <button class="loginbtn" catchtap="login">登录</button>
+        </view>
+        <view class="distributor-login" catchtap="goLogin">用户登录</view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ec-canvas": "../shwoData/shwoData"
+  },
+  "navigationBarTitleText": "我的数据",
+  "navigationBarTextStyle": "white"
+}

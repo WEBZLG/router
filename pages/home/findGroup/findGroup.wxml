@@ -1,0 +1,40 @@
+<!--pages/home/findGroup/findGroup.wxml-->
+<wxs src="../../../app.wxs" module="app"/>
+<view>
+  <view class="banner">
+    <!-- banner轮播 -->
+    <swiper autoplay="true" class="banner-swiper">
+      <block wx:for="{{bannerList}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.url}}" class="slide-image" data-id="{{item.id}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view>
+    <view class="title">
+      <image src="../../../images/nowgroup.png"></image>
+    </view>
+    <view class="groupList">
+      <view class="item"  wx:for="{{dataList}}" wx:key="index">
+        <view class="itemImg">
+          <image src="{{app.getTags(item.pic)[0]}}"></image>
+          <view class="number">{{item.num}}人团</view>
+        </view>
+        <view class="descript">
+          <view class="itemTitle">{{item.title}}</view>
+          <view class="displayFlexBet">
+            <view class="price">￥{{item.price}}/人</view>
+            <button class="pinbtn" catchtap="groupDetails" data-id="{{item.id}}">去拼团</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无拼团</view>
+    </view>
+  </view>
+</view>

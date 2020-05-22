@@ -1,0 +1,84 @@
+<!--pages/router/routerDetials/routerDetails.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<scroll-view scroll-y='true' style='height:{{winHeight}}px' bindscroll="scroll">
+<view class="">
+  <view class="banner">
+    <!-- banner轮播 -->
+    <swiper autoplay="true" class="banner-swiper">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <!-- <image src="{{item.pic_url}}" class="slide-image" data-id="{{item.id}}" data-url="{{item.page_url}}" catchtap="banner" /> -->
+          <image src="{{item.pic}}" class="slide-image" data-id="{{item.id}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="descript">
+    <view class="title">{{travelInfo.title}}</view>
+    <view class="price">
+      <text wx:if="{{travelInfo.man_price}}">成人价￥{{travelInfo.man_price}}/人</text>
+      <text wx:if="{{travelInfo.children_price}}">儿童价￥{{travelInfo.children_price}}/人</text>    
+    </view>
+    <view class="type">类型标签：{{travelInfo.category}}</view>
+    <view class="start">出发地：{{travelInfo.place}} </view>
+    <view class="start">供应商：{{travelInfo.company}} </view>
+  </view>
+  <view class="startTime">
+    <view class="choose displayFlexBet" data-tid="{{travelInfo.id}}" catchtap="chooseTime">
+      <view>查看全部行程</view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+  </view>
+  <view class="details">
+    <view class="nav marketNav">
+      <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+      <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+      <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+      <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+      <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+    </view>
+    <view class="nav fixed" hidden="{{fixedNav}}">
+      <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+      <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+      <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+      <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+      <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+    </view>
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+      <view>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      </view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+      <view>
+        <template is="wxParse" data="{{wxParseData:trip.nodes}}" />
+      </view>
+    </view>
+    <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+      <view>
+        <template is="wxParse" data="{{wxParseData:toutlayrip.nodes}}" />
+      </view>
+      <view>
+        <template is="wxParse" data="{{wxParseData:tour_fee.nodes}}" />
+      </view>
+    </view>
+    <view class="{{currentTab == 3 ? 'show':'hidden'}}">
+      <view>
+        <template is="wxParse" data="{{wxParseData:sign_notes.nodes}}" />
+      </view>
+    </view>
+    <view class="{{currentTab == 4 ? 'show':'hidden'}}">
+      <view>
+        <template is="wxParse" data="{{wxParseData:equipment_notes.nodes}}" />
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="orangebtn" catchtap="wantRetail" data-sid="{{travelInfo.id}}" wx:if="{{travelInfo.sell_status==1}}">我要分销</button>
+    <button class="orangebtn" catchtap="applyRetail"  data-sid="{{travelInfo.id}}" wx:if="{{travelInfo.sell_status==0}}">申请分销</button>
+  </view>
+</view>
+<view class="activeOver" wx:if="{{travelInfo.is_up==1}}">
+  <icon class="iconfont iconyixiajia"></icon>
+</view>
+</scroll-view>

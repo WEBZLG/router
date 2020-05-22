@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "component_home": "/retailPage/pages/retailHome/retailHome",
+    "component_product": "/retailPage/pages/product/product",
+    "component_consult": "/retailPage/pages/consult/consult",
+    "component_myself": "/retailPage/pages/myself/myself"
+  },
+    "navigationBarTextStyle": "white"
+}

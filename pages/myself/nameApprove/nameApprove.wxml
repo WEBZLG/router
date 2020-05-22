@@ -1,0 +1,29 @@
+<!--pages/myself/nameApprove/nameApprove.wxml-->
+<view>
+  <view class="cardbg">
+    <image src="../../../images/cardbg.jpg"></image>
+  </view>
+  <view class="iptbox">
+    <view class="title">姓名</view>
+    <view>
+      <input placeholder="请输入真实姓名" bindinput="realname"></input>
+    </view>
+    <view class="title">身份证号码</view>
+    <view>
+      <input placeholder="请输入身份证号码" bindinput="idcard"></input>
+    </view>
+  </view>
+  <view class="cardimg">
+    <view class="card" catchtap="chooseImg" data-id="0">
+      <image wx:if="{{imgz==''}}" src="../../../images/cardz.jpg"></image>
+      <image wx:if="{{imgz!=''}}" src="{{imgz}}"></image>
+    </view>
+    <view class="card" catchtap="chooseImg" data-id="1">
+      <image  wx:if="{{imgf==''}}" src="../../../images/cardf.jpg"></image>
+      <image wx:if="{{imgf!=''}}" src="{{imgf}}"></image>
+    </view>
+  </view>
+  <view class="btn" >
+    <button type="buttom" class="submit" catchtap="submit">提交</button>
+  </view>
+</view>

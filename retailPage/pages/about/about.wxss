@@ -1,0 +1,14 @@
+/* pages/myself/about/about.wxss */
+@import "../../../utils/wxParse/wxParse.wxss";
+.content {
+  line-height: 48rpx;
+  padding: 30rpx 40rpx;
+  text-indent: 48rpx;
+}
+
+.title {
+  background-color: #f7f4f8;
+  line-height: 80rpx;
+  padding: 0 40rpx;
+  font-size: 30rpx;
+}

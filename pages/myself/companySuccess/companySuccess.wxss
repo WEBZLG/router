@@ -1,0 +1,30 @@
+/* pages/myself/companySuccess/companySuccess.wxss */
+.head{
+  width: 220rpx;
+  height: 215rpx;
+  margin: 63rpx auto 56rpx
+}
+.desc{
+  font-size: 24rpx;
+  color: #666666;
+  text-align: center;
+  line-height: 48rpx;
+}
+.label{
+  font-size: 30rpx;
+}
+.btnbox{
+  position: fixed;
+  bottom: 0;
+  padding: 30rpx 75rpx;
+  left: 0;
+  right: 0;
+}
+.company{
+  display: inline-flex;
+  margin-top: 92rpx;
+  align-items: center;
+}
+.success{
+  text-align: center;
+}

@@ -1,0 +1,47 @@
+/* pages/failApprove/failApprove.wxss */
+page{
+  background-color: #ffffff;
+}
+.cardbg{
+  height: 500rpx;
+  width: 100%;
+}
+.iptbox{
+  text-align: center;
+}
+.card{
+  width: 430rpx;
+  height: 280rpx;
+  margin: 65rpx auto;
+}
+.btn{
+    width: 670rpx;
+    text-align: center;
+    line-height: 90rpx;
+    margin: 0 auto;
+}
+.submit{
+  background-color: #2B53EC;
+  font-size: 36rpx;
+  color: #ffffff;
+  width: 100% !important;
+  border-radius: 90rpx;
+}
+.shiming-icon{
+  height: 140rpx;
+  width: 140rpx;
+  margin: 65rpx auto 80rpx;
+}
+.text1{
+  font-size: 36rpx;
+  color: #333333;
+}
+.text2{
+  font-size: 24rpx;
+  color: #cccccc;
+}
+.notice{
+  text-align: center;
+  line-height: 60rpx;
+  margin-bottom: 90rpx;
+}

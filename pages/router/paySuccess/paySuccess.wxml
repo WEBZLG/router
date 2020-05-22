@@ -1,0 +1,133 @@
+<!--pages/router/paySuccess/paySuccess.wxml-->
+<view>
+  <view class="itembg">
+    <view class="total">合计费用</view>
+    <view class="totalMoney">￥{{dataList.price}}</view>
+    <view class="payInfo">
+      <view class="infoItem">
+        <view class="payStatus">等待发团</view>
+        <view class="payNotice">出行前请确认带齐证件和衣物</view>
+      </view>
+      <view class="infoItem">
+        <view class="startTime">距离出发时间</view>
+        <view class="time" wx:if="{{dataList.countdown.day>0}}">
+          <view class="timebg">{{dataList.countdown.day}}</view>
+          <text>天</text>
+          <view class="timebg">{{dataList.countdown.hour}}</view>
+          <text>小时</text>
+        </view>
+
+        <view class="time" wx:if="{{dataList.countdown.day<1}}">
+          <view class="timebg">{{dataList.countdown.hour}}</view>
+          <text>小时</text>
+          <view class="timebg">{{dataList.countdown.minute}}</view>
+          <text>分</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="itembg information">
+      <view class="company">{{dataList.company}}
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+      <view class="typeInfo">
+        <view class="overImg">
+          <image src="{{dataList.travelInfo.pic}}"></image>
+        </view>
+        <view class="widthFlex">
+          <view class="title">{{dataList.travelInfo.title}}</view>
+          <view class="price">
+            <view>成人价￥{{dataList.currentTerm.man_price}}/人</view>
+            <view>儿童价￥{{dataList.currentTerm.children_price}}/人</view>
+          </view>
+        </view>
+      </view>
+      <view class="type">{{dataList.travelInfo.category}}</view>
+      <view class="contact">
+        <label>订单编号</label>
+        <view>{{dataList.pay_info.order_no}}</view>
+      </view>
+      <view class="contact">
+        <label>订单状态</label>
+        <view>已支付</view>
+      </view>
+      <view class="contact">
+        <label>支付时间</label>
+        <view>{{dataList.pay_info.pay_time}}</view>
+      </view>
+      <view class="contact">
+        <label>联系人</label>
+        <view>{{dataList.pay_info.name}}</view>
+      </view>
+      <view class="contact">
+        <label>联系电话</label>
+        <view>{{dataList.pay_info.phone}}</view>
+      </view>
+      <view class="btnbox">
+        <button class="share">分享赚佣金</button>
+        <!-- <button class="cancel">取消</button>
+        <button class="firmbtn">修改信息</button> -->
+      </view>
+    </view>
+  </view>
+  <view class="itembg goline">
+    <view class="address">
+      <view>{{dataList.currentTerm.start_address}}</view>
+      <view>{{dataList.currentTerm.return_address}}</view>
+    </view>
+    <view class="useTime">
+      <view>{{dataList.currentTerm.start_time}}</view>
+      <view>
+        <view class="number">导游{{dataList.currentTerm.guide}}</view>
+        <view class="line">
+          <image src="../../../images/line-blue.png"></image>
+        </view>
+      </view>
+      <view>{{dataList.currentTerm.return_time}}</view>
+    </view>
+    <view>出发日期：{{dataList.currentTerm.start_time1}}</view>
+  </view>
+  <view class="itembg">
+    <view class="item" wx:for="{{dataList.members}}" wx:key="index">
+      <view class="person">
+        <view class="who">
+          <view class="name">{{item.name}}</view>
+          <view class="idcard">{{item.card_type}}</view>
+          <view class="peopleType">{{item.type}}</view>
+        </view>
+        <view class="who">
+          <view class="sex">{{item.sex}}</view>
+          <view class="cardnum">{{item.card_num}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="price" wx:if='{{item.type=="成人"}}'>￥{{dataList.currentTerm.man_price}}/人</view>
+        <view class="price" wx:if='{{item.type=="儿童"}}'>￥{{dataList.currentTerm.children_price}}/人</view>
+        <view class="desc">退订说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view>服务通知方式</view>
+    <view class="descConetent">支付、退订退款、出行等通知消息将通过您下单账号的手机 号，以手机短信的形式通知给您。</view>
+  </view>
+  <view class="mustItembg">
+    <view class="mustNotice insure">
+      <text>保险信息</text>
+      <view wx:if="{{dataList.travelInfo.is_insure==0}}">费用包含保险</view>
+      <view wx:if="{{dataList.travelInfo.is_insure==1}}">自行购买保险</view>
+    </view>
+    <view class="mustNotice">
+      <text>预定须知</text>
+      <view>我已阅读并同意该条款并付款</view>
+    </view>
+  </view>
+  <view class="questionNotice">
+    <view>温馨提示</view>
+    <view>为了保障您的出游权益，请务必在线支付订单，未支付视为未报 名。*如有其它问题请联系“团长”</view>
+  </view>
+  <!-- <view class="paybtnbox">
+    <button class="paybtn">立即支付</button>
+  </view> -->
+</view>

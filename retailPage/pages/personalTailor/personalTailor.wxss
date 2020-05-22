@@ -1,0 +1,252 @@
+
+/* pages/myself/groupBooking/groupBooking.wxss */
+
+.information {
+  background-color: #322F40;
+  padding: 38rpx 40rpx;
+}
+
+.title {
+  margin-bottom: 35rpx;
+}
+
+.orderTitle{
+  height: 100rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+
+.topContent .item {
+  flex: 1;
+  text-align: center;
+}
+
+.time {
+  display: inline-flex;
+  align-items: center;
+}
+
+.number {
+  font-size: 48rpx;
+  color: #ffc53d;
+}
+
+.timebg {
+  width: 40rpx;
+  height: 50rpx;
+  background: #ffc53d;
+  color: #fff;
+  border-radius: 10rpx;
+  line-height: 50rpx;
+}
+
+.nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  font-size: 30rpx;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.name text {
+  margin-left: 10rpx;
+}
+
+.nav view {
+  flex: 1;
+  text-align: center;
+  padding: 25rpx 0;
+  font-weight: bold;
+  margin: 0 20px 15px;
+}
+
+.nav view.active {
+  color: #ffc53d;
+  border-bottom: 4rpx solid #ffc53d;
+}
+
+.show {
+  display: block;
+  line-height: 48rpx;
+}
+
+.hidden {
+  display: none;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  line-height: 48rpx;
+}
+
+.itembg {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 30rpx 40rpx;
+  font-size: 24rpx;
+}
+
+.price {
+  color: #ffc53d;
+}
+
+.type {
+  color: #ffc53d;
+  margin-top: 30rpx;
+}
+
+.overImg {
+  width: 262rpx;
+  height: 159rpx;
+}
+
+.typeInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.company {
+  font-size: 24rpx;
+  line-height: 78rpx;
+}
+
+.contact {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.contact view {
+  color: #666;
+  margin-left: 30rpx;
+}
+
+.btnbox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btnbox button {
+  font-size: 24rpx;
+  height: 60rpx;
+  width: 140rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  margin: 0;
+  padding: 0;
+  min-height: inherit;
+  font-weight: 400;
+  margin-left: 30rpx;
+}
+
+.cancel {
+  border: 1px solid #00c16c;
+  background-color: #fff;
+  color: #00c16c;
+}
+
+.sharebtn {
+  background-color: #ffc53d;
+  color: #333;
+}
+
+.firmbtn {
+  background-color: #00c16c;
+  color: #fff;
+}
+
+.total {
+  text-align: right;
+  margin: 40rpx 0;
+}
+
+.detailbtn {
+  color: #666;
+}
+
+.waitbtn {
+  background-color: #ff4c4f;
+  color: #fff;
+}
+
+.overbtn {
+  border: 1px solid #999;
+  background: #fff;
+  color: #999;
+}
+
+.total text {
+  margin-right: 40rpx;
+}
+
+.details {
+  position: fixed;
+  top: 420rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+.iconwode-wodedingdan-xiaofeijilu{
+  height: 24rpx;
+  line-height: 0;
+}
+.search {
+  margin: 28rpx 40rpx;
+  font-size: 24rpx;
+}
+
+.search input {
+  padding: 10rpx 0;
+  border-radius: 64rpx;
+  background-color: #ddd;
+  padding-right: 83rpx;
+  padding-left: 30rpx;
+}
+
+.search-icon {
+  height: 24rpx;
+  width: 24rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 28rpx;
+  padding: 20rpx;
+}
+.message{
+  flex: 1;
+}
+
+.list .item {
+  line-height: 70rpx;
+  background-color: #322f40;
+  padding: 0 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.headimg {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #fff;
+  margin-right: 30rpx;
+}
+
+.time {
+  margin-left: 30rpx;
+}
+.iconyonghu_shuangren{
+  margin-right: 12rpx;
+}
+.nickName{
+display: block;
+width: 86rpx;
+overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}

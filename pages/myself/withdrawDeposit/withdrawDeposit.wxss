@@ -1,0 +1,55 @@
+/* pages/myself/withdrawDeposit/withdrawDeposit.wxss */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.container {
+  padding: 30rpx 40rpx;
+}
+
+.account {
+  padding: 0 30rpx;
+  line-height: 90rpx;
+  background-color: #efefef;
+}
+
+.account text {
+  margin-right: 30rpx;
+}
+
+.moneybg {
+  background-color: #fff;
+  padding: 30rpx;
+}
+.total{
+  padding-top: 30rpx;
+  border-top: 1px solid #cccccc;
+}
+.money{
+  font-size: 100rpx;
+  padding: 30rpx 0;
+}
+.trip{
+  font-size: 24rpx;
+  color: #999999;
+  padding: 0 40rpx;
+}
+
+.btnbox{
+  margin: 226rpx 75rpx 0;
+  text-align: center;
+  font-size: 36rpx;
+  color: #01BF6C;
+}
+
+.btnbox .greenbtn{
+  margin-bottom: 60rpx;
+}
+.placeholder{
+  font-size: 24rpx;
+  color: #ffffff;
+}
+.money input{
+  height: 100rpx;
+}

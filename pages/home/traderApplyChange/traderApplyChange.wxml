@@ -1,0 +1,106 @@
+<!--pages/home/traderApply/traderApply.wxml-->
+<view>
+  <view class="banner">
+    <image src="../../../images/fenxiaobg.jpg"></image>
+  </view>
+  <view class="register">
+    <view class="title">
+      <image src="../../../images/register.png"></image>
+    </view>
+    <view class="step">
+      <image src="../../../images/step1.png"></image>
+    </view>
+    <view class="notice">
+      <text class="redcolor">提示：</text> 请先阅读《分销商服务协议》，注册即表示同意该协议
+    </view>
+    <view class="mark">(请先使用个人账号登录后再提交申请，便于查看审核进度 您的资料仅用于开通分销商账号审核，我们将为您严格保密。)</view>
+    <view class="ipt">
+      <input placeholder="请填写联系人姓名" bindinput="realName" value="{{name}}"></input>
+    </view>
+    <view class="ipt">
+      <input placeholder="请填写手机号码（作为代理商账号登录）" bindinput="phoneNum" value="{{phone}}"></input>
+    </view>
+    <view class="ipt">
+      <input placeholder="请填写身份账号" bindinput="idcard" value="{{idcard}}"></input>
+    </view>
+    <view class="ipt">
+      <input placeholder="请填写旅行社名字" bindinput="travelAgency" value="{{travel}}"></input>
+    </view>
+    <view class="ipt">
+      <input placeholder="经营场所所在地" bindinput="address" value="{{address}}"></input>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">营业执照</view>
+    <view class="addImg">
+      <image src="{{images1}}"></image>
+      <view class="cameraBtn" data-tid="0" catchtap="chooseImg"  hidden="{{isShow1}}">
+        <view class="cameraIcon">
+          <image src="../../../images/camera.png"></image>
+        </view>
+      </view>
+      <view class="deleteIcon" catchtap="deleteImg" data-tid="0"  hidden="{{!isShow1}}">
+        <icon class="iconfont iconshanchutubiao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">旅游业经营许可证</view>
+    <view class="addImg">
+      <image src="{{images2}}"></image>
+      <view class="cameraBtn" data-tid="1" catchtap="chooseImg" hidden="{{isShow2}}">
+        <view class="cameraIcon">
+          <image src="../../../images/camera.png"></image>
+        </view>
+      </view>
+      <view class="deleteIcon" catchtap="deleteImg" data-tid="1" hidden="{{!isShow2}}">
+        <icon class="iconfont iconshanchutubiao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人身份证正面</view>
+    <view class="cardImg">
+      <image src="{{images3}}"></image>
+      <view class="cameraBtn" data-tid="2" catchtap="chooseImg" hidden="{{isShow3}}">
+        <view class="cameraIcon">
+          <image src="../../../images/camera.png"></image>
+        </view>
+      </view>
+      <view class="deleteIcon deleteCard" data-tid="2" catchtap="deleteImg" hidden="{{!isShow3}}">
+        <icon class="iconfont iconshanchutubiao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人身份证国徽面</view>
+    <view class="cardImg">
+      <image src="{{images4}}"></image>
+      <view class="cameraBtn" data-tid="3" catchtap="chooseImg" hidden="{{isShow4}}">
+        <view class="cameraIcon">
+          <image src="../../../images/camera.png"></image>
+        </view>
+      </view>
+      <view class="deleteIcon deleteCard" data-tid="3" catchtap="deleteImg" hidden="{{!isShow4}}">
+        <icon class="iconfont iconshanchutubiao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人手持身份证照</view>
+    <view class="addImg">
+      <image src="{{images5}}"></image>
+      <view class="cameraBtn" data-tid="4" catchtap="chooseImg" hidden="{{isShow5}}">
+        <view class="cameraIcon">
+          <image src="../../../images/camera.png"></image>
+        </view>
+      </view>
+      <view class="deleteIcon" data-tid="4" catchtap="deleteImg" hidden="{{!isShow5}}">
+        <icon class="iconfont iconshanchutubiao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="submit" catchtap="submit">提交</button>
+  </view>
+</view>

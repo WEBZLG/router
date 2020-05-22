@@ -1,0 +1,22 @@
+<!--pages/myself/guideInfo/guideInfo.wxml-->
+<view>
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../../images/search@2x.png"></image>
+    </view>
+    <input placeholder="找景点介绍" bindinput="search"></input>
+  </view>
+  <view class="list">
+    <view class="item" catchtap="guideDetails" wx:for="{{dataList}}" wx:key="index" data-id="{{item.id}}">
+      <view class="video">
+        <image src="{{resPath+item.pic}}"></image>
+      </view>
+      <view class="content">
+        <view class="title">{{item.title}}<icon class="iconfont icondaolanxinxi"></icon></view>
+        <view class="desc">{{item.detail}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

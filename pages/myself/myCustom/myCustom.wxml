@@ -1,0 +1,73 @@
+<!--pages/myself/myCustom/myCustom.wxml-->
+<view>
+  <view class="step">
+    <view class="">进度</view>
+    <view class="displayFlexBet">
+      <view class="circle {{dataList.status==0||dataList.status==1||dataList.status==2||dataList.status==3?'active':''}}">
+        <icon class="iconfont icontijiaochenggong"></icon>
+      </view>
+      <view class="line {{dataList.status==1||dataList.status==2||dataList.status==3?'active':''}}"></view>
+      <view class="circle {{dataList.status==1||dataList.status==2||dataList.status==3?'active':''}}">
+        <icon class="iconfont icondianhua"></icon>
+      </view>
+      <view class="line {{dataList.status==2||dataList.status==3?'active':''}}"></view>
+      <view class="circle {{dataList.status==2||dataList.status==3?'active':''}}">
+        <icon class="iconfont icondengpao"></icon>
+      </view>
+      <view class="line {{dataList.status==3?'active':''}}"></view>
+      <view class="circle {{dataList.status==3?'active':''}}">
+        <icon class="iconfont iconwoshou"></icon>
+      </view>
+    </view>
+    <view class="displayFlexBet stepText">
+      <view class="{{dataList.status==0?'':'graycolor'}}">需求已提交</view>
+      <view class="text2 {{dataList.status==1?'':'graycolor'}}">履行顾问跟进中</view>
+      <view class="text3 {{dataList.status==2?'':'graycolor'}}">等待出方案</view>
+      <view class="{{dataList.status==3?'':'graycolor'}}">已成交</view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="title">
+      <view class="verline"></view>
+      <text>基本信息</text>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">订单编号</view>
+      <view>{{dataList.diy_no}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">下单时间</view>
+      <view>{{dataList.add_time}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">联系人</view>
+      <view>{{dataList.contacts}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">手机</view>
+      <view>{{dataList.phone}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">出行人数</view>
+      <view>{{dataList.tour_num}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">出发地及目的地</view>
+      <view>{{dataList.s_r_place}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">计划出行时间</view>
+      <view>{{dataList.plan}}</view>
+    </view>
+    <view class="item displayFlexBet">
+      <view class="graycolor">备注</view>
+      <view>{{dataList.remark}}</view>
+    </view>
+  </view>
+  <view class="notice">
+    {{dataList.msg}}
+  </view>
+  <view class="btnbox" wx:if="{{dataList.status!=3&&dataList.status!=4}}">
+    <button class="greenbtn" catchtap="cancel">取消</button>
+  </view>
+</view>

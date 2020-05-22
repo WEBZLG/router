@@ -1,0 +1,73 @@
+/* pages/retailPage/market/market.wxss */
+
+.search {
+  margin: 28rpx 40rpx;
+  font-size: 24rpx;
+}
+
+.search input {
+  padding: 10rpx 0;
+  border-radius: 64rpx;
+  background-color: #ddd;
+  padding-right: 83rpx;
+  padding-left: 30rpx;
+}
+
+.search-icon {
+  height: 24rpx;
+  width: 24rpx;
+  position: absolute;
+  right: 50rpx;
+  top: 28rpx;
+  padding: 20rpx;
+}
+
+.market .filtrate {
+  background-color: #322f40;
+  line-height: 90rpx;
+  padding: 0 40rpx;
+}
+
+.market .icondaosanjiaoxing- {
+  font-size: 13rpx;
+  margin-left: 20rpx;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #030116;
+}
+
+.information {
+  flex: 1;
+}
+
+.market .list {
+  padding-top: 215rpx;
+}
+
+.market .item {
+  line-height: 48rpx;
+  padding: 22rpx 40rpx;
+  background-color: #322f40;
+  margin-bottom: 30rpx;
+}
+
+.market .title {
+  font-size: 30rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+max-width: 580rpx;
+}
+
+.section {
+  max-width: 130rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

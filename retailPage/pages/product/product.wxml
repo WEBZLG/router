@@ -1,0 +1,36 @@
+<!--pages/retailPage/product/product.wxml-->
+<view class="body product">
+  <view class="caption">分销旅游产品管理</view>
+  <view class="menuList displayFlexBet">
+    <view class="item" catchtap="market">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin5"></icon></view>
+      <view>{{infoList.count}}</view>
+      <view>供应商产品市场</view>
+    </view>
+    <view class="item" catchtap="retailGoods">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin3"></icon></view>
+      <view>{{infoList.merch_count}}</view>
+      <view>分销产品</view>
+    </view>
+    <view class="item" catchtap="seckillGoods">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin4"></icon></view>
+      <view>{{infoList.seckill_count}}</view>
+      <view>秒杀产品</view>
+    </view>
+    <view class="item" catchtap="waitCheck">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin"></icon></view>
+      <view>{{infoList.audited_count}}</view>
+      <view>待审核</view>
+    </view>
+    <view class="item" catchtap="unpassCheck">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin1"></icon></view>
+      <view>{{infoList.refuse_count}}</view>
+      <view>未通过</view>
+    </view>
+    <view class="item" catchtap="undercarriage">
+      <view><icon class="iconfont iconfenxiaoshang-chanpin2"></icon></view>
+      <view>{{infoList.under_count}}</view>
+      <view>已下架</view>
+    </view>
+  </view>
+</view>

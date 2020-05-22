@@ -1,0 +1,109 @@
+<!--pages/router/firmOrder/firmOrder.wxml-->
+<view>
+  <view class="itembg">
+    <view class="total">合计费用</view>
+    <view class="totalMoney">￥{{dataList.price}}</view>
+    <view class="payInfo">
+      <view class="infoItem">
+        <view class="payStatus">等待支付</view>
+        <view class="payNotice">出行前请确认出行信息</view>
+      </view>
+      <view class="infoItem">
+        <view class="startTime">距离出发时间</view>
+        <view>
+          <view class="day">{{dataList.countdown.day}}</view>天
+          <view class="hours">{{dataList.countdown.hour}}</view>小时
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="itembg information">
+      <view class="company">{{dataList.travelInfo.company}}
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+      <view class="typeInfo">
+        <view class="overImg">
+          <image src="{{dataList.travelInfo.pic}}"></image>
+        </view>
+        <view class="widthFlex">
+          <view class="title">{{dataList.travelInfo.title}}</view>
+          <view class="price">
+          <view>成人价￥{{dataList.currentTerm.man_price}}/人</view>
+          <view>儿童价￥{{dataList.currentTerm.children_price}}/人</view>
+          </view>
+        </view>
+      </view>
+      <view class="type">{{dataList.travelInfo.category}}</view>
+      <view class="contact">
+        <label>联系人</label>
+        <view>{{dataList.pay_info.name}}</view>
+      </view>
+      <view class="contact">
+        <label>联系电话</label>
+        <view>{{dataList.pay_info.phone}}</view>
+      </view>
+      <view class="btnbox">
+        <button class="cancel" catchtap="cancel">取消</button>
+        <button class="firmbtn" catchtap="changeInfo">修改信息</button>
+      </view>
+    </view>
+  </view>
+  <view class="itembg goline">
+    <view class="address">
+      <view>{{dataList.currentTerm.start_address}}</view>
+      <view>{{dataList.currentTerm.return_address}}</view>
+    </view>
+    <view class="useTime">
+      <view>{{dataList.currentTerm.start_time}}</view>
+      <view>
+        <view class="number">{{dataList.currentTerm.num}}人团</view>
+        <view class="line">
+          <image src="../../../images/line-right.png"></image>
+        </view>
+      </view>
+      <view>{{dataList.currentTerm.return_time}}</view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view class="item" wx:for="{{dataList.members}}" wx:key="index">
+      <view class="person">
+        <view class="who">
+          <view class="name">{{item.name}}</view>
+          <view class="idcard">{{item.card_type}}</view>
+          <view class="peopleType">{{item.type}}</view>
+        </view>
+        <view class="who">
+          <view class="sex">{{item.sex}}</view>
+          <view class="cardnum">{{item.card_num}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="price">￥{{item.children_price}}/人</view>
+        <view class="desc">退订说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view>服务通知方式</view>
+    <view class="descConetent">{{dataList.currentTerm.notice_type}}</view>
+  </view>
+  <view class="mustItembg">
+    <view class="mustNotice insure">
+      <text>保险信息</text>
+      <view wx:if="{{dataList.travelInfo.is_insure==0}}">费用包含保险</view>
+      <view wx:if="{{dataList.travelInfo.is_insure==1}}">自行购买保险</view>
+    </view>
+    <view class="mustNotice">
+      <text>预定须知</text>
+      <view>我已阅读并同意该条款并付款</view>
+    </view>
+  </view>
+  <view class="questionNotice">
+    <view>温馨提示</view>
+    <view>{{dataList.currentTerm.tips}}</view>
+  </view>
+  <view class="paybtnbox">
+    <button class="paybtn" catchtap="submit">立即支付</button>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "供应商产品市场",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

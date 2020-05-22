@@ -1,0 +1,111 @@
+<!--pages/home/fillOrder/fillOrder.wxml-->
+<view>
+  <view class="orderType">
+    <view class="company">团长：{{updata.travelInfo.guide[0].nick}}
+      <icon class="iconfont iconyoucejiantou"></icon>
+    </view>
+    <view class="typeInfo">
+      <view class="overImg">
+        <image src="{{updata.pics[0].pic}}"></image>
+      </view>
+      <view>
+        <view class="title">{{updata.travelInfo.title}}</view>
+        <view class="pricebox">
+          <view class="price">
+            <view class="oldPrice">原价：￥{{updata.travelInfo.ot_price}}/人</view>
+            <view class="nowPrice">秒杀价：￥{{updata.travelInfo.price}}/人</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="type">{{updata.travelInfo.category}}</view>
+  </view>
+  <view class="choose">
+    <view class="chooseTime" catchtap="chooseTime" data-tid="{{updata.travelInfo.id}}">
+      <view>出发日期</view>
+      <view class="">
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+    <view class="start">
+      <view>{{startTime==''?updata.statTime:startTime}}</view>
+      <view>出发地{{updata.travelInfo.place}}</view>
+      <view>{{updata.travelInfo.num}}人团</view>
+    </view>
+  </view>
+  <view class="choose">
+    <view class="chooseTime" catchtap="choosePeople">
+      <view>选择出行人</view>
+      <view class="">
+        <text class="notice">(填写真实信息，用于购买保险或入住酒店)</text>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+    <view class="start" wx:for="{{chooseList}}" wx:key="index">
+      <view>{{item.name}}</view>
+      <view>{{item.sex}}</view>
+      <view>{{item.card_num}}</view>
+      <view>{{item.type}}</view>
+    </view>
+    <view class="mark">为了您的保险生效及顺利出行，请务必保证填写信息与出游人所持的证件信息一致。</view>
+  </view>
+  <view class="choose">
+    <view class="chooseTime">
+      <view>联系人信息
+        <text class="notice">（境外手机号请联系在线客服）</text>
+      </view>
+    </view>
+    <view class="iptbox">
+      <view class="iptitem">
+        <text>姓名：</text>
+        <input placeholder="必填" bindinput="userName"></input>
+      </view>
+      <view class="iptitem">
+        <text>手机：</text>
+        <input placeholder="必填" bindinput="userPhone"></input>
+      </view>
+    </view>
+    <view class="check" catchtap="open">
+      <icon class="iconfont icontixian-changjianwentix"></icon>查看预定限制
+    </view>
+  </view>
+  <view class="choose">
+    <view class="chooseTime">
+      <view>保险信息</view>
+      <view wx:if="{{updata.travelInfo.is_insure==1}}">自行购买保险</view>
+      <view class="displayFlex" wx:if="{{updata.travelInfo.is_insure==0}}">
+        <!-- <text class="notice">（为了您的出游安全，请购买保险）</text> -->
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{array[index]}}
+          </view>
+        </picker>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="mark">温馨提示：{{updata.travelInfo.tips}}</view>
+  </view>
+  <view class="symbloPrice">
+    <view class="priceTitle">基本团费</view>
+    <view>
+      费用明细（费用包含） · 往返动车二等座火车票 · 行程所列酒店住宿费用 · 行程内所列餐食，具体情况请见行程推荐/安排 · 行程内所含项目导游服务费（无需额外支付小费） · 中文领队兼导游服务或者中文领队和当地导游服务 · 安排当地专属用车(除部分特殊路段因当地规定及安全考量，则依规定派遣小型车) · 行程中所列景点首道大门票行程内所含景点门票，自愿放弃景点内容的恕不退款。 · 海参崴团签旅游签证费用。 · 年龄2-12周岁（不含）,不占床,服务标准同成人
+    </view>
+    <view class="total">合计费用(元)：{{totalPrice}}</view>
+    <button catchtap="submit">确认订单</button>
+  </view>
+
+  <view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+  <view class="modalDlg" wx:if="{{showModal==true}}">
+    <view class="closeIcon"  bindtap="close">
+      <icon class="iconfont iconguanbi1"></icon>
+    </view>
+    <view class="modalImg">
+      <image src="../../../images/notice.png"></image>
+    </view>
+    <view class="message">{{updata.travelInfo.clause}}</view>
+    <button class="colse" bindtap="close">我知道了...</button>
+  </view>
+
+</view>

@@ -1,0 +1,111 @@
+<!--pages/router/paySuccess/paySuccess.wxml-->
+<view class="body">
+  <view class="itembg">
+    <view class="total">合计费用</view>
+    <view class="totalMoney">￥12000.00</view>
+    <view class="payInfo">
+      <view class="infoItem">
+        <view class="payStatus">等待发团</view>
+        <view class="payNotice">出行前请确认带齐证件和衣物</view>
+      </view>
+      <view class="infoItem haveTime">
+        <view class="startTime">距离出发时间</view>
+        <view>
+          <view class="day">07</view>天
+          <view class="hours">21</view>小时
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="itembg information">
+      <view class="company">放假去哪
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+      <view class="typeInfo">
+        <view class="overImg">
+          <image src="../../../images/help.jpg"></image>
+        </view>
+        <view>
+          <view class="title">日本东京+大阪7日6晚跟 团游</view>
+          <view class="oldprice">￥4099/人</view>
+          <view class="price">￥4099/人</view>
+        </view>
+      </view>
+      <view class="type">徒步·摄影·休闲·轰趴</view>
+      <view class="contact">
+        <label>订单编号</label>
+        <view>0000000</view>
+      </view>
+      <view class="contact">
+        <label>订单状态</label>
+        <view>张</view>
+      </view>
+      <view class="contact">
+        <label>支付时间</label>
+        <view>张</view>
+      </view>
+      <view class="contact">
+        <label>联系人</label>
+        <view>张</view>
+      </view>
+      <view class="contact">
+        <label>联系电话</label>
+        <view>999999</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg goline">
+    <view class="address">
+      <view>北京</view>
+      <view>日本东京</view>
+    </view>
+    <view class="useTime">
+      <view>12:00</view>
+      <view>
+        <view class="number">导游小雷</view>
+        <view class="line">
+          <image src="../../../images/line-blue.png"></image>
+        </view>
+      </view>
+      <view>13:00</view>
+    </view>
+    <view>出发日期：2019年10月20日</view>
+  </view>
+  <view class="itembg">
+    <view class="item">
+      <view class="person">
+        <view class="who">
+          <view class="name">了小兔</view>
+          <view class="idcard">（中国居民身份证）</view>
+          <view class="peopleType">成人</view>
+        </view>
+        <view class="who">
+          <view class="sex">男</view>
+          <view class="cardnum">230230199999999999</view>
+        </view>
+      </view>
+      <view>
+        <view class="price">￥499/人</view>
+        <view class="desc">退订说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view>服务通知方式</view>
+    <view class="descConetent">支付、退订退款、出行等通知消息将通过您下单账号的手机 号，以手机短信的形式通知给您。</view>
+  </view>
+  <view class="mustItembg">
+    <view class="mustNotice insure">
+      <text>保险信息</text>
+      <view>自行购买</view>
+    </view>
+    <view class="mustNotice">
+      <text>预定须知</text>
+      <view>我已阅读并同意该条款并付款</view>
+    </view>
+  </view>
+  <view class="questionNotice">
+    <view>*如有其它问题请联系“供应商”</view>
+  </view>
+</view>

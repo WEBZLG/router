@@ -1,0 +1,121 @@
+<!--pages/myself/myself.wxml-->
+<view>
+  <view class="my-top">
+    <view class="mybg">
+      <image src="../../images/mybg@2x.png"></image>
+    </view>
+    <view class="message clearfix">
+      <view class="userinfo">
+        <view class="userhead"  catchtap="myHome">
+          <image src="{{infoList.userInfo.headimgurl}}"></image>
+        </view>
+        <view class="username flex" wx:if="{{uid!=null}}">
+          <view>{{infoList.userInfo.nick}}</view>
+          <view>{{infoList.userInfo.phone}}</view>
+        </view>
+        <view class="login" bindtap="login"  wx:if="{{uid==null}}">注册/登录</view>
+      </view>
+      <view class="account">
+        <view>
+          <text>余额</text>
+          <view class="yue">{{brokerageData==''?'-':brokerageData.free_price}}</view>
+        </view>
+        <view>
+          <text>冻结资金</text>
+          <view class="djzj">{{brokerageData==''?'-':brokerageData.frozen_price}}</view>
+        </view>
+        <view>
+          <text>已提现</text>
+          <view class="ytx">{{brokerageData==''?'-':brokerageData.price}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="cxdd-box">
+      <view class="cxdd">
+        <icon class="iconfont iconwode-chuhangdingdan cx-icon"></icon>
+        <view>
+          <view>出行订单</view>
+          <text>开启优质的出行游玩之旅</text>
+        </view>
+      </view>
+      <view class="watch" catchtap="myorder">查看</view>
+    </view>
+  </view>
+  <view class="my-bottom">
+    <view class="pinbtn">
+      <view class="pin-icon">
+        <image src="../../images/pin@2x.png"></image>
+      </view>
+      <text>发布拼团>邀请好友参加</text>
+    </view>
+    <view class="navbox">
+      <view class="nav-list">
+        <view class="nav-item"  catchtap="groupBooking">
+          <icon class="iconfont iconwode-wodepintuanx qiang-icon"></icon>
+          <view>
+            <view class="title">我的拼团</view>
+            <text>我的拼团的活动</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="myRetail">
+          <icon class="iconfont iconwode-wodeqianbaox nav-icon"></icon>
+          <view>
+            <view class="title">我的分销</view>
+            <text>分享赚佣金</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item" catchtap="myMember">
+          <icon class="iconfont iconwode-wodetuanyuanx nav-icon"></icon>
+          <view>
+            <view class="title">我的团员</view>
+            <text>团员信息全掌握</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="mySeckill">
+          <icon class="iconfont iconwode-wodeshujux nav-icon"></icon>
+          <view>
+            <view class="title">我的秒杀</view>
+            <text>我的秒杀活动</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item"  catchtap="travelPeople">
+          <icon class="iconfont iconwode-wodechangyongxinxix nav-icon"></icon>
+          <view>
+            <view class="title">我的常用信息</view>
+            <text>常用出行人员信息</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="myRouter">
+          <icon class="iconfont iconwode-wodedingzhix nav-icon"></icon>
+          <view>
+            <view class="title">我的定制</view>
+            <text>高端私人定制服务</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item" catchtap="serviceHelp">
+          <icon class="iconfont iconwode-kefubangzhux nav-icon"></icon>
+          <view>
+            <view class="title">客服帮助</view>
+            <text>常见问题 在线客服</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="about">
+          <icon class="iconfont iconwode-guanyuwomenx nav-icon"></icon>
+          <view>
+            <view class="title">关于我们</view>
+            <text>应用介绍 隐私政策</text>
+          </view> 
+        </view>
+      </view>
+    </view>
+    <view class="btnbox">
+      <button class="exit" catchtap="exit"  wx:if="{{uid!=null}}">退出登录</button>
+    </view>
+  </view>
+</view>

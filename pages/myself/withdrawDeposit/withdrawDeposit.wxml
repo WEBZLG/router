@@ -1,0 +1,37 @@
+<!--pages/myself/withdrawDeposit/withdrawDeposit.wxml-->
+<view>
+  <view class="container">
+    <view class="account displayFlexBet">
+      <view>
+        <text>提现账户</text>
+      </view>
+      <view class="displayFlexBet">
+        <text class="greencolor" wx:if='{{takeOutList.status==0}}'>微信钱包</text>
+        <text class="greencolor" wx:if='{{takeOutList.status==1}}' catchtap="bindAccount">请授权账户</text>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="moneybg">
+      <view>提现金额</view>
+      <view class="displayFlexBet">
+        <view class="money">
+          <input placeholder="请输入不低于100元金额" placeholder-class="placeholder" bindinput="moneyNum" value="{{moneyNum}}"></input>
+        </view>
+        <view>
+          <icon class="iconfont iconwode-kefubangzhux"></icon>
+        </view>
+      </view>
+      <view class="total displayFlexBet">
+        <view class="graycolor">当前金额：{{takeOutList.sum}}</view>
+        <view class="greencolor" catchtap="totalMoney">全部提现</view>
+      </view>
+    </view>
+  </view>
+  <view class="trip">单笔最高限额2万元，余额低于100元不可提现</view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="submit">立即提现</button>
+    <view catchtap="cashWithdrawals">历史提现记录</view>
+  </view>
+</view>

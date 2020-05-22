@@ -1,0 +1,57 @@
+<!--retailPage/pages/myHome/myHome.wxml-->
+<!--pages/myself/myhome/myhome.wxml-->
+<view class="mybody">
+  <view>
+    <view class="homebg">
+      <image src="{{infoList.userInfo.pic}}" catchtap="chooseImg" data-id="0"></image>
+      <view class="viewNumber">
+        <view class="number">266</view>
+        <view>记录浏览量</view>
+      </view>
+    </view>
+    <view>
+      <view class="information">
+        <view class="head" >
+          <image src="{{headImgUrl}}" catchtap="chooseImg"  data-id="1"></image>
+        </view>
+        <view class="attestation">
+          <view wx:if="{{infoList.userInfo.is_guide==0}}">已认证导游</view>
+          <view wx:if="{{infoList.userInfo.is_guide==1}}">未认证导游</view>
+          <view wx:if="{{infoList.userInfo.is_guide==2}}">导游认证审核中</view>
+          <view wx:if="{{infoList.userInfo.is_guide==3}}">导游认证未通过</view>
+        </view>
+        <view>
+          <view class="exit-name">
+            <view>
+              <text>{{name}}</text>
+            </view>
+            <view class="exit" catchtap="myInfo">
+              <image src="../../../images/myhomeexit.png"></image>
+            </view>
+          </view>
+        </view>
+        <view class="mygoods">wo的线路</view>
+      </view>
+    </view>
+    <view class="userdata">
+      <view class="item">
+        <view>地区：{{infoList.userInfo.province}} | {{infoList.userInfo.city}} </view>
+        <view>领域：
+          <block wx:for="{{infoList.skill}}" wx:key="index">
+            <text>{{item.name}}</text>
+            <text wx:if="{{index<infoList.skill.length-1}}">,</text>
+          </block>
+        </view>
+      </view>
+      <view>
+        <view class="item">
+          <view>导游人数 {{infoList.userInfo.guide}}</view>
+          <view>产品数 {{infoList.userInfo.travel}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="item">在线时长：{{infoList.userInfo.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

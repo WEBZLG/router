@@ -1,0 +1,73 @@
+/* pages/myself/myRouter/myRouter.wxss */
+
+.step {
+  padding: 15rpx 54rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.step image {
+  height: 180rpx;
+}
+
+.notext {
+  font-size: 24rpx;
+  color: #666;
+  text-align: center;
+  padding: 148rpx 0 95rpx;
+}
+
+.nofangan {
+  height: 232rpx;
+  padding: 0 72rpx 134rpx;
+}
+
+.content {
+  background-color: #fff;
+}
+
+.btnbox {
+  padding: 30rpx 75rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 36rpx;
+}
+
+.routerList {
+  padding: 0 40rpx;
+  position: absolute;
+  top: 380rpx;
+  left: 0;
+  right: 0;
+  bottom: 140rpx;
+  overflow: auto;
+  background: #fff;
+}
+
+.caption {
+  padding: 50rpx 40rpx;
+}
+
+.item {
+  font-size: 24rpx;
+  color: #999;
+  line-height: 48rpx;
+  border-bottom: 1px solid #eee;
+  padding: 14rpx 0;
+}
+
+.headImg {
+  height: 88rpx;
+  width: 88rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 26rpx;
+  background-color: #666;
+}
+
+.address {
+  font-size: 30rpx;
+  color: #333;
+}

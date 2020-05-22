@@ -1,0 +1,23 @@
+/* pages/consult/messageList/messageList.wxss */
+.list{
+  margin-top: 30rpx;
+}
+.msgItem {
+  background-color: #fff;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+  height: 110rpx;
+  margin-bottom: 30rpx;
+  line-height: 48rpx;
+}
+
+.title {
+  width: 600rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 30rpx;
+}
+.time{
+  color: #999999;
+}

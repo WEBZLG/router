@@ -1,0 +1,21 @@
+<!--pages/waitApprove/waitApprove.wxml-->
+<view>
+  <view class="cardbg">
+    <image src="../../images/cardbg.jpg"></image>
+  </view>
+  <view>
+    <view class="shiming-icon">
+       <image src="../../images/wait-icon.png"></image>
+    </view>
+    <view class="notice">
+      <view class="text1">请稍等，您的认证正在审核中</view>
+      <view class="text2">请耐心等待审核结果</view>
+    </view>
+  </view>
+
+  <view class="btn">
+    <button type="buttom" class="submit" catchtap="againApprove">重新认证</button>
+  </view>
+</view>
+
+

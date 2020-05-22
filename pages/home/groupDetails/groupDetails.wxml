@@ -1,0 +1,142 @@
+<!--pages/home/groupDetails/groupDetails.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml" />
+<wxs src="../../../app.wxs" module="app" />
+<wxs src="../../../utils/filter.wxs" module="change" />
+<scroll-view scroll-y='true' style='height:{{winHeight}}px' bindscroll="scroll">
+<view>
+  <view class="bannerbg">
+    <image src="{{dataList.background}}"></image>
+  </view>
+  <view class="banner">
+    <!-- banner轮播 -->
+    <swiper autoplay="true" class="banner-swiper">
+      <block wx:for="{{app.getTags(dataList.pic)}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="container">
+    <view class="title">{{dataList.title}}</view>
+    <view class="router">
+      <view class="price">
+      <text wx:if='{{dataList.price>0}}'>成人价￥{{dataList.price}}/人 </text>
+      <text wx:if='{{dataList.children_price>0}}'>儿童价￥{{dataList.children_price}}/人</text>
+      </view>
+      <view>行程时间：{{dataList.time}}</view>
+      <view>出发地：{{dataList.start_address}}</view>
+    </view>
+    <view class="groupbox">
+      <view class="groupPeople">
+        <view class="captain">
+          <view class="headbox">
+            <image src="{{dataList.users[0].header}}"></image>
+          </view>
+          <view class="captainIcon">团长</view>
+        </view>
+        <view class="headbox {{dataList.users[1]?'':'greyCircle'}}">
+          <image src="{{dataList.users[1].header}}"></image>
+        </view>
+        <view class="headbox {{dataList.users[2]?'':'greyCircle'}}">
+          <image src="{{dataList.users[2].header}}"></image>
+        </view>
+        <view class="headbox {{dataList.users[3]?'':'greyCircle'}}">
+          <image src="{{dataList.users[3].header}}"></image>
+        </view>
+        <view class="headbox {{dataList.users[4]?'':'greyCircle'}}">
+          <image src="{{dataList.users[4].header}}"></image>
+        </view>
+      </view>
+      <view class="endTime">仅剩{{dataList.sur_num}}个名额</view>
+      <view>
+        <button class="sharebtn" wx:if="{{dataList.partake==1}}">已参团，邀请好友参加</button>
+        <button class="mybtn" catchtap="makeGroup">我也要开团</button>
+      </view>
+    </view>
+  </view>
+  <view class="rule">
+    <view class="ruleTitle">拼团规则</view>
+    <view class="ruleText">{{dataList.pink_staic.pink_rule}}</view>
+  </view>
+  <view class="rule">
+    <view class="ruleTitle">拼团流程</view>
+    <view class="ruleText">
+      <view>{{change.filter_N(dataList.pink_staic.pink_process)}}</view>
+      <!-- <template is="wxParse" data="{{wxParseData:pink_process.nodes}}" /> -->
+    </view>
+  </view>
+  <view class="details">
+    <view class="nav">
+      <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+      <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+      <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+      <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+      <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+    </view>
+    <view class="nav fixed" hidden="{{fixedNav}}">
+      <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+      <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+      <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+      <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+      <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+    </view>
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+      <template is="wxParse" data="{{wxParseData:tour_fee.nodes}}" />
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+      <template is="wxParse" data="{{wxParseData:trip.nodes}}" />
+    </view>
+    <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+      <template is="wxParse" data="{{wxParseData:outlay.nodes}}" />
+    </view>
+    <view class="{{currentTab == 3 ? 'show':'hidden'}}">
+      <template is="wxParse" data="{{wxParseData:sign_notes.nodes}}" />
+    </view>
+    <view class="{{currentTab == 4 ? 'show':'hidden'}}">
+      <template is="wxParse" data="{{wxParseData:equipment_notes.nodes}}" />
+    </view>
+  </view>
+  <view class="bottomBox">
+    <view class="action">
+      <view class="leftbtn">
+        <view class="btnbox" catchtap="open">
+          <icon class="iconfont iconfenxiangzhuanyongjin"></icon>
+          <view>分享赚佣金</view>
+        </view>
+        <view class="btnbox" catchtap="creatDialog"  data-aid="{{aid}}" data-type="{{type}}">
+          <icon class="iconfont iconliuyanban"></icon>
+          <view>在线咨询</view>
+        </view>
+      </view>
+      <view class="signup" catchtap="groupFillOrder" data-id="{{dataList.id}}">立即报名</view>
+    </view>
+  </view>
+
+
+    <view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+  <view class="modalDlg" wx:if="{{showModal==true}}">
+    <view class="closeIcon" bindtap="close">
+      <icon class="iconfont iconguanbi1"></icon>
+    </view>
+    <view class="modelTitle">选择发送给好友或者保存海报发到朋友圈</view>
+    <view class="displayFlexBet">
+      <view class="wechat">
+        <button open-type="share" class='sharebtn' data-id="{{id}}">
+          <icon class="iconfont iconweixin"></icon>
+          <view class="message">分享给微信好友或群</view>
+        </button>
+      </view>
+      <view class="poster"  catchtap='sharePyq' data-id="{{id}}">
+        <icon class="iconfont iconshengchenghaibao"></icon>
+        <view class="message">生成朋友圈海报</view>
+      </view>
+    </view>
+    <button class="colse" bindtap="close">我再想想</button>
+  </view>
+  <!-- 分享朋友圈制图 -->
+    <view class='canvas-bg' hidden='{{canvasShow}}'><canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+      <view class="savebtn" catchtap="save">保存海报</view>
+    </view>
+</view>
+</scroll-view>

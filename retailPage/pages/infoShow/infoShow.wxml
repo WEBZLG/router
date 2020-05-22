@@ -1,0 +1,6 @@
+<!--retailPage/pages/infoShow/infoShow.wxml-->
+<view class="body">
+  <view class="imgShow">
+    <image src="{{imageurl}}"></image>
+  </view>
+</view>

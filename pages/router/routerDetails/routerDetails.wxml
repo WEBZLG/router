@@ -1,0 +1,152 @@
+<!--pages/router/routerDetials/routerDetails.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml" />
+
+<scroll-view scroll-y='true' style='height:{{winHeight}}px' bindscroll="scroll">
+  <view>
+    <view class="banner">
+      <!-- banner轮播 -->
+      <swiper autoplay="true" class="banner-swiper">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <!-- <image src="{{item.pic_url}}" class="slide-image" data-id="{{item.id}}" data-url="{{item.page_url}}" catchtap="banner" /> -->
+            <image src="{{item.pic}}" class="slide-image" data-id="{{item.id}}" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="guiderBox">
+        <view class="circle">
+          <image src=""></image>
+        </view>
+        <view class="name">本期导游
+          <block wx:for="{{currentTerm.guide}}" wx:key="index">
+            <text>{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+    </view>
+    <view class="descript">
+      <view class="title">{{travelInfo.title}}</view>
+      <view class="pricebox">
+        <view class="price">
+          成人价￥{{currentTerm.man_price}}/人
+        </view>
+        <view class="price">
+          儿童价￥{{currentTerm.children_price}}/人
+        </view>
+      </view>
+      <view class="type">{{travelInfo.category}}</view>
+      <view class="start">出发地：{{currentTerm.place}} </view>
+      <view class="company" catchtap="companyHome">
+        <!-- <view class="smCircle"></view> -->
+        <text>{{travelInfo.company}}</text>
+      </view>
+    </view>
+    <view class="startTime">
+      <text>出发日期</text>
+      <view class="choose" catchtap="chooseTime">
+        <text>{{startTime==''?time:startTime}}</text>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+    <view class="dataShow">
+      <view>截止时间：
+        <text>{{currentTerm.end_time.day}}天{{currentTerm.end_time.hour}}小时{{currentTerm.end_time.minute}}分</text>
+      </view>
+      <view>已报人数：
+        <text>{{currentTerm.sign_num}}</text>
+      </view>
+      <view>产品状态：
+        <text>{{currentTerm.term_status}}</text>
+      </view>
+      <view>剩余席位：
+        <text>{{currentTerm.out_seat}}</text>
+      </view>
+    </view>
+    <view class="details">
+      <view class="nav">
+        <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+        <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+        <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+        <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+        <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+      </view>
+      <view class="nav fixed" hidden="{{fixedNav}}">
+        <view class="{{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">特色</view>
+        <view class="{{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">行程</view>
+        <view class="{{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">费用</view>
+        <view class="{{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">须知</view>
+        <view class="{{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">提示</view>
+      </view>
+      <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+        <view>
+          <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        </view>
+      </view>
+      <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+        <view>
+          <template is="wxParse" data="{{wxParseData:trip.nodes}}" />
+        </view>
+      </view>
+      <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+        <view>
+          <template is="wxParse" data="{{wxParseData:toutlayrip.nodes}}" />
+        </view>
+        <view>
+          <template is="wxParse" data="{{wxParseData:tour_fee.nodes}}" />
+        </view>
+      </view>
+      <view class="{{currentTab == 3 ? 'show':'hidden'}}">
+        <view>
+          <template is="wxParse" data="{{wxParseData:sign_notes.nodes}}" />
+        </view>
+      </view>
+      <view class="{{currentTab == 4 ? 'show':'hidden'}}">
+        <view>
+          <template is="wxParse" data="{{wxParseData:equipment_notes.nodes}}" />
+        </view>
+      </view>
+    </view>
+    <view class="bottomBox">
+      <view class="action">
+        <view class="leftbtn">
+          <view class="btnbox" catchtap="open">
+            <icon class="iconfont iconfenxiangzhuanyongjin"></icon>
+            <view>分享赚佣金</view>
+          </view>
+          <view class="btnbox" catchtap="creatDialog" data-aid="{{aid}}" data-type="{{type}}">
+            <icon class="iconfont iconliuyanban"></icon>
+            <view>在线咨询</view>
+          </view>
+        </view>
+        <view wx:if="{{currentTerm.term_status!='报名结束'}}" class="signup" catchtap="fillOrder">立即报名</view>
+        <view wx:if="{{currentTerm.term_status=='报名结束'}}" class="signup">报名结束</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+<view class="modalDlg" wx:if="{{showModal==true}}">
+  <view class="closeIcon" bindtap="close">
+    <icon class="iconfont iconguanbi1"></icon>
+  </view>
+  <view class="modelTitle">选择发送给好友或者保存海报发到朋友圈</view>
+  <view class="displayFlexBet">
+    <view class="wechat">
+      <button open-type="share" class='sharebtn' data-id="{{tid}}">
+        <icon class="iconfont iconweixin"></icon>
+        <view class="message">分享给微信好友或群</view>
+      </button>
+    </view>
+    <view class="poster" catchtap='sharePyq' data-id="{{tid}}">
+      <icon class="iconfont iconshengchenghaibao"></icon>
+      <view class="message">生成朋友圈海报</view>
+    </view>
+  </view>
+  <button class="colse" bindtap="close">我再想想</button>
+</view>
+<!-- 分享朋友圈制图 -->
+<view class='canvas-bg' hidden='{{canvasShow}}'>
+  <canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+  <view class="savebtn" catchtap="save">保存海报</view>
+</view>

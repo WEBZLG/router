@@ -1,0 +1,58 @@
+
+<view class="body">
+  <view class="caption">基本信息</view>
+  <view class="item displayFlexBet">
+    <view>真事姓名</view>
+    <text>{{infoList.name}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>户外昵称</view>
+    <text>{{infoList.nick}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>性别 </view>
+    <text>{{infoList.sex}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>手机</view>
+    <text>{{infoList.phone}}</text>
+  </view>
+  <view class="caption">其他信息</view>
+  <view class="item displayFlexBet">
+    <view>导游认证</view>
+    <text wx:if="{{infoList.is_guide==0}}">已认证</text>
+    <text wx:if="{{infoList.is_guide==1}}">未认证</text>
+    <text wx:if="{{infoList.is_guide==2}}">审核中</text>
+    <text wx:if="{{infoList.is_guide==3}}">已拒绝</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>单位认证</view>
+    <text>{{infoList.company}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>所在地区</view>
+    <text>{{infoList.province}}{{infoList.city}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>擅长</view>
+    <text>{{infoList.skill}}</text>
+  </view>
+  <view class="caption">ta带团的线路</view>
+  <view class="item displayFlexBet" wx:for="{{infoList.combination}}" wx:key="index">
+    <view>
+      <view class="lineName">{{item.title}}</view>
+      <view>{{item.start_time}}</view>
+    </view>
+    <view class="displayFlex">
+      <view>
+        <view>￥{{item.price}}/人</view>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="orangebtn">解除关系</button>
+  </view>
+</view>

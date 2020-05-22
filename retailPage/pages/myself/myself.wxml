@@ -1,0 +1,124 @@
+
+<view class="body">
+  <view class="my-top">
+    <view class="mybg">
+      <image src="../../../images/mybg@2x.png"></image>
+    </view>
+    <view class="message clearfix">
+      <view class="userinfo">
+        <view class="userhead" data-name="{{infoList.company}}"  catchtap="myHome">
+          <image src="{{infoList.pic_logo}}"></image>
+        </view>
+        <view class="username flex">
+          <view>{{infoList.company}}</view>
+          <view>{{infoList.phone}}</view>
+        </view>
+      </view>
+      <view class="account">
+        <view>
+          <text>余额</text>
+          <view class="yue">{{infoList.balance}}</view>
+        </view>
+        <view>
+          <text>冻结资金</text>
+          <view class="djzj">{{infoList.frozen}}</view>
+        </view>
+        <view>
+          <text>已提现</text>
+          <view class="ytx">{{infoList.take_out}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="cxdd-box borderBottom">
+      <view class="cxdd">
+        <icon class="iconfont iconfenxiaoshang-wode-dingdanguanli cx-icon"></icon>
+        <view>
+          <view>订单管理</view>
+          <text>新报名订单  退款订单</text>
+        </view>
+      </view>
+      <view class="watch orangebtn" catchtap="myOrder">查看</view>
+    </view>
+    <view class="cxdd-box">
+      <view class="cxdd">
+        <icon class="iconfont iconfenxiaoshang-wode-sirendingzhi cx-icon"></icon>
+        <view>
+          <view>私人订制</view>
+          <text>私人订制行程</text>
+        </view>
+      </view>
+      <view class="watch orangebtn" catchtap="personalTailor">查看</view>
+    </view>
+  </view>
+  <view class="my-bottom">
+    <view class="navbox">
+      <view class="nav-list">
+        <view class="nav-item"  catchtap="seckillGoods">
+          <icon class="iconfont iconshouye-miaosha qiang-icon"></icon>
+          <view>
+            <view class="title">我的秒杀</view>
+            <text>发布秒杀活动预告</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="myRetail">
+          <icon class="iconfont iconfenxiaoshang-wode-fenxiaoguanli nav-icon"></icon>
+          <view>
+            <view class="title">我的分销</view>
+            <text>分销产品管理  分销收益</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item" catchtap="myVisitor">
+          <icon class="iconfont iconfenxiaoshang-wode-kerenguanli nav-icon"></icon>
+          <view>
+            <view class="title">我的客人</view>
+            <text>客人信息管理</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="myStaff">
+          <icon class="iconfont iconfenxiaoshang-wode-yuangongguanli nav-icon"></icon>
+          <view>
+            <view class="title">我的员工</view>
+            <text>领队认证审核</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item"  catchtap="mySupplier">
+          <icon class="iconfont iconfenxiaoshang-wode-wodegongyingshang nav-icon"></icon>
+          <view>
+            <view class="title">我的供应商</view>
+            <text>供应商  申请分销代理</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="lineData">
+          <icon class="iconfont iconfenxiaoshang-wode-jingyingshuju nav-icon"></icon>
+          <view>
+            <view class="title">我的数据</view>
+            <text>实时掌握经营状况</text>
+          </view> 
+        </view>
+      </view>
+      <view class="nav-list">
+        <view class="nav-item" catchtap="serviceHelp">
+          <icon class="iconfont iconfenxiaoshang-wode-kefubangzhu nav-icon"></icon>
+          <view>
+            <view class="title">客服帮助</view>
+            <text>常见问题 在线客服</text>
+          </view> 
+        </view>
+        <view class="nav-item" catchtap="about">
+          <icon class="iconfont iconfenxiaoshang-wode-guanyuwomen nav-icon"></icon>
+          <view>
+            <view class="title">关于我们</view>
+            <text>应用介绍  隐私政策</text>
+          </view> 
+        </view>
+      </view>
+    </view>
+    <view class="btnbox">
+      <button class="exit" catchtap="exit"  wx:if="{{uid!=null}}">退出登录</button>
+    </view>
+  </view>
+</view>

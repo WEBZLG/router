@@ -1,0 +1,16 @@
+<!--pages/myself/retailLimit/retailLimit.wxml-->
+
+<view>
+  <view class="noretail">
+    <icon class="iconfont iconweikaitongfenxiaotishi"></icon>
+  </view>
+  <view class="desc">
+    <view class="title">很抱歉，您暂时还没有获得分销的权限</view>
+    <view class="text">开通分销功能即可轻松分享所有线路邀请好友报名赚佣金</view>
+    <view class="text">也可分享已报名的路线邀请微信好友报名赚取佣金</view>
+  </view>
+  <view class="btnbox">
+    <button class="sign" catchtap="signUp">去报名</button>
+    <button class="openRetail" catchtap="openRetail">去开通分销</button>
+  </view>
+</view>

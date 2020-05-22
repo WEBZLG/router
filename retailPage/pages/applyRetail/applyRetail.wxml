@@ -1,0 +1,57 @@
+<!--pages/home/traderApplyCheck/traderApplyCheck.wxml-->
+<view class="body">
+  <view>
+    <view class="information">
+      <view class="flex">
+        <text>联系人：</text>
+        <view>{{dataList.name}}</view>
+      </view>
+      <view class="flex">
+        <text>手机号：</text>
+        <view>{{dataList.phone}}</view>
+      </view>
+      <view class="flex">
+        <text>旅行社：</text>
+        <view>{{dataList.company}}</view>
+      </view>
+      <view class="flex">
+        <text>所在地：</text>
+        <view>{{dataList.address}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">营业执照</view>
+    <view class="addImg">
+      <image src="{{dataList.pic_business}}"></image>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">旅游业经营许可证</view>
+    <view class="addImg">
+      <image src="{{dataList.pic_business_charter}}"></image>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人身份证正面</view>
+    <view class="cardImg">
+      <image src="{{dataList.pic_card_font}}"></image>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人身份证国徽面</view>
+    <view class="cardImg">
+      <image src="{{dataList.pic_card_back}}"></image>
+    </view>
+  </view>
+  <view class="itemImg">
+    <view class="caption">法人手持身份证照</view>
+    <view class="addImg">
+      <image src="{{dataList.pic_legal_card}}"></image>
+    </view>
+  </view>
+  <view class="caption">提示：如要修改信息请在 主页-我的资料 中修改。</view>
+  <view class="btnbox">
+    <button class="submit" catchtap="applybtn">申请分销</button>
+  </view>
+</view>

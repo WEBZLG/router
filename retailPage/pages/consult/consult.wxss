@@ -1,0 +1,52 @@
+/* pages/consult/consult.wxss */
+.consult .list{
+  margin: 60rpx 90rpx;
+  flex-wrap: wrap;
+}
+
+.consult .iconimg{
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+}
+/* .routerline .iconimg{
+  background-color: #37C4B7;
+}
+.service .iconimg{
+  background-color: #39BCFF;
+}
+.notice .iconimg{
+  background-color: #21B265;
+} */
+
+.consult .item{
+  margin-bottom: 97rpx;
+  text-align: center;
+  font-size: 24rpx;
+  position: relative;
+}
+.consult .item button{
+  min-height: inherit;
+width: inherit;
+background-color: inherit;
+font-size: inherit;
+color: inherit;
+padding: 0;
+border-radius: inherit;
+font-weight: 400;
+
+}
+.consult .messageNum{
+  height: 60rpx;
+  min-width: 60rpx;
+  border-radius: 60rpx;
+  color: #ffffff;
+  background-color: #FE4F51;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: -30rpx;
+}

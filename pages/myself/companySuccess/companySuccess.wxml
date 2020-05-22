@@ -1,0 +1,17 @@
+<!--pages/myself/companySuccess/companySuccess.wxml-->
+<view class="success">
+  <view class="head">
+    <image src="../../../images/unit.png"></image>
+  </view>
+  <view class="desc">
+    <view> 所在单位已审核通过，已认证。</view>
+    <view>如若申请新的所在单位，请先解除原认证单位。</view>
+  </view>
+  <view class="company">
+    <view class="label">所在单位：</view>
+    <view class="graycolor">{{name}}</view>  
+  </view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="remove">申请解除</button>
+  </view>
+</view>

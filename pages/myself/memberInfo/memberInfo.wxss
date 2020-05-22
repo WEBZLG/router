@@ -1,0 +1,22 @@
+/* pages/myself/memberInfo/memberInfo.wxss */
+page{
+  font-size: 24rpx;
+}
+.btnbox {
+  padding: 30rpx 75rpx;
+
+}
+.item{
+  padding: 0 40rpx;
+  line-height: 90rpx;
+  border-bottom: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+.caption{
+  padding: 0 40rpx;
+  line-height: 87rpx;
+  background-color: #F5F5F5;
+}
+.iconyoucejiantou{
+  
+}

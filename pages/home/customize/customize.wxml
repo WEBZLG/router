@@ -1,0 +1,31 @@
+<!--pages/home/customize/customize.wxml-->
+<view>
+  <view class="banner" catchtap="customisedScheme">
+    <image src="{{dataList.pic.pic}}"></image>
+  </view>
+  <view class="targetbox">
+    <view class="target displayFlexBet">
+      <text>目的地</text>
+      <view catchtap="targetMore">更多</view>
+    </view>
+    <view class="address displayFlexBet">
+      <view class="item" wx:for="{{dataList.aim}}" wx:key="index" catchtap="destinationDetails" data-id="{{item.id}}" data-name="{{item.name}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="deepTraevl">
+    <view class="title">深度游玩</view>
+    <view class="deepItem"  wx:for="{{dataList.theme}}" wx:key="index" catchtap="deepTravel" data-id="{{item.id}}">
+      <image src="{{item.pic_cover}}"></image>
+      <!-- <view class="mark">
+        <view class="caption">轻奢小团</view>
+        <view class="descript">旅行是件快乐且值得分享的事儿</view>
+      </view> -->
+    </view>
+    <view class="nodata" wx:if="{{dataList.theme.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无行程</view>
+      </view>
+  </view>
+</view>

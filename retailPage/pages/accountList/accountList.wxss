@@ -1,0 +1,34 @@
+/* retailPage/pages/accountList/accountList.wxss */
+
+.icontianjia {
+  color: #FFC63B;
+  margin-right: 20rpx;
+}
+.addbtnbox{
+  text-align: center;
+  line-height: 110rpx;
+  font-size: 30rpx;
+  background: #322F40;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.list{
+  margin-top:140rpx; 
+}
+
+.item{
+  line-height: 60rpx;
+  padding: 30rpx 40rpx;
+  background-color: #322F40;
+  margin-bottom: 30rpx;
+}
+.notice{
+  border-top: 1px solid #CCCCCC;
+  line-height: 90rpx;
+  text-align: center;
+  color: #999999;
+  margin: 0 40rpx;
+}

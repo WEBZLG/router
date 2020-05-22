@@ -1,0 +1,55 @@
+/* pages/retailHome/customizaDetails/customizaDetails.wxss */
+.container{
+  margin: 30rpx 40rpx;
+  background-color: #322F40;
+}
+.caption{
+  line-height: 90rpx;
+  font-size: 24rpx;
+  border-bottom: 1px solid #9A9A9A;
+  padding: 0 28rpx;
+  color: #FFC53D
+}
+.captionName{
+  margin-right: 30rpx;
+}
+.details{
+  padding: 30rpx 40rpx 112rpx;
+  line-height: 100rpx
+}
+.btnbox{
+  padding: 30rpx 75rpx;
+}
+button.orangebtn{
+  margin-bottom: 40rpx;
+}
+
+.icondingzhidingdan-jiedan{
+  font-size: 70rpx;
+vertical-align: text-top;
+
+}
+.notice{
+  color: #999999;
+  line-height: 48rpx;
+  margin: 30rpx 40rpx;
+}
+.overContainer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #322F40;
+  opacity: 0.9;
+}
+.overIcon{
+  height: 600rpx;
+  text-align: center;
+  line-height: 1030rpx;
+  margin: 84rpx auto 256rpx;
+}
+.iconyijieshu{
+  font-size: 600rpx;
+  color: #DA4D51
+}

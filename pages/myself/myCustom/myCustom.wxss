@@ -1,0 +1,68 @@
+/* pages/myself/myCustom/myCustom.wxss */
+.step{
+  font-size: 24rpx;
+  padding: 30rpx 40rpx;
+  background-color: #ffffff;
+  line-height: 60rpx;
+  margin-bottom: 30rpx;
+}
+.circle{
+  height: 60rpx;
+  width: 60rpx;
+  background-color:  #E7E7E7;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60rpx;
+  color: #ffffff;
+}
+
+
+
+.line{
+  height: 4rpx;
+  background-color:  #E7E7E7;
+  width: 130rpx;
+}
+
+.circle.active,
+.line.active{
+  background-color: #FFC63B;
+}
+.stepText .text2{
+  margin-left: -50rpx;
+}
+.stepText .text3{
+  margin-left: -50rpx;
+}
+.btnbox{
+  padding: 30rpx 75rpx;
+}
+.verline{
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #00C16C;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+.item{
+  line-height: 90rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.content{
+  padding: 30rpx 40rpx 0;
+  background-color: #ffffff;
+  font-size: 24rpx;
+  margin-bottom: 30rpx;
+}
+.notice{
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #666666;
+  padding: 32rpx 65rpx;
+  background-color: #ffffff;
+}

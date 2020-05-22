@@ -1,0 +1,70 @@
+/* pages/home/destination/destination.wxss */
+.destination{
+  flex-wrap: wrap;
+  padding: 46rpx 40rpx 0;
+}
+.item{
+  height: 308rpx;
+  width: 308rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-bottom: 50rpx;
+  position: relative;
+}
+
+.name{
+  position: absolute;
+  bottom: 22rpx;
+  left: 36rpx;
+  color: #ffffff;
+  font-size:48rpx;
+}
+
+.line{
+  width: 90rpx;
+  height: 4rpx;
+  margin-top: 10rpx;
+  background-color: #ffffff;
+}
+
+.morebox{
+  text-align: center;
+}
+
+.morebtn{
+  display: inline-flex;
+  align-items: center;
+  color: #01BF6C;
+  font-size: 40rpx;
+}
+.iconxiangxiajiantou{
+  margin-left: 25rpx;
+  line-height: 50rpx;
+}
+.title{
+  font-size: 48rpx;
+  color: #333333;
+  font-weight: bold;
+  margin: 48rpx 0 78rpx; 
+}
+
+.groom{
+  padding: 30rpx 40rpx;
+}
+.itemImg{
+  width: 100%;
+  height: 450rpx;
+}
+.desc{
+  font-size: 48rpx;
+  color: #333333;
+  margin: 56rpx 0 40rpx; 
+}
+.company{
+  color: #999999;
+  font-size: 30rpx;
+}
+.listItem{
+  padding-bottom: 60rpx;
+  border-bottom: 1px solid #cccccc;
+}

@@ -1,0 +1,29 @@
+<!--pages/retailHome/toAudit/toAudit.wxml-->
+<view class="body">
+  <view class="caption">
+    <icon class="iconfont iconwode-chuhangdingdan"></icon>
+    <text>待审核事件</text>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" catchtap="auditDetails" wx:for="{{dataList.list}}" wx:key="index" data-id="{{item.id}}">
+      <view class="displayFlex">
+        <view class="headimg">
+          <image src="{{item.headimgurl}}"></image>
+        </view>
+        <text>{{item.name}}</text>
+      </view>
+      <view  class="displayFlex">
+      <view>{{item.apply_time}}</view>
+        <!-- <text class="time">10.22 </text> -->
+        <view><icon class="iconfont iconyoucejiantou"></icon></view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无审核数据</view>
+    </view>
+  </view>
+
+</view>

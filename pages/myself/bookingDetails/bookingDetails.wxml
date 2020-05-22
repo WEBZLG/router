@@ -1,0 +1,64 @@
+<view class="list">
+  <view class="item" wx:for="{{dataList}}" wx:key="index">
+    <!-- <view class="time">2019.10.20</view> -->
+    <view class="info">
+      <view class="retail">
+        <view>订单状态：
+          <text wx:if="{{item.pay_status==0}}">未支付</text>
+          <text wx:if="{{item.pay_status==1}}">已支付</text>
+          <text wx:if="{{item.pay_status==2}}">已付款</text>
+        </view>
+        <view>支付时间：{{item.pay_time}}</view>
+        <view>联系人：{{item.contacts}}</view>
+        <view>联系电话：{{item.phone}}</view>
+      </view>
+      <view class="orderInfo">
+        <view class="line"></view>
+        <view class="whitebg">
+          <image src="../../../images/whitebg.png"></image>
+          <view class="content">
+            <view class="shaw">
+              <image src="../../../images/orangeshaw.png"></image>
+            </view>
+            <view class="number">订单编号：{{item.order_no}}</view>
+            <view class="itembg information">
+              <view class="company">出行人员</view>
+              <view class="peopleList">
+                <block wx:for="{{item.members}}" wx:for-item="pitem" wx:key="index">
+                  <view class="peoItem displayFlexBet" data-pid="{{pitem.id}}" catchtap="memberInfo">
+                    <view class="displayFlex">
+                      <view class="headImg">
+                        <image src="{{pitem.headimgurl}}"></image>
+                      </view>
+                      <view>{{pitem.tourername}}</view>
+                    </view>
+                    <view class="displayFlex">
+                      <view class="{{pitem.sign_in==0?'redcolor':'graycolor'}}">{{pitem.sign_in==0?'未签到':'已签到'}}</view>
+                      <view>
+                        <icon class="iconfont iconyoucejiantou"></icon>
+                      </view>
+                    </view>
+                  </view>
+                </block>
+              </view>
+              <view class="totalMoney displayFlexBet">
+                <view class="detailbtn graycolor"></view>
+                <view class="total">
+                  <text>成人x{{item.man_num}}</text>
+                  <text>儿童x{{item.child_num}}</text>
+                  <text>合计：{{item.price}}</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="nodata" wx:if="{{dataList.length<1}}">
+    <view class="noDataIcon">
+      <image src="../../images/nodata.png"></image>
+    </view>
+    <view>暂无报名信息</view>
+  </view>
+</view>

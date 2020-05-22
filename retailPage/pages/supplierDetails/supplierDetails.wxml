@@ -1,0 +1,37 @@
+
+<view class="body">
+  <view class="caption">基本信息</view>
+  <view class="item displayFlexBet">
+    <view>姓名</view>
+    <text>{{infoList.name}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>导游数</view>
+    <text>{{infoList.guide_num}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>产品数</view>
+    <text>{{infoList.product_num}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>国家地区</view>
+    <text>{{infoList.country}}{{infoList.province}}{{infoList.city}}</text>
+  </view>
+  <view class="caption">联系方式</view>
+  <view class="item displayFlexBet">
+    <view>手机号码</view>
+    <text>{{infoList.phone}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>固定电话</view>
+    <text>{{infoList.tel}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>电子邮箱</view>
+    <text>{{infoList.email}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>地址</view>
+    <text>{{infoList.address}}</text>
+  </view>
+</view>

@@ -1,0 +1,77 @@
+<!--pages/home/seckillGroup/seckillGroup.wxml-->
+
+<view>
+  <view class="banner">
+    <!-- banner轮播 -->
+    <!-- <swiper autoplay="true" class="banner-swiper">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item.url}}" class="slide-image" data-id="{{item.id}}" />
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <image src="{{banner}}"></image>
+  </view>
+  <view>
+    <view class="navTime">
+      <view class="navItem {{idx==0?'runing':''}}  {{title1=='已结束'?'over':''}}" data-idx="0" catchtap="chooseTime">
+        <view>00:00</view>
+        <view>{{title1}}</view>
+      </view>
+      <view class="navItem {{idx==1?'runing':''}} {{title2=='已结束'?'over':''}}" data-idx="1" catchtap="chooseTime">
+        <view>08:00</view>
+        <view>{{title2}}</view>
+      </view>
+      <view class="navItem {{idx==2?'runing':''}} {{title3=='已结束'?'over':''}}" data-idx="2" catchtap="chooseTime">
+        <view>12:00</view>
+        <view>{{title3}}</view>
+      </view>
+      <view class="navItem {{idx==3?'runing':''}} {{title4=='已结束'?'over':''}}" data-idx="3" catchtap="chooseTime">
+        <view>16:00</view>
+        <view>{{title4}}</view>
+      </view>
+      <view class="navItem {{idx==4?'runing':''}} {{title5=='已结束'?'over':''}}" data-idx="4" catchtap="chooseTime">
+        <view>20:00</view>
+        <view>{{title5}}</view>
+      </view>
+    </view>
+    <view class="endTime">
+      <view>秒杀抢订中，数量有限，先下单先得哦！</view>
+      <view>距结束：
+        <view class="time">{{haveTime}}</view>
+      </view>
+    </view>
+    <view class="groupList">
+      <view class="item" wx:for="{{dataList}}" wx:key="index">
+        <view class="itembox">
+          <view class="itemImg">
+            <image src="{{item.pic_cover}}"></image>
+          </view>
+          <view>
+            <view class="itemTitle">{{item.title}}</view>
+            <view class="gopin">
+              <view class="price">
+                <text class="textLine">￥{{item.o_price}}</text>
+                <text class="time">￥{{item.price}}</text>
+              </view>
+              <button class="pinbtn" wx:if="{{btnShow==true}}" data-tid="{{item.id}}" data-title="{{item.title}}" catchtap="seckillDetails">立即秒杀</button>
+              <button class=" overbtn"  wx:if="{{btnShow==false}}">立即秒杀</button>
+            </view>
+          </view>
+        </view>
+        <!-- <view class="sellNumber">
+          <view class="progressbox">
+            <view class="progress"></view>
+          </view>
+          <view>已售80%</view>
+        </view> -->
+      </view>
+      <view class="nodata" wx:if="{{dataList.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        暂无秒杀
+      </view>
+    </view>
+  </view>
+</view>

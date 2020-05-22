@@ -1,0 +1,39 @@
+<!--pages/myself/cashWithdrawals /cashWithdrawals .wxml-->
+<view class="body">
+  <view class="information">
+    <view class="title">已提现金额（元）</view>
+    <view class="money">{{infoList.sum}}</view>
+    <view class="trip">每日0:00更新数据</view>
+  </view>
+  <view class="caption displayFlexBet">
+    <view>提现明细</view>
+    <view>提现金额（元）</view>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" wx:for="{{infoList.list}}"  wx:key="index"   data-id="{{item.id}}" catchtap="depositProcess">
+      <view>
+        <view>提现</view>
+        <view class="trip">{{item.add_time}}</view>
+      </view>
+      <view class="displayFlex">
+        <view>
+          <view>{{item.price}}</view>
+          <view class="trip">
+            <text wx:if="{{item.tx_status==1}}">已申请</text>
+            <text wx:if="{{item.tx_status==2}}">已通过</text>
+            <text wx:if="{{item.tx_status==3}}">未通过</text>
+          </view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="nodata"  wx:if="{{infoList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无数据</view>
+    </view>
+  </view>
+</view>

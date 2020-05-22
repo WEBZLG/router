@@ -1,0 +1,6 @@
+/* retailPage/pages/infoShow/infoShow.wxss */
+.imgShow{
+  height: 326rpx;
+  width: 528rpx;
+  margin: 20% auto
+}

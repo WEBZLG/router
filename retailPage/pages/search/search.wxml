@@ -1,0 +1,56 @@
+<!--pages/home/search/search.wxml-->
+<view class="body">
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../../images/search@2x.png"></image>
+    </view>
+    <input placeholder="找线路/找活动/找领队/找旅行社" value="{{keyword}}" bindinput="search"></input>
+  </view>
+  <view>
+    <view class="aboutText">与“{{keyword}}”相关的内容</view>
+    <view wx:if="{{dataList.agent.length==0&&dataList.travel.length==0&&dataList.leader.length==0}}">
+      <view class="noSearch">
+        <image src="../../../images/no-search.png"></image>
+      </view>
+      <view class="notext">没有找到你要的内容</view>
+    </view>
+    <view wx:if="{{dataList.agent.length!=0}}">
+      <view class="title">旅行社</view>
+      <view class="list" wx:for="{{dataList.agent}}" wx:key="index">
+        <view data-cateid="{{item.id}}" catchtap="travelHome">{{item.title}}</view>
+      </view>
+    </view>
+    <view wx:if="{{dataList.travel.length!=0}}">
+      <view class="title">线路行程</view>
+      <view class="list" wx:for="{{dataList.travel}}" wx:key="index">
+        <view data-tid="{{item.id}}" catchtap="routerDetails">{{item.title}}</view>
+      </view>
+    </view>
+    <view wx:if="{{dataList.leader.length!=0}}">
+      <view class="title">领队</view>
+      <view class="list" wx:for="{{dataList.leader}}" wx:key="index">
+        <view data-uid="{{item.id}}" catchtap="leaderApprove">{{item.nick}}</view>
+      </view>
+    </view>
+    <view wx:if="{{dataList.search.length!=0}}">
+      <view class="title">历史搜索</view>
+      <view class="list" wx:for="{{dataList.search}}" wx:key="index">
+        <view data-kwd="{{item.keyword}}" catchtap="oldkey">{{item.keyword}}</view>
+      </view>
+    </view>
+    <view>
+      <view class="title">热门搜索</view>
+      <view class="tags">
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+        <view class="tag">旅游</view>
+      </view>
+    </view>
+  </view>
+</view>

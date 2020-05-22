@@ -1,0 +1,205 @@
+page {
+  font-size: 24rpx;
+}
+
+.title {
+  padding: 34rpx 40rpx;
+  background-color: #fff;
+  margin-bottom: 21rpx;
+}
+
+.upImg {
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+}
+
+.imgbox {
+  margin-top: 32rpx;
+  flex-wrap: wrap;
+}
+
+.img {
+  height: 134rpx;
+  width: 134rpx;
+  margin-right: 30rpx;
+  position: relative;
+}
+
+.addimg {
+  height: 130rpx;
+  width: 134rpx;
+  border: 1px solid #d6d6d8;
+  text-align: center;
+  font-size: 60rpx;
+  overflow: hidden;
+}
+
+.iconjiahao {
+  font-size: 64rpx;
+  color: #d6d6d8;
+  margin-top: 45rpx;
+}
+
+.tagbox {
+  flex-wrap: wrap;
+}
+
+.tags, .members {
+  padding: 30rpx 40rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.tag, .moreTag {
+  border-radius: 10rpx;
+  margin-bottom: 30rpx;
+  border: 1px solid #cacaca;
+  text-align: center;
+  padding: 12rpx 42rpx;
+}
+
+.moreTag {
+  width: 190rpx;
+}
+
+.tag.active, .moreTag.active {
+  background-color: #00c16c;
+  color: #fff;
+  border: 1px solid #00c16c;
+}
+
+.ipt {
+  flex: 1;
+  text-align: right;
+}
+
+.caption {
+  margin-bottom: 20rpx;
+}
+
+.item-content_shadow {
+  color: #666;
+}
+
+/*主容器*/
+
+.stepper {
+  width: 220rpx;
+  height: 60rpx;
+  /*给主容器设一个边框*/
+  border: 1px solid #ccc;
+  border-radius: 6rpx;
+}
+
+/*加号和减号*/
+
+.stepper text {
+  width: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  float: left;
+}
+
+/*数值*/
+
+.stepper input {
+  width: 96rpx;
+  height: 60rpx;
+  float: left;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  /*给中间的input设置左右边框即可*/
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+/*普通样式*/
+
+.stepper .normal {
+  color: #ff4d50;
+}
+
+/*禁用样式*/
+
+.stepper .disabled {
+  color: #ccc;
+}
+
+.message {
+  background-color: #fff;
+  padding: 0 40rpx;
+}
+
+.item {
+  line-height: 80rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.btnbox {
+  padding: 30rpx 75rpx;
+}
+
+/* 地区级联选择器 */
+
+.item-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 500rpx;
+}
+
+.address-item {
+  min-height: 98rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  bottom: 0rpx;
+  left: 0rpx;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+
+.picker-view__pane {
+  height: 100rpx;
+  width: 100%;
+  padding: 20rpx 32rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.picker-view__pane text {
+  color: red;
+  font-size: 30rpx;
+}
+
+.pick-view__group {
+  width: 96%;
+  height: 450rpx;
+}
+
+.iconguanbi {
+  position: absolute;
+  top: -30rpx;
+  right: -15rpx;
+  color: #f00;
+  z-index: 9;
+}
+

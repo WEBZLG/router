@@ -1,0 +1,91 @@
+/* retailPage/pages/myVisitor/myVisitor.wxss */
+
+.banner {
+  height: 898rpx;
+  width: 100%;
+  position: relative;
+  z-index: -1;
+}
+
+.search {
+  margin: 28rpx 40rpx;
+  position: relative;
+}
+
+.search input {
+  padding: 10rpx 0;
+  border-radius: 64rpx;
+  background-color: #ddd;
+  padding-right: 83rpx;
+  padding-left: 30rpx;
+}
+
+.body .search-icon {
+  height: 24rpx;
+  width: 24rpx;
+  position: absolute;
+  right: 10rpx;
+  top: -1rpx;
+  padding: 20rpx;
+}
+
+.container {
+  margin-top: -480rpx;
+}
+
+.body .search input {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.placeholder {
+  color: #fff;
+}
+
+.listbox {
+  margin: 0 22rpx;
+  overflow: auto;
+  height: 1000rpx;
+  position: relative;
+}
+.caption{
+  font-size: 36rpx;
+  position: absolute;
+  top: 60rpx;
+  right: 100rpx;
+}
+.caption .title{
+  font-size:80rpx; 
+}
+.label{
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+.sortIcon{
+  height: 56rpx;
+  width: 56rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.number{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 56rpx;
+  color: #8F8F8F;
+}
+.number.active{
+  color: #891D22;
+}
+.content{
+  position: absolute;
+  top: 54rpx;
+  left: 60rpx;
+  right: 60rpx;
+}
+.item{
+  margin-bottom: 30rpx;
+}

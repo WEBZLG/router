@@ -1,0 +1,82 @@
+<!--retailPage/pages/myInfo/myInfo.wxml-->
+<!--pages/myself/myinfo/myinfo.wxml-->
+<view class="body">
+  <view class="title">
+    <view class="line"></view>
+    <text>基本信息</text>
+  </view>
+  <view class="infobox">
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-1 name"></icon>
+        <text>企业名称</text>
+      </view>
+      <view class="name" >{{infoList.company}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-5 nickname"></icon>
+        <text>经营场所</text>
+      </view>
+      <view>{{infoList.address}}</view>
+    </view>
+    <view class="info-item" data-text="{{infoList.pic_business}}" catchtap="infoShow">
+      <view>
+        <icon class="iconfont iconfenxiaoshang-wodeziliao-6 sex"></icon>
+        <text>营业执照</text>
+      </view>
+      <view data-=""><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+    <view class="info-item" data-text="{{infoList.pic_business_charter}}" catchtap="infoShow">
+      <view>
+        <icon class="iconfont iconwodeziliao-2 phone"></icon>
+        <text>旅游经营许可证</text>
+      </view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+    <view class="info-item" data-text="{{infoList.pic_card_font}}" catchtap="infoShow">
+      <view>
+        <view>
+          <icon class="iconfont iconfenxiaoshang-wodeziliao-3 daoyou"></icon>
+          <text>法人身份证</text>
+        </view>
+      </view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+
+    </view>
+    <view class="info-item" data-text="{{infoList.pic_legal_card}}" catchtap="infoShow">
+      <view>
+        <icon class="iconfont iconfenxiaoshang-wodeziliao-1 address"></icon>
+        <text>法人手持身份证</text>
+      </view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+    <view class="info-item" catchtap="goodAt">
+      <view>
+        <icon class="iconfont iconwodeziliao- goodlike"></icon>
+        <text>产品范围</text>
+      </view>
+      <!-- <view wx:for="{{infoList.skill}}" wx:key="index">
+        <text>{{item.name}}</text>
+      </view> -->
+      <view class="skillBox">{{infoList.skill}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+       <view>
+        <icon class="iconfont iconfenxiaoshang-wodeziliao- router"></icon>
+        <text>手机号码</text>
+      </view>
+      </view>
+      <view >{{infoList.phone}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont  time"></icon>
+        <text>注册时间</text>
+      </view>
+      <view>{{infoList.add_time}}</view>
+    </view>
+  </view>
+  <view class="notice">如有信息变更，请联系淘淘趣游的客服人员</view>
+</view>

@@ -1,0 +1,58 @@
+<!--pages/retailPage/wantRetail/wantRetail.wxml-->
+<view class="body">
+  <view class="caption">当前账号分销商：{{dataList.company}}</view>
+  <view class="unitList">
+    <view class="displayFlexBet item">
+      <view class="label">{{dataList.title}}</view>
+      <view class="displayFlexBet">
+        <view class="orangecolor">
+          <view>成人价￥{{dataList.man_price}}/人 </view>
+          <view>儿童价￥{{dataList.children_price}}/人 </view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>输入分销价格(成人价)</view>
+      <view>
+        <input placeholder="不能低于供应商的价格" bindinput="manprice"></input>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>输入分销价格(儿童价)</view>
+      <view>
+        <input placeholder="不能低于供应商的价格" bindinput="childprice"></input>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>输入佣金比例(1-100之间)</view>
+      <view>
+        <input placeholder="比例在1-100之间" bindinput="scale"></input>
+      </view>
+    </view>
+    <view class="displayFlexBet item" data-tid="{{dataList.id}}" catchtap="chooseTime">
+      <view>选择分销结束时间</view>
+      <view class="displayFlex">
+        <view>{{startTime}}</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou "></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="frontCover">
+    <view>传一张封面图吧，会更吸引人下单哦...(建议尺寸670px*418px)</view>
+    <view class="chooseImg" catchtap="chooseImage"  hidden="{{!iconIsShow}}" >
+      <icon class="iconfont iconjiahao "></icon>
+    </view>
+    <view class="imgView ">
+      <image src="{{images}}"></image>
+      <view class="deleteIcon" hidden="{{iconIsShow}}" catchtap="deleteImg"><icon class="iconfont iconshanchutubiao"></icon></view>
+    </view>
+  </view>
+  <view class="btnbox ">
+    <button class="orangebtn" catchtap="submit">确认分销</button>
+  </view>
+</view>

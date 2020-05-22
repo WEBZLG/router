@@ -1,0 +1,182 @@
+<!--pages/publish/publish.wxml-->
+<view>
+  <view class="title">
+    <input placeholder="在此输入线路标题吸引大家来拼团" bindinput="lineTitle"></input>
+  </view>
+  <view class="upImg">
+    <view class="graycolor">传一张或多张线路宣传头图吧...(建议尺寸670px*418px)</view>
+    <view class="imgbox displayFlex">
+      <view class="img" wx:for="{{images}}" wx:key="index">
+        <icon class="iconfont iconguanbi" catchtap="deleteImg" data-idx="{{index}}"></icon>
+        <image src="{{item}}"></image>
+      </view>
+      <view class="img addimg" wx:if="{{images.length!=4}}" catchtap="chooseImage">
+        <icon class="iconfont iconjiahao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="tags">
+    <view class="caption">添加标签
+      <text class="graycolor">（可多选）</text>
+    </view>
+    <view class="tagbox displayFlexBet">
+      <block wx:for="{{tagList}}" wx:key="index">
+        <view class="tag {{item.isSelected?'active':''}}" bindtap='itemSelected' data-id="{{item.id}}" data-index="{{index}}">{{item.name}}</view>
+      </block>
+    </view>
+  </view>
+  <view class="members">
+    <view class="displayFlexBet">
+      <view>团员数</view>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{num}}" />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+  </view>
+  <view class="message">
+    <view class="item displayFlexBet">
+      <view>报名限制</view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{limitArray}}">
+            <view class="picker">
+              {{limitArray[index]}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet" wx:if="{{limitType==2||limitType==1}}">
+      <view>成人报名费</view>
+      <view class="ipt">
+        <input placeholder="元/人" bindinput="setManPrice"></input>
+      </view>
+    </view>
+    <view class="item displayFlexBet"  wx:if="{{limitType==3||limitType==1}}">
+      <view>儿童报名费</view>
+      <view class="ipt">
+        <input placeholder="元/人" bindinput="setChildPrice"></input>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>出发地点</view>
+      <view class="displayFlex">
+        <view class="item-content arrow {{region ? '' : 'item-content_shadow'  }}" data-type="0" bindtap="pickAddress">{{region||"请选择出发地"}}</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>返回地点</view>
+      <view class="displayFlex">
+        <view class="item-content arrow {{endRegion ? '' : 'item-content_shadow'  }}" data-type="1" bindtap="pickAddress">{{endRegion||"请选择目的地"}}</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>报名开始日期</view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker mode="date" value="{{signStartDate}}" start="{{nowTime}}" data-type="0" bindchange="signDateChange">
+            <view class="picker {{signStartDate ? '' : 'item-content_shadow'  }}">
+              {{signStartDate||'请选择报名开始日期'}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>报名结束日期</view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker mode="date" value="{{signEndDate}}" start="{{nowTime}}" data-type="1" bindchange="signDateChange">
+            <view class="picker {{signEndDate ? '' : 'item-content_shadow' }} ">
+              {{signEndDate||'请选择报名结束日期'}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>出发日期</view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker mode="date" value="{{startDate}}" start="{{nowTime}}" data-type="0" bindchange="bindDateChange">
+            <view class="picker {{startDate ? '' : 'item-content_shadow'  }}">
+              {{startDate||'请选择出发日期'}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>返回日期</view>
+      <view class="displayFlex">
+        <view class="section">
+          <picker mode="date" value="{{endDate}}" start="{{nowTime}}" data-type="1" bindchange="bindDateChange">
+            <view class="picker {{endDate ? '' : 'item-content_shadow' }} ">
+              {{endDate||'请选择返回日期'}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="item displayFlexBet">
+      <view>本期活动保险</view>
+      <view class="displayFlex">
+        <view class="graycolor">费用包含（成团后由团长给团员购买）</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="submit">下一步</button>
+  </view>
+
+  <pop-up visible="{{visible}}" onClose="closePopUp">
+    <view slot="content">
+      <view class="picker-view">
+        <view class="picker-view__pane">
+          <text catchtap="cityCancel">取消</text>
+          <text catchtap="citySure">确定</text>
+        </view>
+        <picker-view class="pick-view__group" bindchange="cityChange" value="{{value}}" wx:key="*this">
+          <picker-view-column indicator-class="item_active">
+            <view wx:for="{{provinces}}" class="picker-item" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{citys}}" class="picker-item" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+          <picker-view-column>
+            <view wx:for="{{areas}}" class="picker-item" wx:key="index">{{item.name}}</view>
+          </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </pop-up>
+</view>

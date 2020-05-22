@@ -1,0 +1,55 @@
+<!--pages/myself/myRetail/myRetail.wxml-->
+<view class="body">
+  <view class="tabnav displayFlexBet">
+    <view class="myRetail {{tabShow==0?'active':''}}" catchtap="tabChange" data-tab="0">我的领队</view>
+    <view class="myFans {{tabShow==1?'active':''}}" catchtap="tabChange" data-tab="1">待审核</view>
+  </view>
+  <view class="retailList" hidden="{{tabShow==0?false:true}}">
+    <view class="message">
+      <view class="title">当前员工（人）</view>
+      <view class="num">{{brokerageData.list.length}}</view>
+      <view class="trip">每日0:00更新数据</view>
+    </view>
+    <view class="list">
+      <view class="navitem displayFlexBet" wx:for="{{brokerageData.list}}" wx:key="index" catchtap="staffDetails" data-id="{{item.id}}">
+        <view>
+          <view class="headImg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          {{item.name}}
+        </view>
+        <view>
+          <text>{{item.title}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fansList" hidden="{{tabShow==1?false:true}}">
+    <view class="message">
+      <view class="title">申请认证员工（人）</view>
+      <view class="num">{{fansData.list.length}}</view>
+      <view class="trip">每日0:00更新数据</view>
+    </view>
+    <view class="list">
+      <view class="item displayFlexBet" wx:for="{{fansData.list}}" wx:key="index"  catchtap="auditDetails"  data-id="{{item.id}}">
+        <view>
+          <view class="headImg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          {{item.name}}
+        </view>
+        <view>
+          <text>{{item.apply_time}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+      <view class="nodata" wx:if="{{fansData.list.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无粉丝</view>
+      </view>
+    </view>
+  </view>
+</view>

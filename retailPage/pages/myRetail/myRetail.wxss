@@ -1,0 +1,114 @@
+/* pages/myself/myRetail/myRetail.wxss */
+
+.tabnav {
+  width: 330rpx;
+  height: 70rpx;
+  font-size: 30rpx;
+  color: #ffc63b;
+  margin: 44rpx auto 60rpx;
+}
+
+.tabnav view {
+  flex: 1;
+  text-align: center;
+  line-height: 70rpx;
+  background-color: #fff;
+}
+
+.tabnav view.active {
+  background-color: #ffc63b;
+  color: #fff;
+}
+
+.myRetail {
+  border-top-left-radius: 10rpx;
+  border-bottom-left-radius: 10rpx;
+}
+
+.myFans {
+  border-top-right-radius: 10rpx;
+  border-bottom-right-radius: 10rpx;
+}
+
+.djIcon, .txIcon, .ljIcon {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 40rpx;
+}
+
+.djIcon {
+  width: 48rpx;
+  height: 45rpx;
+}
+
+.txIcon {
+  width: 49rpx;
+  height: 48rpx;
+}
+
+.ljIcon {
+  width: 49rpx;
+  height: 52rpx;
+}
+
+.message {
+  text-align: center;
+  font-size: 36rpx;
+  line-height: 90rpx;
+}
+
+.num {
+  font-size: 100rpx;
+  margin-top: 30rpx;
+}
+
+.trip {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.navitem {
+  background-color: #322f40;
+  padding: 28rpx 40rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.headImg {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #0ff;
+}
+
+.item {
+  line-height: 122rpx;
+  background-color: #322f40;
+  padding: 0 40rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.item text {
+  font-size: 24rpx;
+  width: 320rpx;
+  display: inline-block;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.list {
+  position: absolute;
+  top: 470rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}

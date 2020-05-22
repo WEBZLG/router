@@ -1,0 +1,35 @@
+<!--pages/home/deepTravel/deepTravel.wxml-->
+<view>
+  <view class="banner">
+    <image src="{{dataList.theme_info.pic_cover}}"></image>
+    <!-- <view class="caption">
+      <view class="name">轻奢小团</view>
+      <view class="desc">旅行是件快乐且值得分享的事儿</view>
+    </view> -->
+  </view>
+  <view class="content">
+    <!-- <view class="type">轻奢小团</view> -->
+    <view class="abstract">{{dataList.theme_info.describe}}</view>
+    <view class="desctipt">{{dataList.theme_info.content}}</view>
+    <view ></view>
+  </view>
+    <view class="groom">
+    <view class="title">旅行顾问推荐行程</view>
+    <view class="list">
+      <view class="listItem" wx:for="{{dataList.push}}" wx:key="index" data-tid="{{item.id}}" catchtap="routerDetails">
+        <view class="itemImg">
+          <image src="{{pubPath+item.pic_cover}}"></image>
+        </view>
+        <view class="desct">{{item.title}}</view>
+        <view class="company">{{item.name}}</view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.push.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无行程</view>
+      </view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,541 @@
+<!--pages/myself/groupBooking/groupBooking.wxml-->
+<view>
+  <view class="tabnav displayFlexBet">
+    <view class="myRetail {{tabShow==0?'active':''}}" catchtap="tabChange" data-tab="0">我发起的</view>
+    <view class="myFans {{tabShow==1?'active':''}}" catchtap="tabChange" data-tab="1">我报名的</view>
+  </view>
+  <!-- 我发起的 -->
+  <view class="current" hidden="{{tabShow==0?false:true}}">
+    <view class="information">
+      <view class="displayFlexBet">
+        <view class="item">
+          <view class="title">待出行订单</view>
+          <view class="number">{{dataList.count}}</view>
+        </view>
+        <view class="item">
+          <view class="title">距离出发时间</view>
+          <view class="time" wx:if="{{dataList.count_down.day>0}}">
+            <view class="timebg">{{dataList.count_down.day}}</view>
+            <text>天</text>
+            <view class="timebg">{{dataList.count_down.hour}}</view>
+            <text>小时</text>
+          </view>
+
+          <view class="time" wx:if="{{dataList.count_down.day<1}}">
+            <view class="timebg">{{dataList.count_down.hour}}</view>
+            <text>小时</text>
+            <view class="timebg">{{dataList.count_down.minute}}</view>
+            <text>分</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view>消费记录
+        <icon class="iconfont iconwode-wodedingdan-xiaofeijilu"></icon>
+      </view> -->
+    </view>
+    <view class="details">
+      <view class="nav">
+        <view class="{{currentTabA==0?'active':''}}" data-current="0" bindtap="clickTabA">全部</view>
+        <view class="{{currentTabA==1?'active':''}}" data-current="1" bindtap="clickTabA">待出行</view>
+        <view class="{{currentTabA==2?'active':''}}" data-current="2" bindtap="clickTabA">已出行</view>
+        <view class="{{currentTabA==3?'active':''}}" data-current="3" bindtap="clickTabA">审核</view>
+
+      </view>
+      <view class="{{currentTabA == 0 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+              <view class="groupNumber">{{item.num}}人团</view>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>报名限制</label>
+            <view wx:if="{{item.sign_rule==1}}">成人和儿童（1.2米以下）</view>
+            <view wx:if="{{item.sign_rule==2}}">只有成人</view>
+            <view wx:if="{{item.sign_rule==3}}">只有儿童（1.2米以下）</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>返回时间</label>
+            <view>{{item.return_time}}</view>
+          </view>
+          <view class="contact">
+            <label>出发地点</label>
+            <view>{{item.start_address}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+          <view>
+            <view class="detailbtn" data-id="{{item.id}}" wx:if="{{!item.is_pass==1||!item.is_pass==2}}" catchtap="signUpDetails">报名详情</view>
+          </view>
+            <view class="btnbox">
+              <button class="sharebtn" wx:if="{{item.status==1&&item.is_pass==0}}" data-pic="{{item.pic}}" data-id="{{item.id}}" data-title="{{item.title}}" catchtap="open">邀请拼团</button>
+              <button class="sharebtn" wx:if="{{item.status==0&&item.is_pass==0}}">已满团</button>
+              <button class="waitbtn" wx:if="{{item.is_pass==1}}">审核中</button>
+              <button class="overbtn" wx:if="{{item.is_pass==2}}">已拒绝</button>
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabA == 1 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+              <view class="groupNumber">{{item.num}}人团</view>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>报名限制</label>
+            <view wx:if="{{item.sign_rule==1}}">成人和儿童（1.2米以下）</view>
+            <view wx:if="{{item.sign_rule==2}}">只有成人</view>
+            <view wx:if="{{item.sign_rule==3}}">只有儿童（1.2米以下）</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>返回时间</label>
+            <view>{{item.return_time}}</view>
+          </view>
+          <view class="contact">
+            <label>出发地点</label>
+            <view>{{item.start_address}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+            <view class="detailbtn"  data-id="{{item.id}}"  catchtap="signUpDetails">报名详情</view>
+            <view class="btnbox">
+              <button class="sharebtn" wx:if="{{item.status==0}}">已满团</button>
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabA == 2 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+              <view class="groupNumber">{{item.num}}人团</view>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>报名限制</label>
+            <view wx:if="{{item.sign_rule==1}}">成人和儿童（1.2米以下）</view>
+            <view wx:if="{{item.sign_rule==2}}">只有成人</view>
+            <view wx:if="{{item.sign_rule==3}}">只有儿童（1.2米以下）</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>返回时间</label>
+            <view>{{item.return_time}}</view>
+          </view>
+          <view class="contact">
+            <label>出发地点</label>
+            <view>{{item.start_address}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+            <view class="detailbtn"  data-id="{{item.id}}"  catchtap="signUpDetails">报名详情</view>
+            <view class="btnbox">
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabA == 3 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+              <view class="groupNumber">{{item.num}}人团</view>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>报名限制</label>
+            <view wx:if="{{item.sign_rule==1}}">成人和儿童（1.2米以下）</view>
+            <view wx:if="{{item.sign_rule==2}}">只有成人</view>
+            <view wx:if="{{item.sign_rule==3}}">只有儿童（1.2米以下）</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>返回时间</label>
+            <view>{{item.return_time}}</view>
+          </view>
+          <view class="contact">
+            <label>出发地点</label>
+            <view>{{item.start_address}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+          <view>
+            <view class="detailbtn"  data-id="{{item.id}}"  wx:if="{{!item.is_pass==1||!item.is_pass==2}}"  catchtap="signUpDetails">报名详情</view>
+          </view>
+            <view class="btnbox">
+              <button class="firmbtn" wx:if="{{item.is_pass==0}}">已通过</button>
+              <button class="waitbtn" wx:if="{{item.is_pass==1}}">审核中</button>
+              <button class="overbtn" wx:if="{{item.is_pass==2}}">已拒绝</button>
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 我报名的 -->
+  <view class="current" hidden="{{tabShow==1?false:true}}">
+    <view class="information">
+      <view class="displayFlexBet">
+        <view class="item">
+          <view class="title">待出行订单</view>
+          <view class="number">{{dataList.count}}</view>
+        </view>
+        <view class="item">
+          <view class="title">距离出发时间</view>
+          <view class="time" wx:if="{{dataList.count_down.day>0}}">
+            <view class="timebg">{{dataList.count_down.day}}</view>
+            <text>天</text>
+            <view class="timebg">{{dataList.count_down.hour}}</view>
+            <text>小时</text>
+          </view>
+
+          <view class="time" wx:if="{{dataList.count_down.day<1}}">
+            <view class="timebg">{{dataList.count_down.hour}}</view>
+            <text>小时</text>
+            <view class="timebg">{{dataList.count_down.minute}}</view>
+            <text>分</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view>消费记录
+        <icon class="iconfont iconwode-wodedingdan-xiaofeijilu"></icon>
+      </view> -->
+    </view>
+    <view class="details">
+      <view class="nav">
+        <view class="{{currentTabB==0?'active':''}}" data-current="0" bindtap="clickTabB">全部</view>
+        <view class="{{currentTabB==1?'active':''}}" data-current="1" bindtap="clickTabB">待出行</view>
+        <view class="{{currentTabB==2?'active':''}}" data-current="2" bindtap="clickTabB">已出行</view>
+        <view class="{{currentTaBb==3?'active':''}}" data-current="3" bindtap="clickTabB">退款</view>
+
+      </view>
+      <view class="{{currentTabB == 0 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>订单编号</label>
+            <view>{{item.order_no}}</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>支付时间</label>
+            <view>{{item.pay_time}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+            <view class="detailbtn"  data-tid="{{item.id}}" catchtap="orderDetails">订单详情</view>
+            <view class="btnbox">
+              <!-- <button class="cancel" wx:if="{{item.status==0}}">申请退款</button> -->
+              <button class=" sharebtn " wx:if="{{item.status==0}}">已满团</button>
+              <button class="sharebtn" wx:if="{{item.status==1&&item.is_pass==0}}" data-pic="{{item.pic}}" data-id="{{item.id}}" data-title="{{item.title}}" catchtap="open">邀请拼团</button>
+            </view>
+          </view>
+        </view>
+        <view class="nodata " wx:if="{{dataList.list.length==0}} ">
+          <view class="noDataIcon ">
+          <image src="../../../images/nodata.png "></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabB==1 ? 'show': 'hidden'}} ">
+        <view class="itembg information " wx:for="{{dataList.list}} " wx:key="index">
+          <view class="company ">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou "></icon>
+          </view>
+          <view class="typeInfo ">
+            <view class="overImg ">
+              <image src="{{item.pic}} "></image>
+            </view>
+            <view class="widthFlex ">
+              <view class="linetitle ">{{item.title}}</view>
+              <view class="price displayFlexBet ">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}} ">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}} ">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type ">{{item.category}}</view>
+          <view class="contact ">
+            <label>订单编号</label>
+            <view>{{item.order_no}}</view>
+          </view>
+          <view class="contact ">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact ">
+            <label>支付时间</label>
+            <view>{{item.pay_time}}</view>
+          </view>
+          <view class="total " wx:if="{{item.sign_rule==1&&item.type==2}} ">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet ">
+            <view class="detailbtn " data-tid="{{item.id}}" catchtap="orderDetails">订单详情</view>
+            <view class="btnbox ">
+              <!-- <button class="cancel"  wx:if="{{item.status==0}}">申请退款</button> -->
+              <button class="sharebtn" wx:if="{{item.status==0}}">已满团</button>
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabB == 2 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>订单编号</label>
+            <view>{{item.order_no}}</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>支付时间</label>
+            <view>{{item.pay_time}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+            <view class="detailbtn" data-tid="{{item.id}}" catchtap="orderDetails">订单详情</view>
+            <view class="btnbox">
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+      <view class="{{currentTabB == 3 ? 'show':'hidden'}}">
+        <view class="itembg information" wx:for="{{dataList.list}}" wx:key="index">
+          <view class="company">团长：{{item.guide}}
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+          <view class="typeInfo">
+            <view class="overImg">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view class="widthFlex">
+              <view class="linetitle">{{item.title}}</view>
+              <view class="price displayFlexBet">
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==2}}">成人价￥{{item.price}}</text>
+                <text wx:if="{{item.sign_rule==1||item.sign_rule==3}}">儿童价￥{{item.children_price}}</text>
+              </view>
+            </view>
+          </view>
+          <view class="type">{{item.category}}</view>
+          <view class="contact">
+            <label>订单编号</label>
+            <view>{{item.order_no}}</view>
+          </view>
+          <view class="contact">
+            <label>出发日期</label>
+            <view>{{item.start_time}}</view>
+          </view>
+          <view class="contact">
+            <label>支付时间</label>
+            <view>{{item.pay_time}}</view>
+          </view>
+          <view class="total" wx:if="{{item.sign_rule==1&&item.type==2}}">
+            <text>成人x{{item.man_num}}</text>
+            <text>儿童x{{item.child_num}}</text>
+            <text>合计：{{item.order_price}}</text>
+          </view>
+          <view class="displayFlexBet">
+            <view class="detailbtn" data-tid="{{item.id}}" catchtap="orderDetails">订单详情</view>
+            <view class="btnbox">
+            </view>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.list.length==0}}">
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无数据</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+    <view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+  <view class="modalDlg" wx:if="{{showModal==true}}">
+    <view class="closeIcon" bindtap="close">
+      <icon class="iconfont iconguanbi1"></icon>
+    </view>
+    <view class="modelTitle">选择发送给好友或者保存海报发到朋友圈</view>
+    <view class="displayFlexBet">
+      <view class="wechat">
+        <button open-type="share" class='sharebtn' data-id="{{tid}}">
+          <icon class="iconfont iconweixin"></icon>
+          <view class="message">分享给微信好友或群</view>
+        </button>
+      </view>
+      <view class="poster" catchtap='sharePyq' data-id="{{tid}}">
+        <icon class="iconfont iconshengchenghaibao"></icon>
+        <view class="message">生成朋友圈海报</view>
+      </view>
+    </view>
+    <button class="colse" bindtap="close">我再想想</button>
+  </view>
+  <!-- 分享朋友圈制图 -->
+  <view class='canvas-bg' hidden='{{canvasShow}}'>
+    <canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+    <view class="savebtn" catchtap="save">保存海报</view>
+  </view>
+</view>

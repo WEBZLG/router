@@ -1,0 +1,62 @@
+<!--pages/retailHome/customizaDetails/customizaDetails.wxml-->
+<view class="body">
+  <view class="container">
+    <view class="caption">
+        <icon class="iconfont icondingzhidingdan-jiedan"></icon>
+      订单有效期12小时，请在有效期内及时给出方案。
+    </view>
+    <view class="details">
+       <view class="item displayFlex">
+          <view class="label">下单时间：</view>
+          <view>{{infoList.add_time}}</view>
+       </view>
+       <!-- <view class="item displayFlex">
+          <view class="label">订单状态：</view>
+          <view>{{infoList.}}</view>
+       </view> -->
+       <view class="item displayFlex">
+          <view class="label">联系人：</view>
+          <view>{{infoList.contacts}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">联系电话：</view>
+          <view>{{infoList.phone}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">出行人数：</view>
+          <view>{{infoList.tour_num}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">出发地及目的地：</view>
+          <view>{{infoList.sart_off}}-{{infoList.destination}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">计划出行时间：</view>
+          <view>{{infoList.start_time}}-{{infoList.return_time}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">备注：</view>
+          <view>{{infoList.remark}}</view>
+       </view>
+    </view>
+  </view>
+  <view class="notice">注：接单后可显示完整联系人信息，请在有效时间内给出方案。越早给出方案，成交几率越大。</view>
+  <view class="btnbox">
+    <button class="orangebtn" wx:if="{{infoList.status==0}}" catchtap="action" data-act="take">接单</button>
+    <button class="orangebtn" wx:if="{{infoList.status==1}}" catchtap="action" data-act="deal">未成交</button>
+    <button class="bluebtn" wx:if="{{infoList.status==1}}" catchtap="action" data-act="cancel">成交</button>
+  </view>
+  <!-- 活动结束 -->
+  <view class="overContainer"  wx:if="{{infoList.diy_status==3}}">
+    <view class="caption">
+        <icon class="iconfont icondingzhidingdan-jiedan"></icon>
+      该订单已与其他旅行社成交，下次加油哦~
+    </view>
+    <view class="overIcon">
+      <icon class="iconfont iconyijieshu"></icon>
+    </view>
+    <view class="btnbox">
+      <button class="orangebtn" catchtap="otherCustomiza">其他定制</button>
+    </view>
+  </view>
+</view>

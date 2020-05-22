@@ -1,0 +1,118 @@
+/* pages/myself/incomeDetails/incomeDetails.wxss */
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.retail {
+  background-color: #00c16c;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  padding: 30rpx 40rpx 98rpx;
+}
+
+.orderInfo {
+  position: relative;
+  top: -66rpx;
+  margin: 0 20rpx;
+}
+
+.line {
+  height: 20rpx;
+  border-radius: 20rpx;
+  background-color: #ffc63b;
+}
+
+.whitebg {
+  margin: -10rpx 20rpx 0;
+  height: 700rpx;
+  position: relative;
+}
+
+.shaw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24rpx;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #333;
+}
+.number{
+  font-size: 24rpx;
+  line-height: 70rpx;
+  margin: 0 20rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px dashed #cccccc;
+}
+.itembg {
+  background-color: #fff;
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  padding: 0rpx 20rpx 0;
+  font-size: 24rpx;
+}
+
+.price {
+  font-size: 30rpx;
+  color: #ffc53d;
+  margin-left: 26rpx;
+}
+
+.type {
+  font-size: 24rpx;
+  color: #ffc53d;
+  margin: 20rpx 0;
+}
+
+
+.overImg {
+  width: 262rpx;
+  height: 159rpx;
+}
+
+.typeInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.company {
+  font-size: 24rpx;
+  line-height: 78rpx;
+}
+
+.contact {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.contact view {
+  color: #666;
+  margin-left: 30rpx;
+}
+.title{
+  font-size: 30rpx;
+  height: 118rpx;
+  margin-left: 26rpx;
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+overflow: hidden;
+}
+.totalMoney{
+  margin-top: 54rpx;
+}
+.total text{
+  margin-right: 40rpx;
+}

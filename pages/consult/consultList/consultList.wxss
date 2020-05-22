@@ -1,0 +1,46 @@
+/* pages/consult/consultList/consultList.wxss */
+
+.list {
+  margin-top: 30rpx;
+}
+
+.item {
+background-color: #fff;
+padding: 0 40rpx;
+font-size: 24rpx;
+height: 110rpx;
+margin-bottom: 30rpx;
+line-height: 48rpx;
+
+}
+
+.status {
+  text-align: center;
+  margin-right: 20rpx;
+}
+
+.status.wait {
+  color: #ffc63b;
+}
+
+.status.over {
+  color: #1db268;
+}
+
+.status .iconfont {
+  font-size: 96rpx;
+  vertical-align: middle;
+}
+.qustion{
+  font-size: 30rpx;
+}
+.time{
+  color: #999999;
+}
+.icon{
+  height: 48rpx;
+  width: 48rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin:  0 auto;
+}

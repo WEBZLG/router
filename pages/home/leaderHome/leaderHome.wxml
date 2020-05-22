@@ -1,0 +1,55 @@
+<!--pages/home/leaderHome/leaderHome.wxml-->
+<view>
+  <view>
+    <view class="homebg">
+      <image src="{{homeBgImg}}"></image>
+      <view class="viewNumber">
+        <view class="number">{{infoList.userInfo.read_num}}</view>
+        <view>记录浏览量</view>
+      </view>
+    </view>
+    <view>
+      <view class="information">
+        <view class="head" >
+          <image src="{{headImgUrl}}"></image>
+        </view>
+        <view class="attestation">
+          <view wx:if="{{infoList.userInfo.is_guide==0}}">已认证导游</view>
+          <view wx:if="{{infoList.userInfo.is_guide==1}}">未认证导游</view>
+          <view wx:if="{{infoList.userInfo.is_guide==2}}">导游认证审核中</view>
+          <view wx:if="{{infoList.userInfo.is_guide==3}}">导游认证未通过</view>
+        </view>
+        <view>
+          <view class="exit-name">
+            <view>
+              <text>{{infoList.userInfo.nick}}</text>
+            </view>
+            <!-- <view class="exit" catchtap="myInfo">
+              <image src="../../../images/myhomeexit.png"></image>
+            </view> -->
+          </view>
+        </view>
+        <view class="mygoods" catchtap="leaderLineList" data-id="{{uid}}">ta的线路</view>
+      </view>
+    </view>
+    <view class="userdata">
+      <view class="item">
+        <view>地区：{{infoList.userInfo.province}} | {{infoList.userInfo.city}} </view>
+        <view>领域：
+          <block wx:for="{{infoList.skill}}" wx:key="index">
+            <text>{{item.name}}</text>
+          </block>
+        </view>
+      </view>
+      <view>
+        <view class="item">
+          <view>带团次数 {{infoList.userInfo.teams}}</view>
+          <view>团员数 {{infoList.userInfo.team_member}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="item">在线时长：{{infoList.userInfo.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

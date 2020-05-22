@@ -1,0 +1,47 @@
+/* pages/myself/expenseList/expenseList.wxss */
+.caption{
+  font-size: 30rpx;
+  line-height: 90rpx;
+  padding: 0 40rpx;
+}
+
+.messagebox{
+  background-color: #ffffff;
+}
+.message{
+  font-size: 30rpx;
+  color: #666666;
+  padding: 30rpx 40rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.title{
+  margin-bottom: 11rpx;
+  color: #333333;
+}
+.order{
+  font-size: 24rpx;
+  line-height: 36rpx;
+}
+
+.selectbg{
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+background-color: #eeeeee;
+font-size: 30rpx;
+}
+.section{
+  background-color: #ffffff;
+  text-align: center;
+  line-height:80rpx;
+  margin-top: 30rpx; 
+}
+.icondaosanjiaoxing-{
+  color: #9B9B9B;
+  font-size: 20rpx;
+margin-left: 10rpx;
+}
+.list{
+  margin-top:110rpx; 
+}

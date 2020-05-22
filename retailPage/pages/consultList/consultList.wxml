@@ -1,0 +1,46 @@
+<!--pages/consult/consultList/consultList.wxml-->
+<view class="list">
+  <block wx:for="{{dataList}}" wx:key="index">
+    <view class="item displayFlexBet" catchtap="consultDialog" data-id="{{item.id}}" data-toid="{{item.toid}}">
+      <view class="displayFlex">
+        <view class="status {{item.tips=='已回复'?'over':'wait'}}">
+          <view class="icon">
+            <image src="{{item.icon}}"></image>
+            <!-- <icon class="iconfont icondengdaihuifu"></icon> -->
+          </view>
+          <view>{{item.tips}}</view>
+        </view>
+        <view>
+          <view class="qustion">{{item.content}}</view>
+          <view class="time">{{item.add_time}}</view>
+        </view>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </block>
+  <view class="nodata" wx:if="{{dataList.length<1}}">
+    <view class="noDataIcon">
+      <image src="../../../images/nodata.png"></image>
+    </view>
+    <view>暂无数据</view>
+  </view>
+  <!-- <view class="item displayFlexBet">
+    <view class="displayFlex">
+      <view class="status over">
+        <view>
+          <icon class="iconfont iconyihuifu"></icon>
+        </view>
+        <view>已回复</view>
+      </view>
+      <view>
+        <view class="qustion">12日的团能报名吗</view>
+        <view class="time">10.20 11.39</view>
+      </view>
+    </view>
+    <view>
+      <icon class="iconfont iconyoucejiantou"></icon>
+    </view>
+  </view> -->
+</view>

@@ -1,0 +1,61 @@
+<!--pages/myself/customisedScheme /customisedScheme .wxml-->
+<view>
+  <view class="step">
+    <image src="../../../images/step.png"></image>
+  </view>
+  <view class="content">
+    <view class="item displayFlex">
+      <view class="title">姓名</view>
+      <view>
+        <input placeholder="请输入联系人姓名" bindinput="name"></input>
+      </view>
+    </view>
+    <view class="item displayFlex">
+      <view class="title">电话</view>
+      <view>
+        <input placeholder="请输入联系人电话" bindinput="phone"></input>
+      </view>
+    </view>
+    <view class="item displayFlex">
+      <view class="title">出行人数</view>
+      <view>
+        <input placeholder="请输入出行人数" bindinput="people"></input>
+      </view>
+    </view>
+    <view class="chooseItem">
+      <view class="title">出发城市及目的地</view>
+      <view class=" displayFlexBet">
+          <input placeholder="请输入出发地"  bindinput="startPlace"></input>
+          <input placeholder="请输入目的地"  bindinput="endPlace"></input>
+      </view>
+    </view>
+    <view class="chooseItem">
+      <view class="title">计划行程时间</view>
+      <view class=" displayFlexBet">
+        <view class="section">
+          <picker mode="date" value="{{dateStar}}" start="{{newDate}}" end="" bindchange="bindDateStart">
+            <view class="picker  {{dateStar?'':'graycolor'}}">
+              {{dateStart||'请选择出发日期'}}
+            </view>
+          </picker>
+        </view>
+        <view class="section">
+          <picker mode="date" value="{{dateEnd}}" start="{{newDate}}" end="" bindchange="bindDateEnd">
+            <view class="picker {{dateEnd?'':'graycolor'}}">
+              {{dateEnd||'请选择返回日期'}}
+            </view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <view>
+      <view class="titel">备注</view>
+      <view>
+        <textarea placeholder="备注"  bindinput="remark"></textarea>
+      </view>
+    </view>
+  </view>
+    <view class="btnbox">
+      <button class="greenbtn" catchtap="submit">免费获取出行方案</button>
+    </view>
+</view>

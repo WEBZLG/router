@@ -1,0 +1,251 @@
+/* pages/home/firmOrder/firmOrder.wxss */
+/* pages/router/firmOrder/firmOrder.wxss */
+
+.itembg {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 30rpx 40rpx;
+  font-size: 24rpx;
+}
+
+.total {
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+  padding-top: 16rpx;
+}
+
+.totalMoney {
+  font-size: 60rpx;
+  color: #ff4d50;
+  margin: 54rpx 0 80rpx;
+  text-align: center;
+}
+
+.payInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  line-height: 60rpx;
+}
+
+.infoItem {
+  flex: 1;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}
+.person{
+  width: 320rpx;
+}
+.payStatus {
+  font-size: 36rpx;
+}
+
+.payNotice {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.day, .hours {
+  height: 50rpx;
+  width: 40rpx;
+  border-radius: 5rpx;
+  background-color: #ffc63b;
+  color: #fff;
+  font-size: 24rpx;
+  color: #333333;
+  line-height: 50rpx;
+  text-align: center;
+  display: inline-block;
+}
+
+.orderType {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  color: #0e0b1e;
+  line-height: 48rpx;
+  margin-left: 30rpx;
+}
+
+.price {
+  font-size: 30rpx;
+  color: #ffc53d;
+  margin-left: 30rpx;
+}
+
+.type {
+  font-size: 24rpx;
+  color: #ffc53d;
+  margin-top: 30rpx;
+}
+
+.information {
+  padding-top: 0;
+}
+
+.overImg {
+  width: 262rpx;
+  height: 159rpx;
+}
+
+.typeInfo {
+  display: flex;
+}
+
+.company {
+  font-size: 24rpx;
+  line-height: 78rpx;
+}
+
+.contact {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.contact view {
+  color: #666;
+  margin-left: 30rpx;
+}
+
+.btnbox {
+  display: flex;
+  margin-top: 40rpx;
+  justify-content: flex-end;
+}
+
+.btnbox button {
+  font-size: 24rpx;
+  height: 60rpx;
+  width: 140rpx;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  margin: 0;
+  padding: 0;
+  min-height: inherit;
+  font-weight: 400;
+  margin-left: 30rpx;
+}
+
+.cancel {
+  border: 1px solid #00c16c;
+  background-color: #fff;
+  color: #00c16c;
+}
+
+.firmbtn {
+  background-color: #00c16c;
+  color: #fff;
+}
+
+.address {
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.useTime {
+  font-size: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.number {
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.line {
+  height: 10rpx;
+  width: 190rpx;
+}
+
+.item, .who {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 60rpx;
+}
+.item{
+  border-bottom: 1px solid #cccccc;
+}
+.name {
+  font-size: 30rpx;
+}
+
+.idcard {
+  color: #999;
+}
+
+.peopleType {
+  height: 30rpx;
+  width: 60rpx;
+  line-height: 30rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 18rpx;
+  background-color: #ffc63b;
+}
+
+.desc {
+  text-align: right;
+  text-decoration: underline;
+}
+
+.descConetent {
+  padding: 40rpx 30rpx 0;
+  line-height: 48rpx;
+  font-size: 24rpx;
+}
+
+.mustItembg {
+  background: #fff;
+  font-size: 24rpx;
+}
+
+.mustNotice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 40rpx;
+}
+
+.mustNotice view {
+  color: #666;
+}
+
+.insure {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.questionNotice {
+  font-size: 24rpx;
+  padding: 30rpx 40rpx;
+  line-height: 48rpx;
+  color: #666666;
+}
+.paybtn{
+  background: #00C16C;
+  color: #ffffff;
+  font-size: 36rpx;
+  font-weight: 400;
+  width: 100% !important;
+  border-radius: 80rpx;
+}
+.paybtnbox{
+  padding: 30rpx 75rpx;
+}
+.goline{
+  box-shadow: 0px 6px 6px -6px rgb(160, 160, 160); 
+}

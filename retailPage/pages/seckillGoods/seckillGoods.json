@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "秒杀产品",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

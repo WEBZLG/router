@@ -1,0 +1,21 @@
+<!--pages/failApprove/failApprove.wxml-->
+<view>
+  <view class="cardbg">
+    <image src="../../images/cardbg.jpg"></image>
+  </view>
+  <view>
+    <view class="shiming-icon">
+       <image src="../../images/fail-icon.png"></image>
+    </view>
+    <view class="notice">
+      <view class="text1">很抱歉，您的认证未通过</view>
+      <view class="text2">请确认提交的信息是真实的，照片清晰完整</view>
+    </view>
+  </view>
+
+  <view class="btn">
+    <button type="buttom" class="submit">重新认证</button>
+  </view>
+</view>
+
+

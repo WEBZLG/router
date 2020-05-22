@@ -1,0 +1,30 @@
+<!--pages/router/travelPeople/travelPeople.wxml-->
+<view>
+  <view class="addbtnbox" catchtap="addPeople">
+    <icon class="iconfont icontianjia"></icon>添加
+  </view>
+  <view class="title">常用出行人</view>
+  <view class="list">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="item" wx:for="{{peopleList}}" wx:key="index">
+        <checkbox value='{{item.id}}' hidden="{{checkShow}}">
+          <text class="name">{{item.name}}</text>
+        </checkbox>
+        <view class="name"  hidden="{{!checkShow}}" catchtap="editPeople" data-id="{{item.id}}">{{item.name}}</view>
+        <view catchtap="editPeople" data-id="{{item.id}}">{{item.sex}}</view>
+        <view catchtap="editPeople" data-id="{{item.id}}">{{item.type}}</view>
+        <view catchtap="editPeople" data-id="{{item.id}}">{{item.card_num}}</view>
+        <view catchtap="editPeople" data-id="{{item.id}}"><icon class="iconfont iconyoucejiantou"></icon></view>
+      </view>
+    </checkbox-group>
+  </view>
+  <view class="addbtn" catchtap="chooseOk"  hidden="{{checkShow}}">
+    <button class="add">已选好</button>
+  </view>
+  <view wx:if="{{peopleList.length==0}}">
+    <view class="noDataIcon">
+      <image src="../../../images/nodata.png"></image>
+    </view>
+    <view class="nodata">暂无数据</view>
+  </view>
+</view>

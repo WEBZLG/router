@@ -1,0 +1,26 @@
+<!--retailPage/addAccount/addAccount.wxml-->
+<view class="body">
+  <view class="item">
+    <input placeholder="请输入您的10位微信支付商户号" placeholder-class="placeholder" bindinput="number"></input>
+  </view>
+  <view class="item">
+    <input placeholder="请输入您的商户名" placeholder-class="placeholder" bindinput="name"></input>
+  </view>
+  <view class="type displayFlex">
+    <view class="section__title">商户类型：</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{typeArray}}">
+      <view class="displayFlexBet">
+        <view class="picker">
+          {{typeArray[index]}}
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+    </view>
+    </picker>
+  </view>
+  <view class="notice">如果您没有商户号，请先到微信商户平台注册账号后即可提现。</view>
+  <view class="btnbox">
+    <button class="orangebtn" catchtap="submit">确认</button>
+  </view>
+</view>

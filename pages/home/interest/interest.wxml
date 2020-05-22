@@ -1,0 +1,17 @@
+<!--pages/home/interest/interest.wxml-->
+<view>
+  <view class="person">已有{{infoList.count}}人感兴趣</view>
+  <view class="peopleList">
+    <view class="item" wx:for="{{infoList.list}}" wx:key="index" data-sid="{{item.id}}" catchtap="interestDetails">
+      <view>
+        <view class="headimg">
+          <image src="{{pubPath + item.headimgurl}}"></image>
+        </view>
+        <text class="name">{{item.nick}}</text>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </view>
+</view>

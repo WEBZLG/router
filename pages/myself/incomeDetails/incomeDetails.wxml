@@ -1,0 +1,64 @@
+<!--pages/myself/incomeDetails/incomeDetails.wxml-->
+<view class="list">
+  <view class="item" wx:for="{{dataList}}" wx:key="index">
+    <view class="time">{{item.key}}</view>
+    <view class="info" wx:for="{{item.value}}" wx:for-item="ritem" wx:key="index">
+      <view class="retail">
+        <view>佣金：￥{{ritem.distribution}}</view>
+      </view>
+      <view class="orderInfo">
+        <view class="line"></view>
+        <view class="whitebg">
+          <image src="../../../images/whitebg.png"></image>
+          <view class="content">
+            <view class="shaw">
+              <image src="../../../images/orangeshaw.png"></image>
+            </view>
+            <view class="number">订单编号：{{ritem.order_no}}</view>
+            <view class="itembg information">
+              <view class="company">{{ritem.company}}
+                <icon class="iconfont iconyoucejiantou"></icon>
+              </view>
+              <view class="typeInfo">
+                <view class="overImg">
+                  <image src="../../../images/help.jpg"></image>
+                </view>
+                <view>
+                  <view class="title">{{ritem.title}}</view>
+                  <view class="price">
+                    <view>成人价￥{{ritem.man_price}}/人</view>
+                    <view>儿童价￥{{ritem.man_price}}/人</view>
+                  </view>
+                </view>
+              </view>
+              <view class="type">徒步·摄影·休闲·轰趴</view>
+              <view class="contact">
+                <label>订单状态</label>
+                <view>{{ritem.pay_status==0?'未支付':'已支付'}}</view>
+              </view>
+              <view class="contact">
+                <label>支付时间</label>
+                <view>{{ritem.pay_time}}</view>
+              </view>
+              <view class="contact">
+                <label>出发时间</label>
+                <view>{{ritem.start_time}}</view>
+              </view>
+              <view class="totalMoney displayFlexBet">
+                <view class="detailbtn graycolor" data-id="{{ritem.id}}" catchtap="orderDetails">订单详情</view>
+                <view class="total">
+                <text>成人x{{ritem.man_num}}</text>
+                <text>儿童x{{ritem.child_num}}</text>
+                <text>合计：{{ritem.order_price}}</text>
+              </view>
+              </view>
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

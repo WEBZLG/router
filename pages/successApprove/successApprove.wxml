@@ -1,0 +1,20 @@
+<!--pages/successApprove/successApprove.wxml-->
+<view>
+  <view class="cardbg">
+    <image src="../../images/cardbg.jpg"></image>
+  </view>
+  <view>
+    <view class="shiming-icon">
+       <image src="../../images/shiming.png"></image>
+    </view>
+    <view class="notice">
+      <view class="text1">恭喜您，认证成功</view>
+      <view class="text2">现在就去分享赚佣金吧</view>
+    </view>
+  </view>
+
+  <view class="btn">
+    <button type="buttom" class="submit">去分享</button>
+  </view>
+</view>
+

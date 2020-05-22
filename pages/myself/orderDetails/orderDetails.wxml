@@ -1,0 +1,158 @@
+<!--pages/myself/orderDetails/orderDetails.wxml-->
+<!--pages/router/firmOrder/firmOrder.wxml-->
+<view>
+  <view class="itembg">
+    <view class="total">合计费用</view>
+    <view class="totalMoney">￥{{dataList.order_info.real_price}}</view>
+    <view class="payInfo">
+      <view class="infoItem">
+        <view class="payStatus" wx:if="{{dataList.order_info.status==0}}">待出行</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==1}}">进行中</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==2}}">行程已结束</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==3}}">已结算</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==4}}">退款审核中</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==5}}">订单完成</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==6}}">驳回申请</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==7}}">已退款</view>
+        <view class="payStatus" wx:if="{{dataList.order_info.status==8}}">退款中</view>
+        <view class="payNotice">出行前请确认带齐证件和衣物</view>
+      </view>
+      <view class="infoItem">
+        <view class="startTime">距离出发时间</view>
+        <view>
+          <view class="day">{{dataList.order_info.count_down.day}}</view>天
+          <view class="hours">{{dataList.order_info.count_down.hour}}</view>小时
+        </view>
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="itembg information">
+      <view class="company">{{dataList.travel_info.company}}
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+      <view class="typeInfo">
+        <view class="overImg">
+          <image src="{{pubPath + dataList.travel_info.pic}}"></image>
+        </view>
+        <view>
+          <view class="title">{{dataList.travel_info.title}}</view>
+          <view class="price widthFlex">
+            <text>成人￥{{dataList.current_term.man_price}}/人 </text>
+            <text>儿童￥{{dataList.current_term.children_price}}/人</text>
+          </view>
+        </view>
+      </view>
+      <view class="type">{{dataList.travel_info.category}}</view>
+      <view class="contact">
+        <label>订单编号</label>
+        <view>{{dataList.order_info.order_no}}</view>
+      </view>
+      <view class="contact">
+        <label>订单状态</label>
+        <view wx:if="{{dataList.order_info.pay_status==0}}">未支付</view>
+        <view wx:if="{{dataList.order_info.pay_status==1}}">已支付</view>
+        <view wx:if="{{dataList.order_info.pay_status==2}}">已退款</view>
+      </view>
+      <view class="contact">
+        <label>支付时间</label>
+        <view>{{dataList.order_info.pay_time}}</view>
+      </view>
+      <view class="contact">
+        <label>联系人</label>
+        <view>{{dataList.order_info.contacts}}</view>
+      </view>
+      <view class="contact">
+        <label>联系电话</label>
+        <view>{{dataList.order_info.phone}}</view>
+      </view>
+      <view class="btnbox">
+        <button class="sharebtn" catchtap="open" data-pic="{{pubPath + dataList.travel_info.pic}}" data-title="{{dataList.travel_info.title}}" data-id="{{dataList.travel_info.id}}" data-type="{{dataList.order_info.order_type}}">分享赚佣金</button>
+        <button class="cancel" wx:if="{{dataList.order_info.status==0}}" data-oid="{{dataList.order_info.id}}" catchtap="refund">申请退款</button>
+        <button class="firmbtn" wx:if="{{dataList.order_info==0}}">签到</button>
+      </view>
+    </view>
+  </view>
+  <view class="itembg goline">
+    <view class="address">
+      <view>{{dataList.current_term.start_address}}</view>
+      <view>{{dataList.current_term.return_address}}</view>
+    </view>
+    <view class="useTime">
+      <view>{{dataList.current_term.start_time}}</view>
+      <view>
+        <view class="number">导游
+        <text wx:for="{{dataList.current_term.guide}}" wx:key="index"> {{item.name}}</text>
+        </view>
+        <view class="line">
+          <image src="../../../images/line-blue.png"></image>
+        </view>
+      </view>
+      <view>{{dataList.current_term.return_time}}</view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view class="item" wx:for="{{dataList.tours}}" wx:key="index">
+      <view class="person">
+        <view class="who">
+          <view class="name">{{item.tourername}}</view>
+          <view class="idcard">{{item.cardtype}}</view>
+          <view class="peopleType">{{item.type}}</view>
+        </view>
+        <view class="who">
+          <view class="sex">{{item.sex}}</view>
+          <view class="cardnum">{{item.cardnumber}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="price">￥{{dataList.price}}/人</view>
+        <view class="desc">退订说明</view>
+      </view>
+    </view>
+  </view>
+  <view class="itembg">
+    <view>服务通知方式</view>
+    <view class="descConetent">{{dataList.order_info.notice_type}}</view>
+  </view>
+  <view class="mustItembg">
+    <view class="mustNotice insure">
+      <text>保险信息</text>
+      <view>自行购买</view>
+    </view>
+    <view class="mustNotice">
+      <text>预定须知</text>
+      <view>我已阅读并同意该条款并付款</view>
+    </view>
+  </view>
+  <view class="questionNotice">
+    <view>温馨提示</view>
+    <view>*如有其它问题请联系“旅行社客服”</view>
+  </view>
+  <!-- <view class="paybtnbox">
+    <button class="paybtn" catchtap="paySuccess">立即支付</button>
+  </view> -->
+   <view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+  <view class="modalDlg" wx:if="{{showModal==true}}">
+    <view class="closeIcon" bindtap="close">
+      <icon class="iconfont iconguanbi1"></icon>
+    </view>
+    <view class="modelTitle">选择发送给好友或者保存海报发到朋友圈</view>
+    <view class="displayFlexBet">
+      <view class="wechat">
+        <button open-type="share" class='sharebtn' data-id="{{tid}}">
+          <icon class="iconfont iconweixin"></icon>
+          <view class="message">分享给微信好友或群</view>
+        </button>
+      </view>
+      <view class="poster"  catchtap='sharePyq' data-id="{{tid}}">
+        <icon class="iconfont iconshengchenghaibao"></icon>
+        <view class="message">生成朋友圈海报</view>
+      </view>
+    </view>
+    <button class="colse" bindtap="close">我再想想</button>
+  </view>
+  <!-- 分享朋友圈制图 -->
+    <view class='canvas-bg' hidden='{{canvasShow}}'><canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+      <view class="savebtn" catchtap="save">保存海报</view>
+    </view>
+</view>

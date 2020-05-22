@@ -1,0 +1,159 @@
+<!--pages/retailHome/retailHome.wxml-->
+<view class="body retailHome">
+  <view class="time">
+    <text>{{nowTime}}</text>
+    <icon class="iconfont iconxiangxiajiantou"></icon>
+  </view>
+  <view class="banner">
+    <image src="{{infoList.bg}}"></image>
+    <view class="welcome">{{infoList.greet}}</view>  
+  </view>
+
+  <view class="list">
+    <view class="caption displayFlex">
+      <text>代办事项</text>
+      <view class="circle">{{infoList.settlement}}</view>
+    </view>
+    <view class="itembox">
+      <view class="item displayFlexBet" catchtap="toAudit">
+        <view class="status">
+          <view class="line bluebgcolor"></view>
+          <text>待审核</text>
+        </view>
+        <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.staff}}" wx:key="index" wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.staff.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+      </view>
+      <view class="item displayFlexBet" catchtap="newCustomization">
+        <view class="status">
+          <view class="line yellowbgcolor"></view>
+          <text>新定制</text>
+        </view>
+        <view  class="displayFlex">
+          <view>{{infoList.diy}}</view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+        <!-- <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.staff}}"  wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.staff.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view> -->
+      </view>
+      <view class="item displayFlexBet" catchtap="newOrder">
+        <view class="status">
+          <view class="line redbgcolor"></view>
+          <text>新订单</text>
+        </view>
+        <view  class="displayFlex">
+          <view>{{infoList.order}}</view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+        <!-- <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.staff}}"  wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.staff.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view> -->
+      </view>
+      <view class="item displayFlexBet" catchtap="newMarket">
+        <view class="status">
+          <view class="line orangebgcolor"></view>
+          <text>新产品</text>
+        </view>
+        <!-- <view  class="displayFlex">
+          <view>666</view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view> -->
+        <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.travel}}" wx:key="index"   wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.travel.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+      </view>
+      <view class="item displayFlexBet"  catchtap="newSeckill">
+        <view class="status">
+          <view class="line lightbluebgcolor"></view>
+          <text>秒杀团</text>
+        </view>
+        <!-- <view  class="displayFlex">
+          <view>666</view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view> -->
+        <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.seckill}}" wx:key="index"   wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.seckill.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+      </view>
+      <view class="item displayFlexBet"  catchtap="newRetail">
+        <view class="status">
+          <view class="line greenbgcolor"></view>
+          <text>新分销</text>
+        </view>
+        <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.distribution}}" wx:key="index"   wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.distribution.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+      </view>
+      <view class="item displayFlexBet"  catchtap="settlement">
+        <view class="status">
+          <view class="line porplebgcolor"></view>
+          <text>待结算</text>
+        </view>
+        <view  class="displayFlex">
+          <view>{{infoList.settlement}}</view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view>
+        <!-- <view class="displayFlex">
+          <view class="displayFlex">
+            <view class="headImg" wx:for="{{infoList.distribution}}"  wx:if="{{index<3}}">
+              <image src="{{item.headimgurl}}"></image>
+            </view>
+            <view class="headImg" wx:if="{{infoList.staff.length>2}}">
+              <icon class="iconfont icongengduo"></icon>
+            </view>
+          </view>
+          <view><icon class="iconfont iconyoucejiantou"></icon></view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>

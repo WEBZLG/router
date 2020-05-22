@@ -1,0 +1,46 @@
+<!--pages/retailHome/newCustomization/newCustomization.wxml-->
+<view class="body">
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../../images/search.png"></image>
+    </view>
+    <input placeholder="输入想要查找的联系人\联系电话\订单号" bindinput="search"></input>
+  </view>
+  <view class="caption">
+    <icon class="iconfont iconwode-chuhangdingdan"></icon>
+    <text>新订制订单</text>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" catchtap="customizaDetails" wx:for="{{dataList}}" wx:key="index" data-id="{{item.id}}">
+      <!-- <view class="headimg">
+        <image src="{{item.headimgurl}}"></image>
+      </view> -->
+      <view class="displayFlexBet message">
+        <view class="message">
+          <view class="displayFlex ">
+            <view>{{item.contacts}}</view>
+            <view class="time">{{item.phone}}</view>
+            <text class="time">{{item.add_time}}</text>
+          </view>
+          <view class="displayFlex">
+            <view>
+              <icon class="iconfont iconyonghu_shuangren"></icon>
+              <text>{{item.tour_num}}</text>
+            </view>
+            <view class="time">{{item.sart_off}}-{{item.destination}}</view>
+          </view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无数据</view>
+    </view>
+  </view>
+</view>

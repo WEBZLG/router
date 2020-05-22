@@ -1,0 +1,115 @@
+/* pages/retailHome/retailHome.wxss */
+
+.welcome{
+  position: absolute;
+top: 160rpx;
+left: 0;
+right: 0;
+text-align: center;
+font-size: 30rpx;
+
+}
+
+.retailHome .time {
+  line-height: 90rpx;
+  text-align: center;
+  background: rgba(10, 6, 28, 1);
+  opacity: 0.8;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.iconxiangxiajiantou {
+  margin-left: 30rpx;
+}
+
+.retailHome .banner {
+  height: 476rpx;
+  width: 100%;
+}
+
+.retailHome .caption {
+  font-size: 30rpx;
+}
+
+.retailHome .circle {
+  font-size: 24rpx;
+  height: 30rpx;
+  width: 30rpx;
+  background: #1379e0;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30rpx;
+  margin-left: 22rpx;
+}
+
+.retailHome .list {
+  padding: 30rpx 40rpx;
+}
+
+.retailHome .item {
+  background-color: #322f40;
+  border-radius: 10rpx;
+  line-height: 124rpx;
+  margin-bottom: 30rpx;
+  padding-right: 20rpx;
+}
+
+.retailHome .status {
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 120rpx;
+  border-right: 1px solid #efefef;
+}
+
+.retailHome .line {
+  width: 6rpx;
+  height: 80rpx;
+  margin: -10rpx 20rpx 0 0;
+  display: inline-block;
+  vertical-align: middle;
+  border-top-left-radius: 6rpx;
+  border-top-right-radius: 6rpx;
+  border-bottom-left-radius: 6rpx;
+  border-bottom-right-radius: 6rpx;
+}
+
+.retailHome .headImg{
+  height: 40rpx;
+  width: 40rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid #ffffff;
+  margin-left: -6rpx;
+  background-color: #333333;
+}
+
+.bluebgcolor {
+  background-color: #087fe9;
+}
+.yellowbgcolor{
+  background-color: #FFC532;
+}
+.redbgcolor{
+  background-color: #D41D41;
+}
+.orangebgcolor{
+  background-color: #ED541F;
+}
+.greenbgcolor{
+  background-color: #39E806;
+}
+.lightbluebgcolor{
+  background-color: #05B3E8;
+}
+.porplebgcolor{
+  background-color: #4F0045;
+}
+.retailHome .itembox{
+  margin: 30rpx 0;
+}

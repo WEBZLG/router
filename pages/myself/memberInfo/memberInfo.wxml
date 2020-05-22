@@ -1,0 +1,41 @@
+<!--pages/myself/memberInfo/memberInfo.wxml-->
+<view>
+  <view class="caption">基本信息</view>
+  <view class="item displayFlexBet">
+    <view>姓名</view>
+    <text>{{infoList.tourername}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>性别 </view>
+    <text>{{infoList.sex}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>身份证号码</view>
+    <text>{{infoList.cardnumber}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>国家地区</view>
+    <text>{{infoList.province}}{{infoList.city}}</text>
+  </view>
+  <view class="caption">联系方式</view>
+  <view class="item displayFlexBet">
+    <view>手机号码</view>
+    <text>{{infoList.mobile}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>固定电话</view>
+    <text>{{infoList.tel}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>电子邮箱</view>
+    <text>{{infoList.email}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>地址</view>
+    <text>{{infoList.address}}</text>
+  </view>
+  <view class="btnbox">
+    <button class="graybtn" wx:if="{{infoList.sign_in==1}}">已到</button>
+    <button class="greenbtn" wx:if="{{infoList.sign_in==1}}">已到</button>
+  </view>
+</view>

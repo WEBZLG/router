@@ -1,0 +1,90 @@
+<!--pages/myself/myinfo/myinfo.wxml-->
+<view>
+  <view class="infobox">
+    <view class="title">
+      <view class="line"></view>
+      <text>基本信息</text>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-1 name"></icon>
+        <text>真实姓名</text>
+      </view>
+      <view class="name" wx:if="{{infoList.realname.status==0}}" catchtap="successApprove">{{infoList.realname.name}}</view>
+      <view class="goApprove"  wx:if="{{infoList.realname.status==1}}" catchtap="nameApprove">去认证</view>
+      <view class="btn"  wx:if="{{infoList.realname.status==2}}" catchtap="waitApprove">审核中</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconzhucedenglu nickname"></icon>
+        <text>户外昵称</text>
+      </view>
+      <view>{{infoList.nick}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-7 sex"></icon>
+        <text>性别</text>
+      </view>
+      <view>{{infoList.sex}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-4 phone"></icon>
+        <text>手机</text>
+      </view>
+      <view>{{infoList.phone}}</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <view>
+          <icon class="iconfont iconwodeziliao-2 daoyou"></icon>
+          <text>导游认证</text>
+        </view>
+      </view>
+      <view class="" wx:if="{{infoList.guide.status==1}}" catchtap="guideApprove">去认证</view>
+      <view class="btn" wx:if="{{infoList.guide.status==0}}">{{infoList.guide.name}}</view>
+      <view class="btn" wx:if="{{infoList.guide.status==2}}">审核中</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-5 address"></icon>
+        <text>所在地区</text>
+      </view>
+      <view>{{infoList.province}}{{infoList.city}}</view>
+    </view>
+    <view class="info-item" catchtap="goodAt" data-skill="{{infoList.skill}}">
+      <view>
+        <icon class="iconfont iconwodeziliao-8 goodlike"></icon>
+        <text>擅长</text>
+      </view>
+      <view class="goodatItem">
+        <block wx:for="{{infoList.skill}}" wx:key="index">
+          <text>{{item.name}}</text>  
+          <text wx:if="{{index<infoList.skill.length-1}}">,</text>
+        </block>
+      </view>
+    </view>
+    <view class="info-item">
+      <view>
+       <view>
+        <icon class="iconfont iconwodeziliao- router"></icon>
+        <text>所在旅行社</text>
+      </view>
+      </view>
+      <view wx:if="{{infoList.company.status==0}}" catchtap="companySuccess" data-name="{{infoList.company.name}}" data-id="{{infoList.company.company_id}}">{{infoList.company.name}}</view>
+      <view wx:if="{{infoList.company.status==1}}" catchtap="companyApprove">去认证</view>
+      <view class="btn" wx:if="{{infoList.company.status==2}}">审核中</view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont  time"></icon>
+        <text>注册时间</text>
+      </view>
+      <view>{{infoList.time}}</view>
+    </view>
+    <view class="btnbox">
+      <button class="greenbtn" catchtap="changeInfo">修改资料</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,60 @@
+<!--pages/myself/retailRenew/retailRenew.wxml-->
+<view>
+  <view class="messsge flex">
+    <view class="headimg">
+      <image src=""></image>
+    </view>
+    <view class="user">
+      <view class="name">小貂蝉 13166669999</view>
+      <view class="action">您的分销功能已到期</view>
+    </view>
+  </view>
+  <view class="chooseType">
+    <view class="title">选择开通时长</view>
+    <view class="box displayFlexBet">
+      <view class="item displayFlexBet {{showId == 0 ? 'active' : ''}}" data-cid="0" catchtap="checked">
+        <icon class="iconfont icontuijian"></icon>
+        <view class="price">
+          <view class="money">15元</view>
+          <view>续费灵活</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">半年</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 1 ? 'active' : ''}}" data-cid="1" catchtap="checked">
+        <view class="price">
+          <view class="money">28元</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">年</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 2 ? 'active' : ''}}" data-cid="2" catchtap="checked">
+        <view class="price">
+          <view class="money">9元</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">季</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 3 ? 'active' : ''}}" data-cid="3" catchtap="checked">
+        <view class="price">
+          <view class="money">3元</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">月</view>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="openbtn">立即续费</button>
+    <button class="retailbtn">去分销</button>
+  </view>
+  <view class="textbg">
+    <view class="caption">成为一级粉丝</view>
+  </view>
+  <view class="chooseType">
+    <view class="title">粉丝特权</view>
+    <view class="desc">开通分销功能成为一级粉丝，海量线路分享给朋友或生成海报发 送到朋友圈，好友通过你的分享报名成功后，赚取佣金，当活动 结束后，可申请提现佣金。 未开通此功能，只能分享自己报名的线路给朋友或朋友圈赚取佣 金。 提示：活动线路的佣金可能不同。
+    </view>
+  </view>
+  <view class="toBottom">~我也是有底线的~</view>
+</view>

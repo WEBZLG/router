@@ -1,0 +1,18 @@
+<!--pages/myself/guideDetails/guideDetails.wxml-->
+<view>
+  <view class="banner">
+    <image src="{{dataList.pic}}"></image>
+  </view>
+  <view class="title">{{dataList.title}}</view>
+  <view class="player displayFlexBet">
+    <icon class="iconfont icondaolanxinxi2" bindtap="audioPlay"></icon>
+    <view>
+      <text>{{currenTime}}</text>/
+      <text>{{duration}}</text>
+    </view>
+    <icon class="iconfont icondaolanxinxi3" bindtap="audioPause"></icon>
+  </view>
+  <view class="content">
+    {{dataList.detail}}
+  </view>
+</view>

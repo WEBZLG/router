@@ -1,0 +1,58 @@
+/* pages/myself/customisedScheme /customisedScheme .wxss */
+
+page {
+  font-size: 24rpx;
+}
+
+.step {
+  padding: 15rpx 54rpx;
+  background-color: #fff;
+  margin-bottom: 40rpx;
+}
+
+.step image {
+  height: 180rpx;
+}
+
+.content {
+  padding: 0 40rpx;
+  background-color: #fff;
+}
+
+.item {
+  border-bottom: 1px solid #eee;
+  line-height: 90rpx;
+}
+
+.title {
+  margin-right: 30rpx;
+}
+
+.chooseItem {
+  line-height: 90rpx;
+  margin-bottom: 30rpx;
+}
+
+.chooseItem input {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+textarea {
+  line-height: 48rpx;
+  margin: 50rpx 0 30rpx;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  height: 200rpx;
+  padding-bottom: 30rpx;
+}
+
+.section {
+  width: 262rpx;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.btnbox{
+  padding: 0rpx 75rpx 30rpx;
+}

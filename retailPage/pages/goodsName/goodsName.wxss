@@ -1,0 +1,62 @@
+/* pages/retailPage/wantRetail/wantRetail.wxss */
+.caption{
+  padding: 0 40rpx;
+  line-height: 100rpx;
+}
+.item{
+  height: 90rpx;
+  background-color: #322F40;
+  padding: 0 40rpx;
+  border-bottom: 1px solid #030116;
+}
+.unitList{
+  margin-bottom: 30rpx;
+}
+.frontCover{
+  padding: 30rpx 40rpx 24rpx;
+  background-color: #322F40;
+}
+.chooseImg{
+  height: 134rpx;
+  width: 134rpx;
+  text-align: center;
+  line-height: 188rpx;
+  border: 1px solid #828286;
+  margin-top: 28rpx;
+}
+.iconjiahao{
+  color: #D6D6D8;
+  font-size: 100rpx;
+}
+.btnbox{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30rpx 75rpx;
+}
+.imgView{
+  height: 400rpx;
+  position: relative;
+}
+.deleteIcon{
+position: absolute;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+line-height: 200rpx;
+}
+.iconshanchutubiao{
+  font-size: 100rpx;
+}
+.redbtn{
+  margin-bottom: 30rpx;
+}
+.label{
+  width: 350rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}

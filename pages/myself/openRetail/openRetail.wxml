@@ -1,0 +1,66 @@
+<!--pages/myself/openRetail/openRetail.wxml-->
+<view>
+  <view class="messsge flex">
+    <view class="headimg">
+      <image src=""></image>
+    </view>
+    <view class="user">
+      <view class="name">{{infoList.nick}} {{infoList.phone}}</view>
+      <view class="action">{{infoList.tips}}</view>
+    </view>
+  </view>
+  <view class="chooseType">
+    <view class="title">选择开通时长</view>
+    <view class="box displayFlexBet">
+      <view class="item displayFlexBet {{showId == 0 ? 'active' : ''}}" data-cid="0" data-type="1L" catchtap="checked">
+        <icon class="iconfont icontuijian" wx:if='{{infoList.price_set.first.icon!=""}}'></icon>
+        <view class="price">
+          <view class="money">{{infoList.price_set.first.price}}元</view>
+          <view>续费灵活</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">{{infoList.price_set.first.title}}</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 1 ? 'active' : ''}}" data-cid="1" data-type="2L"  catchtap="checked">
+      <icon class="iconfont icontuijian" wx:if='{{infoList.price_set.second.icon!=""}}'></icon>
+        <view class="price">
+          <view class="money">{{infoList.price_set.second.price}}元</view>
+          <view>续费灵活</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">{{infoList.price_set.second.title}}</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 2 ? 'active' : ''}}" data-cid="2" data-type="3L"  catchtap="checked">
+      <icon class="iconfont icontuijian" wx:if='{{infoList.price_set.third.icon!=""}}'></icon>
+        <view class="price">
+          <view class="money">{{infoList.price_set.third.price}}元</view>
+          <view>续费灵活</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">{{infoList.price_set.third.title}}</view>
+      </view>
+      <view class="item displayFlexBet {{showId == 3 ? 'active' : ''}}" data-cid="3" data-type="4L"  catchtap="checked">
+      <icon class="iconfont icontuijian" wx:if='{{infoList.price_set.fourth.icon!=""}}'></icon>
+        <view class="price">
+          <view class="money">{{infoList.price_set.fourth.price}}元</view>
+          <view>续费灵活</view>
+        </view>
+        <icon class="iconfont iconxuanzhong"></icon>
+        <view class="time">{{infoList.price_set.fourth.title}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="openbtn" catchtap="openRetail" wx:if="{{infoList.tips=='未开通分销功能'}}">立即开通</button>
+    <button class="openbtn" catchtap="openRetail" wx:if="{{infoList.tips!='未开通分销功能'}}">立即续费</button>
+    <button class="retailbtn" wx:if="{{infoList.tips!='未开通分销功能'}}">去分销</button>
+  </view>
+  <view class="textbg">
+    <view class="caption">成为一级粉丝</view>
+  </view>
+  <view class="chooseType">
+    <view class="title">粉丝特权</view>
+    <view class="desc">{{infoList.privilege}}</view>
+  </view>
+  <!-- <view class="toBottom">~我也是有底线的~</view> -->
+</view>

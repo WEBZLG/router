@@ -1,0 +1,132 @@
+/* pages/home/traderApply/traderApply.wxss */
+
+.banner {
+  height: 400rpx;
+  width: 100%;
+}
+
+.title {
+  height: 70rpx;
+  width: 348rpx;
+  margin: 0rpx auto;
+  padding: 30rpx 0;
+}
+
+.step {
+  width: 100%;
+  height: 168rpx;
+  padding-bottom: 30rpx;
+}
+
+.register {
+  background-color: #fff;
+  padding-bottom: 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.notice {
+  font-size: 24rpx;
+  padding: 0 40rpx;
+  line-height: 48rpx;
+}
+
+.mark {
+  font-size: 24rpx;
+  color: #999;
+  padding: 0 40rpx;
+  line-height: 48rpx;
+}
+
+.ipt input {
+  height: 86rpx;
+  margin: 30rpx 40rpx 40rpx;
+  border: 1px solid #c6c6c6;
+  border-radius: 5rpx;
+  font-size: 24rpx;
+  padding-left: 14rpx;
+}
+
+.itemImg {
+  background-color: #fff;
+  padding-bottom: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.caption {
+  font-size: 30rpx;
+  color: #333;
+  padding: 30rpx 40rpx;
+}
+
+.addImg {
+  height: 420rpx;
+  margin: 0 90rpx 50rpx;
+  background-color: #d0d0d0;
+  position: relative;
+}
+
+.cardImg {
+  height: 328rpx;
+  margin: 0 110rpx 50rpx;
+  background-color: #d0d0d0;
+  position: relative;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.cameraBtn {
+  height: 159rpx;
+  width: 159rpx;
+  background-color: #5ac6ab;
+  border-radius: 50%;
+  position: absolute;
+  top: 117rpx;
+  left: 50%;
+  margin-left: -79.5rpx;
+}
+
+.cardImg .cameraBtn {
+  top: 78rpx;
+}
+
+.cameraIcon {
+  width: 70rpx;
+  height: 60rpx;
+  margin: 50rpx auto;
+}
+
+.iconshanchutubiao {
+  color: #fff;
+  font-size: 64rpx;
+}
+
+.deleteIcon {
+  height: 159rpx;
+  width: 159rpx;
+  background-color: #5ac6ab;
+  border-radius: 50%;
+  position: absolute;
+  top: 117rpx;
+  left: 50%;
+  margin-left: -79.5rpx;
+  text-align: center;
+  line-height: 159rpx;
+  opacity: .3;
+}
+
+.deleteCard{
+  top: 78rpx;
+}
+
+.btnbox {
+  margin: 30rpx 75rpx;
+}
+
+button.submit {
+  width: 100% !important;
+  color: #fff;
+  font-size: 36rpx;
+  font-weight: 400;
+  background-color: #ff4c4f;
+  border-radius: 80rpx;
+}

@@ -1,0 +1,126 @@
+/* pages/router/routerDetials/routerDetails.wxss */
+@import "../../../utils/wxParse/wxParse.wxss";
+page{
+    background-color: #030116;
+    color: #ffffff;
+}
+swiper-item, .banner-swiper {
+  width: 100%;
+  height: 460rpx;
+}
+
+.banner {
+  position: relative;
+}
+
+.guiderBox {
+  display: inline-block;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+  background-color: #322f40;
+  font-size: 30rpx;
+  padding-right: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+}
+
+.descript {
+  background-color: #322f40;
+  padding: 30rpx;
+  line-height: 48rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  margin-bottom: 30rpx;
+}
+
+
+.company {
+  color: #01bf6c;
+  display: flex;
+  align-items: center;
+}
+
+.iconyoucejiantou {
+  font-size: 30rpx;
+}
+
+.startTime {
+  font-size: 30rpx;
+  background-color: #322f40;
+  margin: 30rpx 0;
+  padding: 10rpx 30rpx;
+  line-height: 60rpx;
+}
+
+.choose {
+  font-size: 24rpx;
+}
+
+.nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  background-color: #322f40;
+  font-size: 30rpx;
+}
+
+.nav view {
+  flex: 1;
+  text-align: center;
+  padding: 25rpx 0;
+}
+
+.nav view.active {
+  color: #ffc53d;
+  border-bottom: 4rpx solid #ffc53d;
+}
+
+.show {
+  display: block;
+  background-color: #322f40;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.hidden {
+  display: none;
+  background-color: #322f40;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.btnbox {
+  padding: 30rpx 75rpx;
+}
+
+.btnbox button {
+  margin-bottom: 20rpx;
+}
+
+.activeOver {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.iconyixiajia{
+  font-size: 456rpx;
+  line-height: 456rpx;
+  color: #EA4C4F;
+  margin-top: 110rpx;
+}
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}

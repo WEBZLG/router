@@ -1,0 +1,27 @@
+<!--pages/retailHome/toAudit/toAudit.wxml-->
+<view class="body">
+  <view class="caption">
+    <icon class="iconfont iconwode-chuhangdingdan"></icon>
+    <text>申请记录</text>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" catchtap="waitCheckDetails" wx:for="{{dataList}}" wx:key="index" data-id="{{item.id}}">
+      <view class="company">
+        {{item.name}}
+      </view>
+      <view class="displayFlex">
+        <text class="time">{{item.add_time}}</text>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无申请记录</view>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,32 @@
+/* retailPage/pages/waitCheckDetails/waitCheckDetails.wxss */
+.company,
+.filtrate{
+  line-height: 90rpx;
+  background-color: #322F40;
+  padding: 0 40rpx;
+}
+.caption{
+    line-height: 80rpx;
+  padding: 0 40rpx;
+}
+.filtrate{
+  margin-bottom: 30rpx;
+}
+.item{
+  height: 140rpx;
+  line-height: 48rpx;
+  padding: 0 40rpx;
+  background-color: #322F40;
+}
+.list{
+  position: fixed;
+  top: 290rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+.icondaosanjiaoxing-{
+  font-size: 13rpx;
+  margin-left: 20rpx;
+}

@@ -1,0 +1,74 @@
+/* retailPage/pages/myInfo/myInfo.wxss */
+/* pages/myself/myinfo/myinfo.wxss */
+
+.infobox {
+margin: 20rpx 30rpx 44rpx;
+padding: 0rpx 18rpx 32rpx;
+background-color: #322F40;
+}
+
+.title {
+font-size: 30rpx;
+padding: 0 40rpx;
+}
+
+.line {
+  height: 30rpx;
+  width: 8rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  background: #FFC63B;
+}
+.info-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #cccccc;
+  height: 89rpx;
+  line-height: 89rpx;
+}
+.name{
+  font-size: 28rpx;
+  margin: 0 -4rpx 0 -14rpx;
+}
+
+.sex,
+.phone,
+.address,
+.goodlike{
+  margin-right: 10rpx;
+
+}
+.time{
+  margin-left: 34rpx;
+}
+.daoyou{
+font-size: 28rpx;
+margin-right: 14rpx;
+
+}
+.router,
+.nickname{
+margin-right: 10rpx;
+
+}
+.notice{
+  padding: 0 40rpx;
+}
+.phone{
+  color: #F4C04D;
+  margin: 1rpx -10rpx 0 -18rpx;
+}
+.goodlike{
+  margin: 0 -6rpx 0 -20rpx
+}
+.skillBox{
+  width: 500rpx;
+  overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}

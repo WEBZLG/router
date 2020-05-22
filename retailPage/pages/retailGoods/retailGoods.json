@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "我分销的产品",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,37 @@
+<!--pages/retailHome/autitDetials/auditDetails.wxml-->
+<view class="body">
+  <view class="container">
+    <view class="caption">
+      <text class="captionName">{{dataList.name}}</text>申请所在单位认证
+    </view>
+    <view class="details">
+       <view class="item displayFlex">
+          <view class="label">申请时间：</view>
+          <view>{{dataList.supplier_apply_time}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">姓名：</view>
+          <view>{{dataList.name}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">性别：</view>
+          <view>{{dataList.sex}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">联系电话：</view>
+          <view>{{dataList.phone}}</view>
+       </view>
+       <view class="item displayFlex">
+          <view class="label">所在旅行社：</view>
+          <view>{{dataList.company}}</view>
+       </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button wx:if="{{dataList.status==0}}" class="bluebtn">已通过</button>
+    <button wx:if="{{dataList.status==2}}" class="orangebtn">审核中</button>
+    <button wx:if="{{dataList.status==3}}" class="redbtn">已拒绝</button>
+    <button wx:if="{{dataList.status==1}}" class="orangebtn" catchtap="passbtn">通过</button>
+    <button wx:if="{{dataList.status==1}}" class="bluebtn" catchtap="refusebtn">拒绝</button>
+  </view>
+</view>

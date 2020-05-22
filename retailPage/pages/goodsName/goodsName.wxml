@@ -1,0 +1,38 @@
+<!--pages/retailPage/wantRetail/wantRetail.wxml-->
+<view class="body">
+  <view class="caption">当前账号分销商：{{infoList.company}}</view>
+  <view class="unitList">
+    <view  class="displayFlexBet item">
+      <view class="label">{{infoList.title}}</view>
+      <view class="displayFlexBet">
+        <view class="orangecolor"> 
+          <view>儿童价￥{{infoList.ot_children_price}}/人</view>
+          <view>成人价￥{{infoList.ot_man_price}}/人</view>
+        </view> 
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>分销价格</view>
+      <view>
+       <view>儿童￥{{infoList.children_price}}/人</view>
+          <view>成人￥{{infoList.man_price}}/人</view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>分销结束时间</view>
+      <view>{{infoList.validity_time}}</view>
+    </view>
+  </view>
+  <view class="frontCover">
+    <view class="imgView">
+      <image src="{{infoList.pic_cover}}"></image>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="redbtn" catchtap="overRetail">结束分销</button>
+    <button class="orangebtn" catchtap="foreshowSeckill">预告秒杀</button>
+  </view>
+</view>

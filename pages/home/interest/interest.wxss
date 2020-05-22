@@ -1,0 +1,36 @@
+/* pages/home/interest/interest.wxss */
+page{
+  background-color: #ffffff;
+}
+.person{
+  padding: 30rpx 40rpx;
+  font-size: 24rpx
+}
+
+.headimg{
+  height: 48rpx;
+  width: 48rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #CDCDCD;
+  margin-right: 20rpx;
+  display: inline-block;
+  vertical-align: text-bottom;
+}
+
+.item{
+  padding: 0 40rpx;
+  font-size: 30rpx;
+  display: flex;
+  line-height: 120rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.peopleList{
+  position: fixed;
+  top: 92rpx;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}

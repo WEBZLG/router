@@ -1,0 +1,43 @@
+
+<view class="body">
+  <view class="company displayFlexBet">
+    <view>黑龙江省中旅国际旅行社有限公司</view>
+    <view class="displayFlex">
+      <view class="orangecolor">ta的资料</view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="caption">ta的产品</view>
+  <view class="filtrate displayFlexBet">
+    <view>
+      <text>供应商</text>
+      <icon class="iconfont icondaosanjiaoxing-"></icon>
+    </view>
+    <view>
+      <text>分类</text>
+      <icon class="iconfont icondaosanjiaoxing-"></icon>
+    </view>
+    <view>
+      <text>时间</text>
+      <icon class="iconfont icondaosanjiaoxing-"></icon>
+    </view>
+    <view>
+      <text>人气</text>
+      <icon class="iconfont icondaosanjiaoxing-"></icon>
+    </view>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet">
+      <view class="widthFlex">
+        <view class="displayFlexBet">
+          <view>￥3099/人</view>
+          <view>10.20  09:1</view>
+        </view>
+        <view>前往世界的尽头  跳跃西班牙</view>
+      </view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+  </view>
+</view>

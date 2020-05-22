@@ -1,0 +1,10 @@
+<!--pages/myself/goodAt/goodAt.wxml-->
+<view>
+  <view class="title">请选择你的擅长带团类型</view>
+  <view class="list displayFlexBet">
+    <view class="item {{item.isSelected?'active':''}}" bindtap='itemSelected' data-id="{{item.id}}" data-index="{{index}}"  wx:for="{{tagList}}" wx:key="index">{{item.name}}</view>
+  </view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="submit">保存</button>
+  </view>
+</view>

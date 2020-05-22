@@ -1,0 +1,42 @@
+<!--pages/myself/expenseList/expenseList.wxml-->
+<view>
+  <view class="selectbg">
+    <view class="section">
+      <picker mode="date" value="{{date}}" fields="month" start="2020-01-01" end="{{nowDate}}" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="list">
+    <view class="item" wx:for="{{dataList}}" wx:key="index">
+      <view class="displayFlexBet caption">
+        <view class="">{{item.key}}</view>
+        <view class="graycolor">支出￥{{item.value.sum}}</view>
+      </view>
+      <view class="messagebox">
+        <view class="message displayFlexBet" wx:for="{{item.value.bills}}" wx:key="index">
+          <view>
+            <view class="title">{{item.title}}</view>
+            <view class="order">
+              <view>订单号：{{item.order_no}}</view>
+              <view>{{item.order_time}}</view>
+            </view>
+          </view>
+          <view class="">
+            <text class="redcolor">-{{item.price}}</text>
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{dataList.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <text>暂无消费记录</text>
+    </view>
+  </view>
+</view>

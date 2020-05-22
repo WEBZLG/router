@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="logbd">
+    <view class="welcome">
+      <image src="../../images/login4@2x.png"></image>
+    </view>
+    <view class="coin-icon">
+      <image src="../../images/login1@2x.png"></image>
+      <view class="register">
+        <image src="../../images/login5@2x.png"></image>
+        <view class="register-text" bindtap="goLogin">已有账号，去登录</view>
+      </view>
+    </view>
+    <view class="line">
+      <image src="../../images/login2@2x.png"></image>
+      <view class="inline">
+        <image src="../../images/login3@2x.png"></image>
+      </view>
+    </view>
+    <view class="loginbox">
+      <view class="title">
+        <view class="title-icon">
+          <image src="../../images/login7@2x.png"></image>
+        </view>
+        用户注册
+      </view>
+      <view class="iptbox">
+        <view class="ipt-item">
+          <input placeholder="请输入手机号或微信直接登录" bindinput='getPhoneValue' value='{{phone}}'></input>
+          <view class="user-icon">
+            <image src="../../images/user7@2x.png"></image>
+          </view>
+        </view>
+        <view class="ipt-item">
+          <input placeholder="输入收到的验证码" bindinput='getCodeValue' value='{{code}}'></input>
+          <view class="getcode" bindtap='getVerificationCode' disabled='{{disabled}}'>{{codename}}</view>
+        </view>
+        <view class="btnbg">
+          <image src="../../images/register3@2x.png"></image>
+          <button class="loginbtn" catchtap="register">注册</button>
+        </view>
+        <view class="distributor-login">点击注册或登录即表示同意该
+          <text class="agreement">《用户服务协议》</text>
+        </view>
+      </view>
+    </view>
+    <view class="wechat-login">
+      
+      <button open-type="getUserInfo" class="pop-btn" bindgetuserinfo="getUserInfo">
+        <icon class="iconfont iconweixin"></icon>
+      </button>
+    </view>
+  </view>
+
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modalDlg" wx:if="{{showModal}}">
+    <view>尊敬的用户：</view>
+    <text>我们需要您的手机号码进行账户绑定</text>
+    <view class="btnbox">
+    <button bindtap="close">取消</button>
+    <button class='getphone' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">获取手机号码 </button>
+    </view>
+  </view>
+</view>

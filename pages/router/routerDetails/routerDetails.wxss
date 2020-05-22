@@ -1,0 +1,346 @@
+/* pages/router/routerDetials/routerDetails.wxss */
+@import "../../../utils/wxParse/wxParse.wxss";
+
+swiper-item, .banner-swiper {
+  width: 100%;
+  height: 460rpx;
+}
+
+.banner {
+  position: relative;
+}
+
+.guiderBox {
+  display: inline-block;
+  border-radius: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  color: #666;
+  font-size: 30rpx;
+  padding-right: 30rpx;
+  position: absolute;
+  bottom: 30rpx;
+  left: 30rpx;
+}
+
+.circle {
+  display: inline-block;
+  vertical-align: middle;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  background-color: #d38e8e;
+  margin: 10rpx;
+}
+
+.descript {
+  font-size: 24rpx;
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #333;
+}
+
+.price {
+  display: inline-block;
+  font-size: 30rpx;
+  color: #2b53ec;
+  margin: 30rpx 30rpx 30rpx 0;
+}
+
+.price text {
+  font-size: 30rpx;
+}
+
+.type {
+  color: #ffc53d;
+}
+
+.start {
+  color: #666;
+  margin: 24rpx 0;
+}
+
+.company {
+  color: #01bf6c;
+  display: flex;
+  align-items: center;
+}
+
+.iconyoucejiantou {
+  font-size: 30rpx;
+}
+
+.startTime {
+  font-size: 30rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin: 30rpx 0;
+  padding: 10rpx 30rpx;
+  line-height: 60rpx;
+}
+
+.choose {
+  font-size: 24rpx;
+  overflow: hidden;
+}
+
+.dataShow {
+  font-size: 24rpx;
+  color: #333;
+  line-height: 48rpx;
+  background-color: #fff;
+  padding: 10rpx 30rpx;
+}
+
+.dataShow text {
+  font-size: 24rpx;
+}
+
+.nav {
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+  background-color: #fff;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.name {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.name text {
+  margin-left: 10rpx;
+}
+
+.nav view {
+  flex: 1;
+  text-align: center;
+  padding: 25rpx 0;
+}
+
+.nav view.active {
+  color: #2b53ec;
+  border-bottom: 4rpx solid #2b53ec;
+}
+
+.show {
+  display: block;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.hidden {
+  display: none;
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.action, .leftbtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}
+
+.iconfenxiangzhuanyongjin {
+  color: #ff4c4f;
+  font-size: 50rpx;
+  height: 40rpx;
+  line-height: 0;
+}
+
+.iconliuyanban {
+  color: #f5c447;
+  font-size: 40rpx;
+  height: 40rpx;
+  line-height: 0;
+}
+
+.leftbtn {
+  flex: 2;
+}
+
+.signup {
+  flex: 1;
+  background-color: #00c16c;
+  color: #fff;
+  font-size: 36rpx;
+  padding: 32rpx 0;
+}
+
+.btnbox {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.bottomBox {
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 0 10px 1px #ccc;
+}
+
+.details {
+  padding-bottom: 140rpx;
+}
+
+.smCircle {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 10rpx;
+  border-radius: 50%;
+  background-color: #d38e8e;
+}
+
+button.colse {
+  background-color: #01bf6c;
+  border-radius: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  margin: 0rpx 0 80rpx;
+  min-height: inherit !important;
+  font-weight: 400;
+}
+
+.modelTitle {
+  margin-top: 127rpx;
+}
+
+.wechat .iconweixin {
+  color: #00c16c;
+  margin-bottom: 80rpx;
+}
+
+.poster .iconshengchenghaibao {
+  font-size: 80rpx;
+  color: #009aff;
+  margin-bottom: 85rpx;
+  margin-top: 16rpx;
+}
+
+.poster, .wechat {
+  text-align: center;
+  margin: 100rpx 0;
+  overflow: hidden;
+}
+
+button:not([size='mini']) {
+  width: inherit;
+}
+
+.sharebtn {
+  margin: 0;
+  padding: 0;
+  font-size: 24rpx;
+  line-height: inherit;
+  background-color: #fff;
+}
+
+.button-hover {
+  background-color: #fff;
+}
+
+button::after {
+  border: none;
+}
+
+.share-bg, .canvas-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.share-box {
+  background: #fff;
+  width: 80%;
+  margin: 25% auto;
+  border-radius: 15rpx;
+  font-weight: bold;
+}
+
+.share-title {
+  text-align: center;
+  padding: 56rpx 0 35rpx 0;
+}
+
+.share-btn-box {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 60rpx;
+}
+
+.btn-img {
+  height: 96rpx;
+  width: 96rpx;
+}
+
+.share-pyq {
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.cancel {
+  padding: 24rpx 0;
+  text-align: center;
+  border-top: 1px solid #e1e1e1;
+  margin-top: 30rpx;
+}
+
+#shareCanvas {
+  position: fixed;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  margin-left: 300rpx;
+  height: 950rpx;
+  width: 600rpx;
+  margin: 50rpx auto 0;
+  background-color: #fff;
+}
+
+.description {
+  padding: 30rpx;
+}
+
+.savebtn {
+  height: 60rpx;
+  width: 200rpx;
+  border-radius: 60rpx;
+  background-color: #00c16c;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  bottom: 92rpx;
+  left: 50%;
+  margin-left: -100rpx;
+}
+
+.fixed {
+  position: fixed;
+  top: -29rpx;
+  left: 0;
+  right: 0;
+}

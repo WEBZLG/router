@@ -1,0 +1,12 @@
+<!--pages/home/lineList/lineList.wxml-->
+<view class="list">
+  <view class="item"  wx:for="{{infoList}}" wx:key="index"  data-tid="{{item.id}}" catchtap="routerDetails">
+    <view>
+      <view>{{item.title}}</view>
+      <view class="time">{{item.start_time}}-{{item.return_time}}</view>
+    </view>
+    <icon class="iconfont iconyoucejiantou"></icon>
+  </view>
+
+</view>
+

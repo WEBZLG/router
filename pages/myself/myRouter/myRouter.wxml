@@ -1,0 +1,50 @@
+<!--pages/myself/myRouter/myRouter.wxml-->
+<view>
+  <view class="step">
+    <image src="../../../images/step.png"></image>
+  </view>
+  <view class="content">
+    <!-- 没有定制行程 -->
+    <view class="nodata" hidden="true">
+      <view class="notext">您还没有定制行程</view>
+      <view class="nofangan">
+        <image src="../../../images/nofangan.png"></image>
+      </view>
+    </view>
+    <!-- 行程列表 -->
+    <view class="listBox">
+      <view class="caption">我的定制行程</view>
+      <view class="routerList">
+        <view class="item displayFlexBet" wx:for="{{dataList}}" wx:key="index" data-did="{{item.id}}"  catchtap="myCustom">
+          <view class="displayFlex">
+            <view class="headImg">
+              <image src="{{item.pic}}"></image>
+            </view>
+            <view>
+              <view class="address">
+                {{item.s_r_place}}
+                <icon wx:if="{{item.new==0}}" class="iconfont iconwodedingzhihangcheng-x redcolor"></icon>
+              </view>
+              <view class="graycolor">出发日期：{{item.start_time}}</view>
+            </view>
+          </view>
+          <view>
+            <text>{{item.status}}</text>
+            <icon class="iconfont iconyoucejiantou"></icon>
+          </view>
+        </view>
+        <view class="nodata" wx:if="{{dataList.length==0}}" >
+          <view class="noDataIcon">
+            <image src="../../../images/nodata.png"></image>
+          </view>
+          <view>暂无定制行程</view>
+        </view>
+      </view>
+
+    </view>
+
+    <view class="btnbox">
+      <button class="greenbtn" catchtap="customisedScheme">提交定制需求</button>
+    </view>
+  </view>
+</view>

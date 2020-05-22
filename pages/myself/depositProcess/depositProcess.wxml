@@ -1,0 +1,65 @@
+<!--pages/myself/depositProcess/depositProcess.wxml-->
+<view>
+  <view class="depositbg">
+    <view class="txIcon">
+      <image src="../../../images/txxq.png"></image>
+    </view>
+    <view class="notice">提现申请已提交</view>
+    <view>提现金额:￥{{takeOutList.money}}</view>
+  </view>
+  <view class="listview-container">
+      <view class="playlog-item" wx:if="{{takeOutList.tx_status==1}}">
+        <view class="dotline">
+          <!-- 竖线 -->
+          <view class="line"></view>
+          <!-- 圆点 -->
+          <view class="dot">
+            <icon class="iconfont icontixianjindu-chenggong greencolor"></icon>
+          </view>
+          <!-- 时间戳 -->
+        </view>
+        <view class="content">
+          <view class="course">
+            <view class="step">提交提现申请</view>
+            <view>{{takeOutList.add_time}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="playlog-item" wx:if="{{takeOutList.tx_status==3}}">
+        <view class="dotline">
+          <!-- 竖线 -->
+          <view class="line"></view>
+          <!-- 圆点 -->
+          <view class="dot">
+            <icon class="iconfont icontixianjindu-shibai redcolor"></icon>
+          </view>
+          <!-- 时间戳 -->
+        </view>
+        <view class="content">
+          <view class="course">
+            <view class="redcolor step">审核未通过</view>
+            <view>{{takeOutList.update_time}}</view>
+            <view class="desc">原因：{{takeOutList.tx_remark}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="playlog-item"  wx:if="{{takeOutList.tx_status==2}}">
+        <view class="dotline">
+          <!-- 竖线 -->
+          <view class="line" style="height:0"></view>
+          <!-- 圆点 -->
+          <view class="dot">
+            <icon class="iconfont icontixianjindu-dengdai orangecolor"></icon>
+          </view>
+          <!-- 时间戳 -->
+        </view>
+        <view class="content">
+          <view class="course">
+            <view  class="step">提现成功</view>
+            <view>{{takeOutList.update_time}}</view>
+            <view class="desc">转账完毕</view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>

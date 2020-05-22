@@ -1,0 +1,77 @@
+/* pages/retailPage/wantRetail/wantRetail.wxss */
+
+.caption {
+  padding: 0 40rpx;
+  line-height: 100rpx;
+}
+
+.item {
+  height: 90rpx;
+  background-color: #322f40;
+  padding: 0 40rpx;
+  border-bottom: 1px solid #030116;
+}
+
+.item input{
+  text-align: right;
+}
+
+.unitList {
+  margin-bottom: 30rpx;
+}
+
+.frontCover {
+  padding: 30rpx 40rpx 24rpx;
+  background-color: #322f40;
+}
+
+.chooseImg {
+  height: 134rpx;
+  width: 134rpx;
+  text-align: center;
+  line-height: 188rpx;
+  border: 1px solid #828286;
+  margin-top: 28rpx;
+}
+
+.iconjiahao {
+  color: #d6d6d8;
+  font-size: 100rpx;
+}
+
+.btnbox {
+  padding: 30rpx 75rpx;
+}
+
+.imgView {
+  height: 400rpx;
+  position: relative;
+  margin-top: 30rpx;
+}
+
+.deleteIcon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  line-height: 420rpx;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.iconshanchutubiao {
+  font-size: 100rpx;
+}
+
+.label {
+  width: 350rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.iconyoucejiantou{
+  line-height: 60rpx;
+}

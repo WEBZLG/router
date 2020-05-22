@@ -1,0 +1,31 @@
+/* pages/myself/goodAt/goodAt.wxss */
+page{
+  background: #ffffff;
+}
+.title{
+  font-size: 30rpx;
+  color: #333333;
+  padding: 30rpx 40rpx;
+}
+.item{
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 24rpx;
+  border-radius: 50rpx;
+  background-color: #CDCDCD;
+  color: #666666;
+  text-align: center;
+  line-height: 50rpx;
+  margin-bottom: 30rpx;
+}
+.item.active{
+  color: #ffffff;
+  background-color: #AEC7FF;
+}
+.list{
+  padding: 0 40rpx;
+  flex-wrap: wrap;
+}
+.btnbox{
+  padding: 30rpx 75rpx;
+}

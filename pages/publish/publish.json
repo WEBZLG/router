@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "pop-up": "/components/pop-up/index"
+  },
+  "navigationBarTitleText": "发布拼团",
+  "navigationBarTextStyle": "white"
+}

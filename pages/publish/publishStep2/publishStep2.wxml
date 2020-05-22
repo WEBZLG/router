@@ -1,0 +1,41 @@
+<!--pages/publish/publishStep2/publishStep2.wxml-->
+<view>
+  <!-- <view class="textarea">
+    <textarea placeholder="在此输入活动特色、景点简单介绍来让大家了解此次活动的亮点" bindinput="textarea"></textarea>
+  </view>
+  <view class="upImg">
+    <view class="graycolor">将活动亮点做成漂亮的图片吧...(宽度为750px，5M以内最佳)</view>
+    <view class="imgbox displayFlex">
+      <view class="img" wx:for="{{images}}" wx:key="index">
+        <icon class="iconfont iconguanbi" catchtap="deleteImg" data-idx="{{index}}"></icon>
+        <image src="{{item}}"></image>
+      </view>
+      <view class="img addimg" wx:if="{{images.length!=4}}" catchtap="chooseImage">
+        <icon class="iconfont iconjiahao"></icon>
+      </view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="nextStep">下一步</button>
+  </view> -->
+  <!-- style="height:{{editorHeight}}px;" -->
+  <view class="container">
+    <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange" bindready="onEditorReady" show-img-toolbar="true" show-img-resize="true" bindinput="getInput">
+    </editor>
+  </view>
+  <!-- hidden="{{keyboardHeight > 0 ? false : true}}" style="bottom: {{isIOS ? keyboardHeight : 0}}px" -->
+  <view class="toolbar" catchtouchend="format">
+    <i class="iconfont icon-charutupian" catchtouchend="insertImage"></i>
+    <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header" data-value="{{2}}"></i>
+    <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header" data-value="{{3}}"></i>
+    <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+    <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+    <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+    <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+    <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list" data-value="ordered"></i>
+    <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list" data-value="bullet"></i>
+  </view>
+  <view class="btnbox">
+    <button class="greenbtn" catchtap="nextStep">下一步</button>
+  </view>
+</view>

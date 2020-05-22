@@ -1,0 +1,129 @@
+/* pages/home/findTravel/findTravel.wxss */
+
+.search {
+  margin: 28rpx 40rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.search input {
+  padding: 10rpx 0;
+  border-radius: 64rpx;
+  background-color: #ddd;
+  padding-left: 83rpx;
+}
+
+.search-icon {
+  height: 24rpx;
+  width: 24rpx;
+  position: absolute;
+  left: 73rpx;
+  top: 48rpx;
+}
+
+.nav {
+  height: 90rpx;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: 90rpx;
+  background: #2d2d2f;
+  color: #d0d0d0;
+  font-size: 32rpx;
+  white-space: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.nav-item {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+
+.nav-item.active {
+  color: #FFC53D;
+}
+
+.nav-item.active .underline {
+  display: block;
+}
+
+.tab-box {
+  position: fixed;
+  top: 112rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: inherit;
+}
+
+.tab-content {
+  overflow-y: scroll;
+}
+
+.underline {
+  display: none;
+  width: 30rpx;
+  height: 4rpx;
+  background-color: #FFC53D;
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  margin-left: -15rpx;
+}
+
+/* .container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 200rpx;
+} */
+
+.routerItem {
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.companyInfo {
+  position: absolute;
+  top: 54rpx;
+  left: 130rpx;
+  right: 130rpx;
+}
+
+.circlebox {
+  color: #333333;
+  font-size: 24rpx;
+  border-radius: 68rpx;
+  height: 68rpx;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.circle {
+  background-color: #fff;
+  margin: 4rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  border-radius: 60rpx;
+  position: relative;
+  top: 4rpx;
+}
+
+.databox {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}

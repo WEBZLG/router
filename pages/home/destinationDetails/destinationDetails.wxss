@@ -1,0 +1,56 @@
+/* pages/home/destinationDetails/destinationDetails.wxss */
+.destination{
+  flex-wrap: wrap;
+  padding: 46rpx 40rpx 0;
+}
+.banner{
+  width: 100%;
+  height: 546rpx;
+  position: relative;
+}
+.title{
+  font-size: 48rpx;
+  color: #333333;
+  font-weight: bold;
+  margin: 48rpx 0 78rpx; 
+}
+
+.groom{
+  padding: 30rpx 40rpx;
+}
+.itemImg{
+  width: 100%;
+  height: 450rpx;
+}
+.desc{
+  font-size: 48rpx;
+  color: #333333;
+  margin: 56rpx 0 40rpx; 
+}
+.company{
+  color: #999999;
+  font-size: 30rpx;
+}
+.listItem{
+  padding-bottom: 60rpx;
+  border-bottom: 1px solid #cccccc;
+}
+
+.address{
+  position: absolute;
+  bottom: 22rpx;
+  left: 100rpx;
+  color: #ffffff;
+  font-size:48rpx;
+}
+
+.line{
+  width: 90rpx;
+  height: 4rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+  background-color: #ffffff;
+}
+.num{
+  font-size: 30rpx;
+}

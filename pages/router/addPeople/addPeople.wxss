@@ -1,0 +1,77 @@
+/* pages/router/addPeople/addPeople.wxss */
+
+.title {
+  padding: 30rpx 40rpx;
+  color: #666;
+  font-size: 24rpx;
+}
+
+.item {
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+  color: #666;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  line-height: 90rpx;
+}
+
+.item text {
+  color: #333;
+}
+
+.btnbox {
+  margin: 0 75rpx;
+}
+
+.btnbox button {
+  width: 100% !important;
+  color: #fff;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+  margin: 30rpx 0;
+  font-weight: 400;
+}
+
+.savebtn {
+  background-color: #00c16c;
+}
+
+.delbtn {
+  background-color: #ff4c4f;
+}
+
+.section {
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.item input {
+  text-align: right;
+}
+
+.verline {
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #00c16c;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.sexPicker {
+  width: 200rpx;
+  padding-right: 80rpx;
+  margin-right: -80rpx;
+}

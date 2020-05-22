@@ -1,0 +1,102 @@
+/* pages/myself/myinfo/myinfo.wxss */
+
+.infobox {
+  margin: 30rpx 0rpx;
+}
+
+.title {
+  font-family: PingFang;
+  color: #333;
+  margin-bottom: 30rpx;
+  padding: 0 40rpx;
+  height: 30rpx;
+}
+
+.line {
+  height: 30rpx;
+  width: 8rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  background: #00c069;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  height: 90rpx;
+  font-size: 24rpx;
+  color: #333;
+  line-height: 89rpx;
+  background-color: #fff;
+  padding: 0 40rpx;
+}
+
+.name {
+  font-size: 28rpx;
+  color: #4e70b2;
+  margin: 0 -4rpx 0 -14rpx;
+}
+
+.nickname {
+  font-size: 22rpx;
+  color: #3b3b3b;
+}
+
+.sex, .phone, .address, .goodlike {
+  color: #303030;
+  margin-right: 10rpx;
+}
+
+.time {
+  margin-left: 34rpx;
+}
+
+.daoyou {
+  font-size: 28rpx;
+  color: #f4c04d;
+  margin: 0 -10rpx 0 -14rpx;
+}
+
+.router {
+  font-size: 28rpx;
+  color: #3058a5;
+  margin: 0 -10rpx 0 -14rpx;
+}
+
+text {
+  color: #666;
+  font-size: 24rpx;
+}
+
+.btn {
+  color: #ccc;
+}
+
+.goodatItem text {
+  margin-left: 10rpx;
+}
+
+.goodatItem {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: right;
+}
+
+.btnbox {
+  position: fixed;
+  bottom: 0;
+  padding: 30rpx 75rpx;
+  left: 0;
+  right: 0;
+}
+input{
+  text-align: right;
+}

@@ -1,0 +1,28 @@
+<!--pages/myself/withdrawDeposit/withdrawDeposit.wxml-->
+<view class="body">
+  <view class="container">
+    <view class="account displayFlexBet"  catchtap="accountList">
+      <view>
+        <text>提现账户</text>
+        <text class="orangecolor">{{accountName==''?'请添加/选择您的商户号账号':accountName}}</text>
+      </view>
+      <view><icon class="iconfont iconyoucejiantou"></icon></view>
+    </view>
+    <view class="moneybg">
+      <view>提现金额</view>
+      <view class="displayFlexBet">
+        <view class="money"><input placeholder="输入提现金额" value="{{money}}" bindinput="bindmoney" placeholder-class="placeholder"></input></view>
+        <view><icon class="iconfont iconwode-kefubangzhux"></icon></view>
+      </view>
+      <view class="total displayFlexBet">
+        <view class="">当前金额{{takeOutList.sum}}</view>
+        <view class="orangecolor" catchtap="total">全部提现</view>
+      </view>
+    </view>
+  </view>
+  <view class="trip">单笔最高限额2万元，余额低于100元不可提现</view>
+  <view class="btnbox">
+    <button class="orangebtn" catchtap="submit">立即提现</button>
+    <view catchtap="cashWithdrawals">历史提现记录</view>
+  </view>
+</view>

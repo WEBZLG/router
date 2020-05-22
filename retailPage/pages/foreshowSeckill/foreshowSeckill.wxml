@@ -1,0 +1,69 @@
+<!--pages/retailPage/wantRetail/wantRetail.wxml-->
+<view class="body">
+  <view class="caption">当前账号分销商：{{company}}</view>
+  <view class="unitList">
+    <view class="displayFlexBet item">
+      <view class="label">{{infoList.title}}</view>
+      <view class="displayFlexBet">
+        <view class="orangecolor">
+          <view>成人价￥{{infoList.man_price}}/人</view>
+          <view>儿童价￥{{infoList.children_price}}/人</view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>分销价格</view>
+      <view>
+        <view>成人价￥{{infoList.sale_man_price}}/人</view>
+        <view>儿童价￥{{infoList.sale_children_price}}/人</view>
+      </view>
+    </view>
+    <view class="displayFlexBet item" catchtap="chooseTime">
+      <view>选择一个排期</view>
+      <view>
+        <text>{{startTime}}</text>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>输入秒杀价</view>
+      <view>
+        <input placeholder="秒杀价不能低于供应商价格" bindinput="seckillPrice"></input>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>输入数量</view>
+      <view>
+        <input placeholder="当前排期还有5个席位" bindinput="number"></input>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>设置秒杀开始时间</view>
+      <view class="displayFlex">
+        <view>
+          <picker mode="date" value="{{date}}" start="{{nowTime}}" end="{{startTime}}" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="interval displayFlexBet">
+      <view class="timeItem {{timeid==0?'active':''}}" data-timeid="0" catchtap="chooseHour" data-time="00:00:00">00:00</view>
+      <view class="timeItem {{timeid==1?'active':''}}" data-timeid="1" catchtap="chooseHour" data-time="00:80:00">08:00</view>
+      <view class="timeItem {{timeid==2?'active':''}}" data-timeid="2" catchtap="chooseHour" data-time="12:00:00">12:00</view>
+      <view class="timeItem {{timeid==3?'active':''}}" data-timeid="3" catchtap="chooseHour" data-time="16:00:00">16:00</view>
+      <view class="timeItem {{timeid==4?'active':''}}" data-timeid="4" catchtap="chooseHour" data-time="20:00:00">20:00</view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="orangebtn" catchtap="submit">发布预告</button>
+  </view>
+</view>

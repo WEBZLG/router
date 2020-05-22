@@ -1,0 +1,38 @@
+<!--pages/home/destination/destination.wxml-->
+<view>
+  <view class="destination displayFlexBet">
+    <view class="item" wx:for="{{dataList.aim}}" wx:key="index" data-id="{{item.id}}" catchtap="destinationDetails">
+      <image src="{{item.pic}}"></image>
+      <view class="name">
+        <text>{{item.name}}</text>
+        <view class="line"></view>
+      </view>
+    </view>
+  </view>
+  <view class="morebox">
+    <view class="morebtn">
+      <view>更多目的地</view>
+      <icon class="iconfont iconxiangxiajiantou"></icon>
+    </view>
+  </view>
+
+  <view class="groom">
+    <view class="title">旅行顾问推荐行程</view>
+    <view class="list">
+      <view class="listItem" wx:for="{{dataList.push}}" wx:key="index" data-tid="{{item.id}}" catchtap="routerDetails">
+        <view class="itemImg">
+          <image src="{{item.pic_cover}}"></image>
+        </view>
+        <view class="desc">{{item.title}}</view>
+        <view class="company">{{item.name}}</view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.push.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无行程</view>
+      </view>
+    </view>
+  </view>
+
+</view>

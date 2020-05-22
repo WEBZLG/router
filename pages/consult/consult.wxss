@@ -1,0 +1,64 @@
+/* pages/consult/consult.wxss */
+
+.list {
+  margin: 60rpx 90rpx;
+  flex-wrap: wrap;
+}
+
+.iconimg {
+  height: 200rpx;
+  width: 200rpx;
+  border-radius: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+/* .routerline .iconimg{
+  background-color: #37C4B7;
+}
+.service .iconimg{
+  background-color: #39BCFF;
+}
+.notice .iconimg{
+  background-color: #21B265;
+} */
+
+.item {
+  margin-bottom: 97rpx;
+  text-align: center;
+  font-size: 24rpx;
+  position: relative;
+  width: 200rpx;
+  height: 262rpx;
+}
+
+.item button {
+  min-height: inherit;
+  width: inherit;
+  background-color: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding: 0;
+  border-radius: inherit;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+.messageNum {
+  height: 60rpx;
+  min-width: 60rpx;
+  border-radius: 60rpx;
+  color: #fff;
+  background-color: #fe4f51;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: -30rpx;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}

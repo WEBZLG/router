@@ -1,0 +1,36 @@
+
+<view class="body">
+  <view class="information">
+    <view class="title">我的佣金（元）</view>
+    <view class="money">{{takeOutList.price}}</view>
+    <view class="trip">每日0:00更新数据</view>
+  </view>
+  <view class="caption displayFlexBet">
+    <view>订单明细</view>
+    <view>预计可获得佣金（元）</view>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" wx:for="{{takeOutList.list}}" wx:key="index" data-id="{{item.id}}" catchtap="incomeDetails">
+        <view>
+          <!-- <view class="headImg">
+            <image src="{{item.headimgurl}}"></image>
+          </view> -->
+          {{item.nick}}
+        </view>
+        <view>
+          <text class="redcolor">{{item.price}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+    </view>
+    <view class="nodata" wx:if="{{takeOutList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无数据</view>
+      <!-- <view class="trip">您还没有分享过线路</view>
+      <view class="btnbox">
+        <button class="greenbtn">去分享转佣金</button>
+      </view> -->
+    </view>
+  </view>
+</view>

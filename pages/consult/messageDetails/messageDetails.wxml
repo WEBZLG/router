@@ -1,0 +1,11 @@
+<!--pages/consult/messageDetails/messageDetails.wxml-->
+<view class="content">
+  <view class="title">{{dataList.title}}</view>
+  <view class="message">
+    {{dataList.message}}
+  </view>
+  <view class="down">
+    <view wx:if="{{dataList.author}}" class="author ">{{dataList.author}}</view>
+    <view class="time">发布于{{dataList.add_time}}</view>
+  </view>
+</view>

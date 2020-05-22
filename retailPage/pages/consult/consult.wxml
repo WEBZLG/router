@@ -1,0 +1,27 @@
+<!--pages/consult/consult.wxml-->
+<view class="body consult">
+<view class="list displayFlexBet">
+  <view class="item routerline" catchtap="consultList">
+    <view class="messageNum">{{dataList.travel}}</view>
+    <view class="iconimg">
+      <image src="../../../images/touterline.png"></image>
+    </view>
+    <text>线路咨询</text>
+  </view>
+  <view class="item service">
+    <button open-type="contact" bindcontact="handleContact">
+      <view class="iconimg">
+        <image src="../../../images/servce.png"></image>
+      </view>
+      <text>平台服务</text>
+    </button>
+  </view>
+  <view class="item notice">
+    <view class="messageNum">{{dataList.notice}}</view>
+    <view class="iconimg">
+      <image src="../../../images/laba.png"></image>
+    </view>
+    <text>通告通知</text>
+  </view>
+</view>
+</view>

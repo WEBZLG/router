@@ -1,0 +1,5 @@
+/* retailPage/pages/shwoData/shwoData.wxss */
+.ec-canvas {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,137 @@
+/* pages/myself/bookingDetails/bookingDetails.wxss */
+
+/* pages/myself/incomeDetails/incomeDetails.wxss */
+
+.time {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.retail {
+  background-color: #00c16c;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  padding: 30rpx 40rpx 98rpx;
+}
+
+.orderInfo {
+  position: relative;
+  top: -66rpx;
+  margin: 0 20rpx;
+}
+
+.line {
+  height: 20rpx;
+  border-radius: 20rpx;
+  background-color: #ffc63b;
+}
+
+.whitebg {
+  margin: -10rpx 20rpx 0;
+  height: 700rpx;
+  position: relative;
+}
+
+.shaw {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24rpx;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.number {
+  font-size: 24rpx;
+  line-height: 70rpx;
+  margin: 0 20rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px dashed #ccc;
+}
+
+.itembg {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 0rpx 20rpx 0;
+  font-size: 24rpx;
+  margin-top: 14rpx;
+}
+
+.price {
+  font-size: 30rpx;
+  color: #ffc53d;
+  margin-left: 26rpx;
+}
+
+.type {
+  font-size: 24rpx;
+  color: #ffc53d;
+  margin: 20rpx 0;
+}
+
+.overImg {
+  width: 262rpx;
+  height: 159rpx;
+}
+
+.typeInfo {
+  display: flex;
+  justify-content: space-around;
+}
+
+.company {
+  font-size: 24rpx;
+  line-height: 78rpx;
+}
+
+.contact {
+  display: flex;
+  font-size: 24rpx;
+  line-height: 48rpx;
+}
+
+.contact view {
+  color: #666;
+  margin-left: 30rpx;
+}
+
+.title {
+  font-size: 30rpx;
+  height: 118rpx;
+  margin-left: 26rpx;
+}
+
+.totalMoney {
+  margin-top: 50rpx;
+}
+
+.total text {
+  margin-right: 40rpx;
+}
+
+.headImg {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 30rpx;
+}
+
+.peoItem {
+  line-height: 124rpx;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.peopleList {
+  height: 400rpx;
+  overflow: auto;
+}

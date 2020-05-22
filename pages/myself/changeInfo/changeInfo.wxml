@@ -1,0 +1,45 @@
+<!--pages/myself/myinfo/myinfo.wxml-->
+<view>
+  <view class="infobox">
+    <view class="title">
+      <view class="line"></view>
+      <text>修改信息</text>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconzhucedenglu nickname"></icon>
+        <text>户外昵称</text>
+      </view>
+      <view>
+        <input value="{{infoList.nick}}" bindinput="nickName"></input>
+      </view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-7 sex"></icon>
+        <text>性别</text>
+      </view>
+      <view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+          <view class="picker">
+            {{sex}}
+          </view>
+        </picker>
+      </view>
+    </view>
+    <view class="info-item">
+      <view>
+        <icon class="iconfont iconwodeziliao-5 address"></icon>
+        <text>所在地区</text>
+      </view>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+    <view class="btnbox">
+      <button class="greenbtn" catchtap="changeInfo">保存修改</button>
+    </view>
+  </view>
+</view>

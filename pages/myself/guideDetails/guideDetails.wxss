@@ -1,0 +1,37 @@
+/* pages/myself/guideDetails/guideDetails.wxss */
+
+.banner {
+  height: 469rpx;
+  width: 100%;
+}
+
+.title {
+  font-size: 30rpx;
+  padding: 30rpx 40rpx 0;
+}
+
+.player {
+  width: 600rpx;
+  margin: 30rpx auto;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #fff;
+  border-radius: 90rpx;
+  font-size: 24rpx;
+}
+
+.icondaolanxinxi2 {
+  font-size: 80rpx;
+  line-height: 80rpx;
+  margin-left: 10rpx;
+}
+
+.icondaolanxinxi3 {
+  font-size: 50rpx;
+  line-height: 50rpx;
+  margin-right: 20rpx;
+}
+.content{
+  padding: 0 50rpx 50rpx; 
+  line-height: 48rpx;
+}

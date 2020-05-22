@@ -1,0 +1,24 @@
+/* pages/retailPage/product/product.wxss */
+.product .caption{
+  padding: 30rpx 40rpx; 
+}
+
+.menuList{
+  flex-wrap: wrap;
+}
+
+.product .item{
+height: 230rpx;
+width: 230rpx;
+background-color: #322F40;
+line-height: 48rpx;
+text-align: center;
+padding: 35rpx 0 32rpx;
+box-sizing: border-box;
+margin-bottom: 30rpx;
+overflow: hidden;
+}
+.product .iconfont{
+  font-size: 70rpx;
+  margin-top: 10rpx;
+}

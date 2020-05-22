@@ -1,0 +1,60 @@
+/* pages/publish/publishStep2/publishStep5.wxss */
+@import "../../../weui.wxss";
+@import "../../../iconfont.wxss";
+.container {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+right: 0;
+bottom: 260rpx;
+background-color: #ffffff;
+}
+
+.ql-container {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  overflow: auto;
+  padding: 30rpx 40rpx;
+  border: 1px solid #ECECEC;
+}
+
+.ql-active {
+  color: #22C704;
+}
+
+.iconfont {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.toolbar {
+  box-sizing: border-box;
+  padding: 0 10px;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 100%;
+  bottom: 130rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ECECEC;
+  border-left: none;
+  border-right: none;
+}
+
+.btnbox{
+  padding: 30rpx 75rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

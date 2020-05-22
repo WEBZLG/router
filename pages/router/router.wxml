@@ -1,0 +1,28 @@
+<!--pages/router/router.wxml-->
+
+<view>
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../images/search@2x.png"></image>
+    </view>
+    <input placeholder="找线路/找活动/找领队/找旅行社" bindinput="search"></input>
+  </view>
+  <view class="container">
+    <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
+      <block wx:for="{{navData}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+        <view class="nav-item {{currentTab == idx ?'active':''}}" data-current="{{idx}}" data-id="{{navItem.id}}" bindtap="switchNav">{{navItem.name}}
+          <view class="underline"></view>
+        </view>
+      </block>
+    </scroll-view>
+    <!-- 页面内容 -->
+    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">
+      <swiper-item wx:for="{{navData}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+        <view class="routerItem" wx:for="{{contentData}}" wx:key="index" catchtap="routerDetails" data-id="{{item.id}}">
+          <image src="{{item.pic_cover}}"></image>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

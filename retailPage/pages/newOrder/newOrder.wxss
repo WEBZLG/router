@@ -1,0 +1,37 @@
+/* pages/retailHome/toAudit/toAudit.wxss */
+
+.list{
+  margin-top: 100rpx;
+}
+.caption {
+  padding: 0 40rpx;
+  line-height: 100rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #030116;
+}
+
+.iconwode-chuhangdingdan {
+  margin-right: 24rpx;
+}
+
+.item {
+  line-height: 140rpx;
+  background-color: #322f40;
+  padding: 0 40rpx;
+  margin-bottom: 30rpx;
+}
+
+.company {
+  width: 330rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.time {
+  margin-left: 30rpx;
+}

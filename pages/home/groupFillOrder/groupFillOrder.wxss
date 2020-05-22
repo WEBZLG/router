@@ -1,0 +1,125 @@
+/* pages/home/groupFillOrder/groupFillOrder.wxss */
+/* pages/home/fillOrder/fillOrder.wxss */
+.overImg{
+  width: 262rpx;
+  height: 159rpx;
+}
+.typeInfo{
+  display: flex;
+  /* justify-content: space-around; */
+}
+.company{
+  font-size: 24rpx;
+  line-height: 80rpx;
+}
+.orderType{
+background-color: #ffffff;
+padding: 0 40rpx 25rpx 40rpx;
+}
+.title{
+  font-size: 30rpx;
+  color: #0E0B1E;
+  line-height: 48rpx;
+  margin-left: 30rpx;
+  height: 110rpx;
+}
+.price{
+  font-size: 30rpx;
+  color: #FFC53D;
+  margin-left: 30rpx;
+}
+.type{
+  font-size: 24rpx;
+  color: #FFC53D;
+  margin-top: 30rpx;
+}
+.chooseTime{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  color: #333333;
+  padding: 0 40rpx;
+  height: 92rpx;
+  border-bottom: 1px solid #eeeeee;
+}
+.notice{
+  font-size: 24rpx;
+  color: #FF0E0E;
+}
+.dayicon{
+  height: 54rpx;
+  width: 54rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 17rpx;
+}
+.choose{
+  background-color: #ffffff;
+  margin: 30rpx 0;
+}
+.start{
+  color: #666666;
+  font-size: 24rpx;
+  padding: 30rpx 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+}
+.mark{
+  color: #999999;
+  font-size: 24rpx;
+  padding: 30rpx 40rpx;
+}
+.check{
+  font-size: 24rpx;
+  color: #FC6B00;
+  text-align: center;
+  line-height: 80rpx;
+  border-top: 1px solid #eeeeee;
+}
+.iptbox .iptitem{
+  padding: 0rpx 40rpx;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 80rpx;
+
+}
+.symbloPrice{
+  background-color: #ffffff;
+  padding: 30rpx 40rpx;
+  font-size: 24rpx;
+  color: #666666;
+  line-height: 48rpx;
+}
+.priceTitle{
+  font-size: 30rpx;
+  color: #333333;
+}
+.total{
+  font-size: 30rpx;
+  color: #FF4D50;
+  text-align: center;
+  margin-top: 85rpx;
+  background-color: #ffffff;
+}
+button{
+  background-color: #01bf6c;
+  width: 100% !important;
+  border-radius: 80rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #fff;
+  margin: 30rpx 0;
+  letter-spacing: 12rpx;
+  min-height: inherit !important;
+}
+.guideName{
+  margin-left: 10rpx;
+}
+.icontixian-changjianwentix{
+  margin-right: 8rpx;
+}

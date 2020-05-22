@@ -1,0 +1,90 @@
+/* pages/serviceHelp/serviceHelp.wxss */
+
+.banner {
+  height: 380rpx;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color:#322F40;
+  font-size: 30rpx;
+  line-height: 96rpx;
+}
+
+.contact view {
+  flex: 1;
+  text-align: center;
+}
+
+.contact icon {
+  font-size: 60rpx;
+  vertical-align: text-top;
+}
+
+.online {
+  border-right: 1px solid #cdcdcd;
+}
+
+.questions {
+  background: #322F40;
+  margin-top: 30rpx;
+ padding: 30rpx 40rpx 0;
+}
+
+.line {
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #FFC63B;
+  border-top-right-radius: 8rpx;
+  border-top-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.title {
+  font-size: 30rpx;
+}
+
+.item {
+  font-size: 24rpx;
+  border-bottom: 1px solid #eeeeee;
+  padding: 30rpx 0;
+  line-height: 48rpx;
+}
+
+.desc {
+  width: 98%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.clickMore{
+  font-size: 24rpx;
+  text-align: center;
+}
+.iconxiangxiajiantou{
+  color: #FFC63B;
+  margin-left: 12rpx;
+}
+
+.sevise-h1{
+font-size: 60rpx;
+color: #fff;
+padding: 0rpx 40rpx;
+position: absolute;
+top: 100rpx;
+}
+
+.sevise-text{
+  color: #fff;
+  font-size: 24rpx;
+  margin-top: 24rpx;
+  padding: 0 40rpx;
+  position: absolute;
+  top: 170rpx;
+}

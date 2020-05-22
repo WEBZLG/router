@@ -1,0 +1,72 @@
+/* pages/myself/accumulatedIncome/accumulatedIncome.wxss */
+/* pages/myself/blockedFund/blockedFund.wxss */
+/* pages/myself/cashWithdrawals /cashWithdrawals .wxss */
+.information{
+  padding: 60rpx 0 30rpx;
+  text-align: center;
+  font-size: 36rpx;
+}
+.money{
+  font-size: 100rpx;
+  padding-top: 30rpx;
+}
+.trip{
+  font-size: 24rpx;
+  color: #666666;
+}
+.caption{
+  background-color: #00C16C;
+  font-size: 30rpx;
+  font-weight: bold;
+  padding: 0 40rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+}
+
+.list{
+  position: absolute;
+  top: 424rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: auto;
+}
+
+.item{
+  padding: 12rpx 40rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  line-height: 48rpx;
+  border-bottom: 1px solid #cccccc;
+}
+
+.btnbox{
+  padding: 30rpx 40rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.headImg {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 28rpx;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #0ff;
+}
+
+.item {
+  line-height: 122rpx;
+  background-color: #fff;
+  padding: 0 40rpx;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.item text {
+  font-size: 24rpx;
+  color: #666;
+}

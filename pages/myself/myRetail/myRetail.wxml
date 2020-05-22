@@ -1,0 +1,84 @@
+<!--pages/myself/myRetail/myRetail.wxml-->
+<view>
+  <view class="tabnav displayFlexBet">
+    <view class="myRetail {{tabShow==0?'active':''}}" catchtap="tabChange" data-tab="0">我的佣金</view>
+    <view class="myFans {{tabShow==1?'active':''}}" catchtap="tabChange" data-tab="1">我的粉丝</view>
+  </view>
+  <view class="retailList" hidden="{{tabShow==0?false:true}}">
+    <view class="message">
+      <view class="title">当前佣金（元）</view>
+      <view class="num">{{brokerageData==''?'-':brokerageData.free_price}}</view>
+      <view class="trip">每日0:00更新数据</view>
+    </view>
+    <view class="list">
+      <view class="navitem displayFlexBet" catchtap="blockedFund">
+        <view>
+          <view class="djIcon">
+            <image src="../../../images/dongjie.png"></image>
+          </view>
+          冻结
+        </view>
+        <view>
+          <text class="redcolor">{{brokerageData==''?'-':brokerageData.frozen_price}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+      <view class="navitem displayFlexBet" catchtap="withdrawDeposit">
+        <view>
+          <view class="txIcon">
+            <image src="../../../images/tixian.png"></image>
+          </view>
+          提现
+        </view>
+        <view>
+          <text class="orangecolor">{{brokerageData==''?'-':brokerageData.sum_price}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+      <view class="navitem displayFlexBet" catchtap="accumulatedIncome">
+        <view>
+          <view class="ljIcon">
+            <image src="../../../images/leiji.png"></image>
+          </view>
+          累计佣金
+        </view>
+        <view>
+          <text class="">{{brokerageData==''?'-':brokerageData.sum_price}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+      <view class="navitem displayFlexBet" catchtap="openRetail">
+        <view>
+          <!-- <view class="ljIcon">
+            <image src="../../../images/leiji.png"></image>
+          </view> -->
+          续费/分销
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fansList" hidden="{{tabShow==1?false:true}}">
+    <view class="message">
+      <view class="title">当前粉丝（人）</view>
+      <view class="num">{{fansData.num}}</view>
+      <view class="trip">每日0:00更新数据</view>
+    </view>
+    <view class="list">
+      <view class="item displayFlexBet" data-id="{{item.id}}" wx:for="{{fansData.list}}" wx:key="index" >
+        <view>
+          <view class="headImg">
+            <image src="{{item.headimgurl}}"></image>
+          </view>
+          {{item.nick}}
+        </view>
+        <view>
+          <text>{{item.title}}</text>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

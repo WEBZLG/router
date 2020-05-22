@@ -1,0 +1,87 @@
+<!--pages/retailPage/wantRetail/wantRetail.wxml-->
+<view class="body">
+  <view class="caption">当前账号分销商：{{dataList.account}}</view>
+  <view class="unitList">
+    <view class="displayFlexBet item">
+      <view class="label">{{dataList.title}}</view>
+      <view class="displayFlexBet">
+        <view class="orangecolor">
+          <view>成人价￥{{dataList.man_price}}/人</view>
+          <view>儿童价￥{{dataList.children_price}}/人</view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>分销价格</view>
+      <view>
+        <view>成人价￥{{dataList.sell_man_price}}/人</view>
+        <view>儿童价￥{{dataList.sell_children_price}}/人</view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>排期</view>
+      <view class="displayFlex">
+        <view>{{dataList.term}}</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>秒杀价</view>
+      <view>
+        {{dataList.price}}
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>数量</view>
+      <view>
+        {{dataList.num}}
+      </view>
+    </view>
+    <view class="displayFlexBet item">
+      <view>秒杀开始时间</view>
+      <view class="displayFlex">
+        <view>{{dataList.start_time.day}}</view>
+        <view>
+          <!-- <icon class="iconfont iconyoucejiantou"></icon> -->
+        </view>
+      </view>
+    </view>
+    <view class="interval displayFlexBet">
+      <view class="timeItem {{timeid==0?'active':''}}" data-timeid="0" >00:00</view>
+      <view class="timeItem {{timeid==1?'active':''}}" data-timeid="1" >08:00</view>
+      <view class="timeItem {{timeid==2?'active':''}}" data-timeid="2" >12:00</view>
+      <view class="timeItem {{timeid==3?'active':''}}" data-timeid="3" >16:00</view>
+      <view class="timeItem {{timeid==4?'active':''}}" data-timeid="4" >20:00</view>
+    </view>
+  </view>
+  <view class="btnbox">
+    <button class="orangebtn" catchtap="cancel">撤销</button>
+  </view>
+  <view class="displayFlexBet instering">
+    <view class="pitem" wx:for="{{dataList.orders}}" wx:key="index" data-id="{{item.oid}}">
+      <view class="displayFlex">
+        <view class="headimg">
+          <image src="{{item.headimgurl}}"></image>
+        </view>
+        <view class="name">{{item.nick}}</view>
+      </view>
+      <view class="displayFlex">
+        <view>{{item.phone}}</view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class="displayFlexBet instering">
+    <view>感兴趣用户（{{dataList.orders.length}}）</view>
+    <view>
+      <icon class="iconfont iconyoucejiantou"></icon>
+    </view>
+  </view> -->
+</view>

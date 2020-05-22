@@ -1,0 +1,52 @@
+<!--retailPage/pages/lineData/lineData.wxml-->
+<view class="body">
+  <view class="title">我的销售数据</view>
+  <view class="container">
+    <view class="datebox">
+      <picker mode="selector" value="{{date}}" bindchange="bindDateChange" range="{{dateArray}}">
+        <view class="picker">
+          {{dateArray[date]||nowDate}}
+          <icon class="iconfont icondaosanjiaoxing-"></icon>
+        </view>
+      </picker>
+    </view>
+    <view class='echart_wrap'>
+      <ec-canvas id="mychart" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
+    </view>
+  </view>
+  <view class="dataTotal">
+    <view class="displayFlexBet">
+      <view>{{record.title}}</view>
+      <view class="graycolor">数据{{record.update_time}}</view>
+    </view>
+    <view class="displayFlexBet">
+      <view>
+        <view class="label label1">营业额</view>
+        <view class="number">{{record.yye}}</view>
+      </view>
+      <view>
+        <view class="label label2">实收</view>
+        <view class="number">{{record.shishou}}</view>
+      </view>
+      <view>
+        <view class="label label3">提现</view>
+        <view class="number">{{record.tx}}</view>
+      </view>
+    </view>
+    <view class="displayFlexBet">
+      <view>
+        <view class="label label4">订单数</view>
+        <view class="number">{{record.dingdan}}</view>
+      </view>
+      <view>
+        <view class="label label5">客户数</view>
+        <view class="number">{{record.kehu}}</view>
+      </view>
+      <view>
+        <view class="label label6">员工数</view>
+        <view class="number">{{record.yuangong}}</view>
+      </view>
+    </view>
+  </view>
+
+</view>

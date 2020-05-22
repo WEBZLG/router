@@ -1,0 +1,47 @@
+<!--pages/myself/tourApprove/tourApprove.wxml-->
+<view>
+  <view class="desc">
+    <view class="tourbg">
+      <image src="../../../images/tourbg.png"></image>
+    </view>
+    <view>认证导游身份，线上轻松分房，管理团员信息 </view>
+    <view>还可认证所在旅行社以及发布拼团活动</view>
+  </view>
+  <view class="iptbox">
+    <view class="item">
+      <text>认证类型：</text>
+      <view>
+        <view class="section">
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+            <view class="picker">
+              {{type}}
+            </view>
+          </picker>
+          <view class=" down-icon">
+            <icon class="iconfont icondaosanjiaoxing-"></icon>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item">
+      <text>认证简介：</text>
+      <view>
+        <textarea bindinput="bindinput" placeholder="例如，4年以上导游经历，带团超过100多团，应变能力强。"></textarea>
+      </view>
+    </view>
+    <view class="item">
+      <text>证件照片：</text>   
+      <view>
+        <view class="addbtn" catchtap="chooseImage">
+          <icon class="iconfont iconjiahao" hidden="{{iconIsShow}}"></icon>
+          <icon class="iconfont iconguanbi" hidden="{{!iconIsShow}}" catchtap="deleteImg"></icon>
+          <image src="{{images}}"></image>
+        </view>
+        <text class="notice">请保证照片清晰可见</text>
+      </view>
+    </view>
+  </view>
+  <view class="btn">
+    <button type="buttom" class="submit" catchtap="submitForm">提交</button>
+  </view>
+</view>

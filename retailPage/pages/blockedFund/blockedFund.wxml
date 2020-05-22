@@ -1,0 +1,39 @@
+
+<view class="body">
+  <view class="information">
+    <view class="title">冻结佣金（元）</view>
+    <view class="money">{{takeOutList.price}}</view>
+    <view class="trip">每日0:00更新数据</view>
+  </view>
+  <view class="caption displayFlexBet">
+    <view>订单明细</view>
+    <view>预计可获得佣金（元）</view>
+  </view>
+  <view class="list">
+    <view class="item displayFlexBet" wx:for="{{takeOutList.list}}" wx:key="index">
+      <view>
+        <view>{{item.nick}}</view>
+        <view class="trip">{{item.add_time}}</view>
+      </view>
+      <view class="displayFlex">
+        <view>
+          <view>{{item.price}}</view>
+          <view class="trip">{{item.pay_status}}</view>
+        </view>
+        <view>
+          <icon class="iconfont iconyoucejiantou"></icon>
+        </view>
+      </view>
+    </view>
+    <view class="nodata" wx:if="{{takeOutList.list.length==0}}">
+      <view class="noDataIcon">
+        <image src="../../../images/nodata.png"></image>
+      </view>
+      <view>暂无数据</view>
+      <view class="trip">您还没有分销过任何产品</view>
+      <view class="btnbox">
+        <button class="orangebtn" catchtap="goRetail">去分销</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,47 @@
+<!-- 日历年月 -->
+<view class="calenderbox">
+  <view class='calendar_title flex_nowrap'>
+    <view class='icon' bindtap='lastMonth' wx:if="{{activeIdx!=0}}">
+      <icon class="iconfont iconzuocejiantou-copy"></icon>
+    </view>
+    <view class="navbox">
+      <view class="calenderItem {{activeIdx==index?'active':''}}" wx:for="{{timeData}}" wx:key="index" data-idx="{{index}}" catchtap="changeTime">
+        <view>{{item.key}}</view>
+      </view>
+    </view>
+    <view bindtap='nextMonth' class='nextMonth' wx:if="{{activeIdx!=timeData.length-1}}">
+      <icon class="iconfont iconyoucejiantou"></icon>
+    </view>
+  </view>
+
+  <!-- 日历主体 -->
+  <view class='calendar'>
+    <view class='header'>
+      <block wx:for='{{date}}' wx:key='index' class='{{(index == todayIndex) && isTodayWeek ? "weekMark" : ""}}'>
+        <view wx:if="{{item=='日'||item=='六'}}" class="redcolor">{{item}}</view>
+        <view wx:else>{{item}}</view>
+      </block>
+    </view>
+
+    <view class='date-box'>
+      <block wx:for='{{dateArr}}' wx:for-item="item" wx:key='index'>
+        <view class='{{isToday == item.isToday ? "nowDay" : ""}}'>
+          <view class='date-head'>
+            <view>{{item.dateNum}}</view>
+            <view class="padg" wx:for="{{timeData[activeIdx].value}}" wx:for-item="items" wx:key='indexs' bindtap='lookHuoDong' data-year='{{year}}' data-month='{{item.month}}' data-datenum='{{item.dateNum}}' data-price="{{items.man_price}}" data-place="{{items.place}}">
+              <view class="price" wx:if="{{item.dateNum==items.day}}">￥{{items.man_price}}/人</view>
+              <view class="place" wx:if="{{item.dateNum==items.day}}">{{items.place}}</view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="nodata" wx:if="{{timeData.length==0}}">
+    <view class="noDataIcon">
+      <image src="../../../images/nodata.png"></image>
+    </view>
+    <view>暂无行程排期</view>
+  </view>
+
+</view>

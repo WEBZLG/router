@@ -1,0 +1,22 @@
+<!--retailPage/pages/accountList/accountList.wxml-->
+<view class="body">
+  <view class="addAccount">
+    <view class="addbtnbox" catchtap="addAccount">
+      <icon class="iconfont icontianjia"></icon>添加
+    </view>
+    <view class="list">
+      <view class="item" wx:for="{{dataList}}" wx:key="index" data-id="{{item.id}}" data-account="{{item.account}}" data-name="{{item.name}}" data-type="{{item.type}}" catchtap="check">
+        <view>商户号：{{item.account}}</view>
+        <view>商户名称：{{item.name}}</view>
+        <view>商户类型: {{item.type}}</view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无商户信息</view>
+      </view>
+      <view class="notice">如果您没有绑定提现的商户号，请先添加商户号。</view>
+    </view>
+  </view>
+</view>

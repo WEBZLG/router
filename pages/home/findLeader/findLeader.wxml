@@ -1,0 +1,28 @@
+<!--pages/home/findLeader/findLeader.wxml-->
+<view>
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../../images/search@2x.png"></image>
+    </view>
+    <input placeholder="找领队" bindinput="search"></input>
+  </view>
+  <view class="list" wx:for="{{dataList}}" wx:key="index">
+    <view class="item" data-uid="{{item.id}}" catchtap="leaderHome">
+      <view>
+        <view class="headImg">
+          <image src="{{item.headimgurl}}"></image>
+        </view>
+        <view class="talk">给ta留言</view>
+      </view>
+      <view class="descript">
+        <view>
+          <text class="name">{{item.nick}}</text>
+          {{item.company}}
+        </view>
+        <view>接待量：{{item.num}}</view>
+        <view>擅长：{{item.skill}}</view>
+      </view>
+    </view>
+  </view>
+</view>

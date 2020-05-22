@@ -1,0 +1,44 @@
+/* pages/myself/retailLimit/retailLimit.wxss */
+page{
+  background-color: #ffffff;
+}
+.noretail{
+  height: 190rpx;
+  width: 190rpx;
+  margin: 80rpx auto;
+  color: #FBA024;
+  padding-top: 126rpx;
+}
+.desc{
+  font-size: 24rpx;
+  color: #dcdcdc;
+  text-align: center;
+  line-height: 56rpx;
+}
+.title{
+  font-size: 36rpx;
+  color: #333333;
+}
+button.sign{
+  width: 100%!important;
+  min-height: inherit;
+  background-color: #00C16C;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 400;
+  border-radius: 40rpx;
+  margin-top: 70rpx;
+}
+button.openRetail{
+  width: 100%!important;
+  min-height: inherit;
+  background-color: #2B53EC;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 400;
+  border-radius: 40rpx;
+  margin-top: 58rpx;
+}
+.btnbox{
+  margin:75rpx;
+}

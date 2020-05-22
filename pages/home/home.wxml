@@ -1,0 +1,110 @@
+<!--pages/home/home.wxml-->
+<view>
+  <!-- 搜索 -->
+  <view class="search">
+    <view class="search-icon" catchtap="searchbtn">
+      <image src="../../images/search@2x.png"></image>
+    </view>
+    <input placeholder="找线路/找活动/找领队/找旅行社" bindinput="search"></input>
+  </view>
+  <!-- banner图1 -->
+  <view class="banner1">
+    <!-- banner轮播 -->
+    <swiper autoplay="true" class="banner-swiper">
+      <block wx:for="{{imgUrls}}" wx:key="index">
+        <swiper-item>
+          <!-- <image src="{{item.pic_url}}" class="slide-image" data-id="{{item.id}}" data-url="{{item.page_url}}" catchtap="banner" /> -->
+          <image src="{{item.url}}" class="slide-image" data-id="{{item.id}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="my-btn">
+      <view class="my-made" catchtap="customize">
+        <icon class="iconfont iconshouye-woyaodingzhi made-icon"></icon>
+        <text>我要定制行程</text>
+      </view>
+      <view class="my-route" catchtap="myRouter">
+        <icon class="iconfont iconshouye-wodedingzhihangcheng route-icon"></icon>
+        <text>查看我的定制</text>
+      </view>
+    </view>
+  </view>
+  <!-- 四块导航 -->
+  <view class="navbg">
+    <view class="nav-list">
+      <view class="item" catchtap="traderApply">
+        <view class="nav-icon fx">
+          <image src="../../images/fenxiao@2x.png"></image>
+        </view>
+        <text>分销代理</text>
+      </view>
+      <view class="item" catchtap="findGroup">
+        <view class="nav-icon pt">
+          <image src="../../images/pingtuan@2x.png"></image>
+        </view>
+        <text>找拼团</text>
+      </view>
+      <view class="item" catchtap="seckillGroup">
+        <view class="nav-icon mst">
+          <image src="../../images/miaosha@2x.png"></image>
+        </view>
+        <text>秒杀团</text>
+      </view>
+      <view class="item" catchtap="findTravel">
+        <view class="nav-icon lxs">
+          <image src="../../images/lvxingshe@2x.png"></image>
+        </view>
+        <text>找旅行社</text>
+      </view>
+      <view class="item" catchtap="findLeader">
+        <view class="nav-icon zld">
+          <image src="../../images/leadericon.png"></image>
+        </view>
+        <text>找领队</text>
+      </view>
+    </view>
+    <!-- 公告 -->
+    <view class="displayFlexBet">
+      <view class="green-dot"></view>
+      <view class="message-icon">信息</view>
+      <swiper class="swiper-container" vertical="true" autoplay="true" circular="true" interval="2000">
+        <block wx:for="{{notice}}" wx:key="index">
+          <swiper-item>
+            <view class="message"  data-id="{{item.id}}">        
+              <view class="title">{{item.title}}</view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="title-icon">
+        <image src="https://travel.liaofankeji.com/upload/web/notice/jx.png"></image>
+      </view>
+    </view>
+  </view>
+  <block wx:for="{{travel}}" wx:key="index">
+    <view class="banner2"  data-id="{{item.id}}" catchtap="routerDetails">
+      <image src="{{item.pic}}"></image>
+      <view class="banner2-btn">{{item.man_price}}</view>
+    </view>
+  </block>
+  <!-- 菜单按钮 -->
+  <view class="menu" bindtap="powerDrawer" data-statu="open">
+    <image src="../../images/menu.png"></image>
+  </view>
+  <!-- 左侧抽屉菜单 -->
+  <view class='mask' bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"> </view>
+  <view class='Drawer' animation="{{animationData}}" wx:if="{{showModalStatus}}">
+    <view class="navlistbg">
+      <image src="../../images/navbg.jpg"></image>
+    </view>
+    <view class="listbox">
+      <view class="list-item" wx:for="{{navData}}" wx:key="index" data-id="{{item.id}}" catchtap="switchTap">
+        <view class="menu-icon">
+          <image src="{{item.icon}}"></image>
+        </view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+
+</view>

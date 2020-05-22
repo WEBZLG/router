@@ -1,0 +1,46 @@
+<!--retailPage/pages/myVisitor/myVisitor.wxml-->
+<view class="body">
+  <view class="banner">
+    <image src="../../../images/visitor.png"></image>
+    <view class="caption">
+      <view class="title">客人榜</view>
+      <view>2019年消费排行榜</view>
+    </view>
+  </view>
+  <view class="container">
+    <!-- 搜索 -->
+    <view class="search">
+      <view class="search-icon" catchtap="searchbtn">
+        <image src="../../../images/search.png"></image>
+      </view>
+      <input placeholder="输入想要查找的客人" bindinput="search" placeholder-class="placeholder"></input>
+    </view>
+    <view class="listbox">
+      <image src="../../../images/listbg.png"></image>
+      <view class="content">
+        <view class="displayFlexBet label">
+          <view>排行</view>
+          <view>名称</view>
+          <view>消费</view>
+        </view>
+        <view class="list">
+          <view class="item displayFlexBet" wx:for="{{infoList}}" wx:key="index" data-id="{{item.id}}" catchtap="visitorDetails">
+            <view class="sortIcon">
+              <image wx:if="{{index==1}}" src="../../../images/jin.png"></image>
+              <image wx:if="{{index!=1}}" src="../../../images/yin.png"></image>
+              <view class="number">{{index}}</view>
+            </view>
+            <view>{{item.name}}</view>
+            <view class="redcolor">{{item.price}}</view>
+          </view>
+          <view class="nodata" wx:if="{{infoList.length==0}}">
+            <view class="noDataIcon">
+              <image src="../../../images/nodata.png"></image>
+            </view>
+            <view>暂无客人</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

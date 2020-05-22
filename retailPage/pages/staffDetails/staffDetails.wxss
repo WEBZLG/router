@@ -1,0 +1,25 @@
+/* retailPage/pages/visitorDetails/visitorDetails.wxss */
+
+.btnbox {
+  padding: 30rpx 75rpx;
+}
+
+.item {
+  padding: 0 40rpx;
+  height: 90rpx;
+  border-bottom: 1px solid #030116;
+  background-color: #322f40;
+}
+
+.caption {
+  padding: 0 40rpx;
+  line-height: 87rpx;
+  background-color: #030116;
+}
+
+.lineName {
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

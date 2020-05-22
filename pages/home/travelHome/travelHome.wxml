@@ -1,0 +1,51 @@
+<!--pages/home/travelHome/travelHome.wxml-->
+<view>
+  <view>
+    <view class="homebg">
+      <image src="{{infoList.pic}}"></image>
+      <view class="viewNumber">
+        <view class="number">{{infoList.read_num}}</view>
+        <view>记录浏览量</view>
+      </view>
+    </view>
+    <view>
+      <view class="information">
+        <view class="head">
+          <image src="{{infoList.logo}}"></image>
+        </view>
+        <view class="attestation">
+          <view wx:if="{{infoList.status==0}}">已认证企业</view>
+          <view wx:if="{{infoList.status==2}}">未认证企业</view>
+        </view>
+        <view>
+          <view class="exit-name">
+            <view>
+              <text>{{infoList.company}}</text>
+            </view>
+          </view>
+        </view>
+        <view class="mygoods" catchtap="lineList" data-aid="{{uid}}">ta的线路</view>
+      </view>
+    </view>
+    <view class="userdata">
+      <view class="item">
+        <view>地区：{{infoList.location}}</view>
+        <view>领域：
+          <!-- <block wx:for="infoList.tag" wx:key="index">
+            <text>{{item.name}}</text>
+          </block> -->
+          <text>{{infoList.tag.name}}</text>
+        </view>
+      </view>
+      <view>
+        <view class="item">
+          <view>导游人数 {{infoList.guide_num}}</view>
+          <view>产品数 {{infoList.travel_num}}</view>
+        </view>
+      </view>
+      <view>
+        <view class="item">在线时长：{{infoList.time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

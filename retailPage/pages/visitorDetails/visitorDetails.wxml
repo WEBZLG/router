@@ -1,0 +1,53 @@
+
+<view class="body">
+  <view class="caption">基本信息</view>
+  <view class="item displayFlexBet">
+    <view>姓名</view>
+    <text>{{infoList.tourername}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>性别 </view>
+    <text>{{infoList.sex}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>身份证号码</view>
+    <text>{{infoList.card_num}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>国家地区</view>
+    <text>{{infoList.province}}{{infoList.city}}</text>
+  </view>
+  <view class="caption">联系方式</view>
+  <view class="item displayFlexBet">
+    <view>手机号码</view>
+    <text>{{infoList.mobile}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>固定电话</view>
+    <text>{{infoList.tel}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>电子邮箱</view>
+    <text>{{infoList.email}}</text>
+  </view>
+  <view class="item displayFlexBet">
+    <view>地址</view>
+    <text>{{infoList.address}}</text>
+  </view>
+  <view class="caption">ta报过的线路</view>
+  <view class="item displayFlexBet" wx:for="{{infoList.travel_list}}">
+    <view>
+      <view class="lineName">{{item.title}}</view>
+      <view>{{item.add_time}}</view>
+    </view>
+    <view class="displayFlex">
+      <view>
+        <view>成人价￥{{item.man_price}}/人</view>
+        <view>儿童价￥4000/人</view>
+      </view>
+      <view>
+        <icon class="iconfont iconyoucejiantou"></icon>
+      </view>
+    </view>
+  </view>
+</view>

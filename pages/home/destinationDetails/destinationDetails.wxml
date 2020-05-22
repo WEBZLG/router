@@ -1,0 +1,32 @@
+<!--pages/home/destinationDetails/destinationDetails.wxml-->
+<!--pages/home/destination/destination.wxml-->
+<view>
+  <view class="banner">
+    <image src="{{dataList.pic}}"></image>
+    <view class="address">
+      <view class="name">{{dataList.name}}</view>
+      <view class="line"></view>
+      <view class="num">{{dataList.count}}个行程</view>
+    </view>
+  </view>
+
+  <view class="groom">
+    <view class="title">旅行顾问推荐行程</view>
+    <view class="list">
+      <view class="listItem" wx:for="{{dataList.list}}" wx:key="index" data-tid="{{item.id}}" catchtap="routerDetails">
+        <view class="itemImg">
+          <image src="{{item.pic_cover}}"></image>
+        </view>
+        <view class="desc">{{item.title}}</view>
+        <view class="company">{{item.name}}</view>
+      </view>
+      <view class="nodata" wx:if="{{dataList.list.length==0}}">
+        <view class="noDataIcon">
+          <image src="../../../images/nodata.png"></image>
+        </view>
+        <view>暂无行程</view>
+      </view>
+    </view>
+  </view>
+
+</view>

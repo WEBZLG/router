@@ -1,0 +1,63 @@
+/* pages/router/changePeople/changePeople.wxss */
+/* pages/router/addPeople/addPeople.wxss */
+.title{
+  padding: 30rpx 40rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+.item{
+  height: 90rpx;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 40rpx;
+  font-size: 24rpx;
+  color: #666666;
+  justify-content: space-between;
+  border-bottom: 1px solid #eeeeee;
+  line-height: 90rpx;
+}
+.item text{
+  color: #333333;
+}
+
+.btnbox{
+  margin: 0 75rpx;
+}
+
+.btnbox button{
+  width: 100%!important;
+  color: #ffffff;
+  font-size: 30rpx;
+  border-radius: 80rpx;
+  margin: 30rpx 0;
+  font-weight: 400;
+}
+.savebtn{
+  background-color: #00C16C;
+}
+.delbtn{
+  background-color: #FF4C4F;
+}
+.section{
+  text-align: right;
+}
+.flex{
+display: flex;
+align-items: center;
+}
+.item input{
+  text-align: right;
+}
+.verline{
+  width: 8rpx;
+  height: 30rpx;
+  background-color: #00C16C;
+  border-top-left-radius: 8rpx;
+  border-top-right-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
