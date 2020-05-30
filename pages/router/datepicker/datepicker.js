@@ -30,7 +30,7 @@ Page({
 
   },
   lookHuoDong(e){
-    console.log(e);
+    //console.log(e);
     var year = e.currentTarget.dataset.year;
     var month = e.currentTarget.dataset.month;
     var day = e.currentTarget.dataset.datenum;
@@ -84,7 +84,7 @@ Page({
     this.setData({
       dateArr: dateArr
     })
-    console.log(dateArr)
+    //console.log(dateArr)
     let nowDate = new Date();
     let nowYear = nowDate.getFullYear();
     let nowMonth = nowDate.getMonth() + 1;
@@ -162,7 +162,7 @@ Page({
     var arr = this.data.timeData;
     var year = this.data.timeData[idx].key.split('.')[0];
     var month = this.data.timeData[idx].key.split('.')[1]-1;
-    console.log(year,month)
+    // console.log(year,month)
     this.dateInit(year, month);
   },
   getTime(tid) {
@@ -175,12 +175,13 @@ Page({
     });
     ajax.wxRequest('POST', 'Index/choiceTrip', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         wx.hideLoading();
         if (res.code == 200) {
           var obj = res.data
           wx.hideLoading();
           var arr = []
+          //console.log(obj)
           for (let i in obj) {
             let o = {};
             o['key'] = i;
@@ -192,7 +193,7 @@ Page({
           });
           var firstYear = arr[0].key.split('.')[0];
           var firstMonth = arr[0].key.split('.')[1];
-          console.log(firstYear, firstMonth)
+          // console.log(firstYear, firstMonth)
 
           that.dateInit(firstYear * 1, firstMonth * 1-1);
         } else {

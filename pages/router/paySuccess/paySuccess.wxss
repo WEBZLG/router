@@ -271,3 +271,138 @@
 .goline {
   box-shadow: 0px 6px 6px -6px rgb(160, 160, 160);
 }
+
+button.colse {
+  background-color: #01bf6c;
+  border-radius: 80rpx;
+  font-size: 30rpx;
+  color: #fff;
+  margin: 0rpx 0 80rpx;
+  min-height: inherit !important;
+  font-weight: 400;
+}
+.modelTitle {
+  margin-top: 127rpx;
+}
+
+.wechat .iconweixin {
+  color: #00c16c;
+  margin-bottom: 80rpx;
+}
+
+.poster .iconshengchenghaibao {
+  font-size: 80rpx;
+  color: #009aff;
+  margin-bottom: 85rpx;
+  margin-top: 16rpx;
+}
+
+.poster, .wechat {
+  text-align: center;
+  margin: 100rpx 0;
+  overflow: hidden;
+}
+
+/* button:not([size='mini']) {
+  width: inherit;
+} */
+
+.sharebtn {
+  margin: 0;
+  padding: 0;
+  font-size: 24rpx;
+  line-height: inherit;
+  background-color: #fff;
+}
+
+.button-hover {
+  background-color: #fff;
+}
+
+button::after {
+  border: none;
+}
+
+.share-bg, .canvas-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.share-box {
+  background: #fff;
+  width: 80%;
+  margin: 25% auto;
+  border-radius: 15rpx;
+  font-weight: bold;
+}
+
+.share-title {
+  text-align: center;
+  padding: 56rpx 0 35rpx 0;
+}
+
+.share-btn-box {
+  display: flex;
+  justify-content: space-evenly;
+  line-height: 60rpx;
+}
+
+.btn-img {
+  height: 96rpx;
+  width: 96rpx;
+}
+
+.share-pyq {
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.cancel {
+  padding: 24rpx 0;
+  text-align: center;
+  border-top: 1px solid #e1e1e1;
+  margin-top: 30rpx;
+}
+
+#shareCanvas {
+  position: fixed;
+  top: 30rpx;
+  left: 0;
+  right: 0;
+  margin-left: 300rpx;
+  height: 950rpx;
+  width: 600rpx;
+  margin: 50rpx auto 0;
+  background-color: #fff;
+}
+
+.description {
+  padding: 30rpx;
+}
+
+.savebtn {
+  height: 60rpx;
+  width: 200rpx;
+  border-radius: 60rpx;
+  background-color: #00c16c;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  position: absolute;
+  bottom: 92rpx;
+  left: 50%;
+  margin-left: -100rpx;
+}
+
+.fixed {
+  position: fixed;
+  top: -29rpx;
+  left: 0;
+  right: 0;
+}

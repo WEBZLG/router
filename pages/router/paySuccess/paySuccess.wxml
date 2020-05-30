@@ -65,7 +65,7 @@
         <view>{{dataList.pay_info.phone}}</view>
       </view>
       <view class="btnbox">
-        <button class="share">分享赚佣金</button>
+        <button class="share" catchtap="open">分享赚佣金</button>
         <!-- <button class="cancel">取消</button>
         <button class="firmbtn">修改信息</button> -->
       </view>
@@ -130,4 +130,29 @@
   <!-- <view class="paybtnbox">
     <button class="paybtn">立即支付</button>
   </view> -->
+</view>
+<view class="maskover" catchtouchmove="preventTouchMove" wx:if="{{showModal==true}}"></view>
+<view class="modalDlg" wx:if="{{showModal==true}}">
+  <view class="closeIcon" bindtap="close">
+    <icon class="iconfont iconguanbi1"></icon>
+  </view>
+  <view class="modelTitle">选择发送给好友或者保存海报发到朋友圈</view>
+  <view class="displayFlexBet">
+    <view class="wechat">
+      <button open-type="share" class='sharebtn' data-id="{{tid}}">
+        <icon class="iconfont iconweixin"></icon>
+        <view class="message">分享给微信好友或群</view>
+      </button>
+    </view>
+    <view class="poster" catchtap='sharePyq' data-id="{{tid}}">
+      <icon class="iconfont iconshengchenghaibao"></icon>
+      <view class="message">生成朋友圈海报</view>
+    </view>
+  </view>
+  <button class="colse" bindtap="close">我再想想</button>
+</view>
+<!-- 分享朋友圈制图 -->
+<view class='canvas-bg' hidden='{{canvasShow}}'>
+  <canvas canvas-id="shareCanvas" id='shareCanvas'></canvas>
+  <view class="savebtn" catchtap="save">保存海报</view>
 </view>

@@ -32,6 +32,9 @@ Page({
   // 报名提交
   submit() {
     var that = this;
+    wx.navigateTo({
+      url: '../paySuccess/paySuccess'
+    });
     wx.login({
       success(res) {
         if (res.code) {
