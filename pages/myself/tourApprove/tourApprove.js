@@ -61,7 +61,7 @@ Page({
         }
         ajax.wxRequest('POST', 'User/certified', item,
           (res) => {
-            console.log(res)
+            //console.log(res)
             if (res.code == 400) {
               wx.showToast({
                 title: res.msg,

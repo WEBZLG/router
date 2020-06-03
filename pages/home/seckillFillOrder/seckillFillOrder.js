@@ -45,7 +45,7 @@ Page({
     this.setData({
       showModal: true
     })
-    console.log(this.data.showModal)
+    //console.log(this.data.showModal)
   },
   chooseTime(e) {
     var tid = e.currentTarget.dataset.tid
@@ -94,14 +94,14 @@ Page({
       phone: phone,
       insure: insure
     }
-    console.log(item)
+    //console.log(item)
     wx.showLoading({
       mask: 'true'
     });
     ajax.wxRequest('POST', 'travel/seckillSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var data = JSON.stringify(res.data);
@@ -144,7 +144,7 @@ Page({
     ajax.wxRequest('POST', 'travel/seckillSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -182,7 +182,7 @@ Page({
     ajax.wxRequest('POST', 'Travel/members', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -201,7 +201,7 @@ Page({
           that.setData({
             totalPrice: choose.length * that.data.unitPrice
           })
-          console.log(that.data.chooseList)
+          //console.log(that.data.chooseList)
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -243,7 +243,7 @@ Page({
    */
   onShow: function () {
     var uid = app.globalData.uid;
-    console.log(this.data.choosePerson)
+    //console.log(this.data.choosePerson)
     this.peopleList(uid)
   },
 

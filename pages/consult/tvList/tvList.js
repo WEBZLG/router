@@ -1,5 +1,5 @@
-// pages/serviceHelp/serviceHelp.js
-const app = getApp()
+// pages/consult/tvList.js
+var app = getApp();
 var ajax = require("../../../utils/ajax.js");
 Page({
 
@@ -7,45 +7,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    infoList:'',
-    page:1
+    dataList:'',
+    dataAll:''
   },
-  viewMore(){
+  getData(uid){
     var that = this;
-    this.setData({
-      page : that.data.page + 1
-    })
-    this.getInformation(0, that.data.page)
-  },
-  helpDetails(e) {
-    var cid = e.currentTarget.dataset.cid;
-    wx.navigateTo({
-      url: '../helpDetails/helpDetails?cid=' + cid,
-    })
-  },
-  freeTell: function (e) {
-    var phone = e.currentTarget.dataset.phone;
-    wx.makePhoneCall({
-      phoneNumber: phone,
-    })
-  },
-  // 获取信息
-  getInformation(type,page) {
-    var that = this;
+    var uid = app.globalData.uid;
     var item = {
-      page: page,
-      type: type
+      uid: uid
     }
-    wx.showLoading();
-    ajax.wxRequest('POST', 'index/customer', item,
+    wx.showLoading({
+      mask: 'true'
+    });
+    ajax.wxRequest('POST', 'Index/getRoomList', item,
       (res) => {
         wx.hideLoading();
-        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
-            infoList: res.data
-          });
+            dataAll : res.data,
+            dataList : res.data.room_info
+          })
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -53,6 +35,7 @@ Page({
             icon: "none"
           })
         }
+
       },
       (err) => {
         wx.hideLoading();
@@ -62,11 +45,19 @@ Page({
         })
       })
   },
+  goTv(e){
+    let roomId = e.currentTarget.dataset.roomid
+    // let customParams = encodeURIComponent(JSON.stringify({ path: 'pages/index/index', pid: 3 })) 
+    wx.navigateTo({
+        // url: `plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id=${roomId}&custom_params=${customParams}`
+        url: `plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id=${roomId}`
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getInformation(0, 1)
+
   },
 
   /**
@@ -80,7 +71,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var uid = app.globalData.uid;
+    this.getData(uid);
   },
 
   /**
@@ -101,7 +93,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    var uid = app.globalData.uid;
+    this.getData(uid);
   },
 
   /**

@@ -74,7 +74,7 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths[0];
         wx.showLoading({
@@ -212,7 +212,7 @@ Page({
     ajax.wxRequest('POST', 'User/apply', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.showToast({
             title: res.msg,
@@ -253,7 +253,7 @@ Page({
     ajax.wxRequest('POST', 'User/apply_status', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 400) {
           wx.hideLoading();
           var dataList = res.data;
@@ -302,7 +302,7 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    console.log(options.phone)
+    //console.log(options.phone)
     var uid = app.globalData.uid;
     if (options.phone) {
       that.getData(uid, options.phone)

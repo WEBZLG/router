@@ -79,7 +79,7 @@ Page({
       value
     } = e.target.dataset
     if (!name) return
-    // console.log('format', name, value)
+    // //console.log('format', name, value)
     this.editorCtx.format(name, value)
 
   },
@@ -92,14 +92,14 @@ Page({
   insertDivider() {
     this.editorCtx.insertDivider({
       success: function() {
-        console.log('insert divider success')
+        //console.log('insert divider success')
       }
     })
   },
   clear() {
     this.editorCtx.clear({
       success: function(res) {
-        console.log("clear success")
+        //console.log("clear success")
       }
     })
   },
@@ -121,7 +121,7 @@ Page({
         ajax.uploadimages(res.tempFilePaths, function(resp) {
           var array = resp;
           var newImages = [];
-          console.log(array)
+          //console.log(array)
           for (var idx in array) {
             var data = JSON.parse(array[idx]);
             newImages.push(ajax.resPath + data.data.path)
@@ -130,7 +130,7 @@ Page({
               data: {},
               width: '100%',
               success: function(res) {
-                console.log(res)
+                //console.log(res)
               }
             })
           }
@@ -140,7 +140,7 @@ Page({
   },
   getInput(e) {
     var html = e.detail.html;
-    console.log(html)
+    //console.log(html)
     this.setData({
       newData: html
     })
@@ -155,7 +155,7 @@ Page({
       return false;
     }
     app.globalData.stepData.stepEnd = that.data.newData;
-    console.log(app.globalData.stepData)
+    //console.log(app.globalData.stepData)
     var submitData = app.globalData.stepData;
     var item = {
       'uid': app.globalData.uid,
@@ -186,7 +186,7 @@ Page({
     ajax.wxRequest('POST', 'User/pubPink', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({

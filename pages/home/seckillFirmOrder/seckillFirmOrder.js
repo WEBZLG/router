@@ -50,14 +50,14 @@ Page({
             phone: phone,
             insure: insure
           }
-          console.log(item)
+          //console.log(item)
           wx.showLoading({
             mask: 'true'
           });
           ajax.wxRequest('POST', 'travel/seckillSignUp', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 var data = JSON.parse(res.data.parameters);
@@ -129,14 +129,14 @@ Page({
       phone: phone,
       insure: insure
     }
-    console.log(item)
+    //console.log(item)
     wx.showLoading({
       mask: 'true'
     });
     ajax.wxRequest('POST', 'travel/seckillSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         var data = JSON.stringify(res.data);
         if (res.code == 200) {
           wx.navigateTo({
@@ -158,7 +158,7 @@ Page({
   onLoad: function(options) {
     var data = JSON.parse(options.data);
     var info = JSON.parse(options.info);
-    console.log(data)
+    //console.log(data)
     this.setData({
       dataList: data,
       info: info

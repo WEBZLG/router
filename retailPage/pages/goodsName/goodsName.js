@@ -40,7 +40,7 @@ Page({
           ajax.wxRequest('POST', 'Merchant/endRetail', item,
             (res) => {
               wx.hideLoading({ mask: 'true' });
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 wx.showToast({
@@ -86,7 +86,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/merchProductInfo', item,
       (res) => {
         wx.hideLoading({ mask: 'true' });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

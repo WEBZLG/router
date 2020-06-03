@@ -42,7 +42,7 @@ Page({
   },
   // 国家地区
   bindMultiPickerChange: function(e) {
-    console.log(e)
+    //console.log(e)
     var that = this;
     that.setData({
       "multiIndex[0]": e.detail.value[0],
@@ -50,10 +50,10 @@ Page({
       province: that.data.multiArray[0][that.data.multiIndex[0]],
       city: that.data.multiArray[1][that.data.multiIndex[1]]
     })
-    console.log(this.data.multiArray[0][this.data.multiIndex[0]], this.data.multiArray[1][this.data.multiIndex[1]])
+    //console.log(this.data.multiArray[0][this.data.multiIndex[0]], this.data.multiArray[1][this.data.multiIndex[1]])
   },
   bindMultiPickerColumnChange: function(e) {
-    console.log(e)
+    //console.log(e)
     var that = this;
     switch (e.detail.column) {
       case 0:
@@ -152,7 +152,7 @@ Page({
     ajax.wxRequest('POST', 'User/addUsedInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({
@@ -184,7 +184,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(city.multiArray)
+    //console.log(city.multiArray)
   },
 
   /**

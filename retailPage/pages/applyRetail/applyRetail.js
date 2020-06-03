@@ -30,7 +30,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/getApplyInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           if (action == '') {

@@ -42,7 +42,7 @@ Page({
     ajax.wxRequest('POST', 'User/takeOut', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({
@@ -84,7 +84,7 @@ Page({
           });
           wx.login({
             success(res) {
-              console.log(res);
+              //console.log(res);
               if (res.code) {
                 var item = {
                   uid: app.globalData.uid,
@@ -93,7 +93,7 @@ Page({
                 ajax.wxRequest('POST', 'User/bdwx', item,
                   (res) => {
                     wx.hideLoading();
-                    console.log(res)
+                    //console.log(res)
                     if (res.code == 200) {
                       wx.hideLoading();
                       wx.showToast({
@@ -118,7 +118,7 @@ Page({
                     })
                   })
               } else {
-                console.log('授权失败！' + res.errMsg)
+                //console.log('授权失败！' + res.errMsg)
               }
             }
           })
@@ -142,7 +142,7 @@ Page({
     ajax.wxRequest('POST', 'User/takeOut', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

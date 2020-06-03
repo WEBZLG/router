@@ -55,7 +55,7 @@ Page({
     this.setData({
       showModal: true
     })
-    console.log(this.data.showModal)
+    //console.log(this.data.showModal)
   },
 
   // 选择日期
@@ -85,7 +85,7 @@ Page({
     ajax.wxRequest('POST', 'User/usedInformation', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -114,7 +114,7 @@ Page({
           })
 
 
-          console.log(that.data.choosePerson)
+          //console.log(that.data.choosePerson)
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -148,13 +148,13 @@ getdata(){
     phone: '',
     insure: ''
   }
-  console.log(item)
+  //console.log(item)
   wx.showLoading({
     mask: 'true'
   });
   ajax.wxRequest('POST', 'Travel/signUp', item,
     (res) => {
-      console.log(res)
+      //console.log(res)
       if (res.code == 200) {
         wx.hideLoading();
         that.setData({
@@ -175,7 +175,7 @@ getdata(){
       //             if (res.code) {
       //               that.bindWx(uid,res.code)
       //             } else {
-      //               console.log('授权失败！' + res.errMsg)
+      //               //console.log('授权失败！' + res.errMsg)
       //             }
       //           }
       //         })
@@ -214,7 +214,7 @@ getdata(){
     var name = this.data.userName;
     var phone = this.data.userPhone;
     var insure = that.data.insure;
-    console.log(insure)
+    //console.log(insure)
     if (member == '') {
       wx.showToast({
         title: '请选择出行人',
@@ -257,7 +257,7 @@ getdata(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     var travelInfo = JSON.parse(options.travelInfo)
     this.setData({
       updata: travelInfo,
@@ -265,7 +265,7 @@ getdata(){
       term_id: travelInfo.currentTerm.id
     });
     this.getdata()
-    console.log(travelInfo)
+    //console.log(travelInfo)
   },
 
   /**
@@ -280,7 +280,7 @@ getdata(){
    */
   onShow: function () {
     var uid = app.globalData.uid;
-    console.log(this.data.choosePerson)
+    //console.log(this.data.choosePerson)
     this.peopleList(uid)
   },
 

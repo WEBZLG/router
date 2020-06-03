@@ -27,7 +27,7 @@ Page({
     ajax.wxRequest('POST', 'User/takeOutList', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

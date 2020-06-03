@@ -39,7 +39,7 @@ Page({
     ajax.wxRequest('POST', 'User/payLog', item,
       (res) => {
         wx.hideLoading();
-        console.log(res.data)
+        //console.log(res.data)
         if (res.code == 200) {
           var obj = res.data
           var arr = []
@@ -49,7 +49,7 @@ Page({
             o['value'] = obj[i]
             arr.push(o)
           }
-          console.log(arr)
+          //console.log(arr)
           that.setData({
             dataList: arr
           })

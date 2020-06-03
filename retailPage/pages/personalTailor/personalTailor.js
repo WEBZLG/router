@@ -57,7 +57,7 @@ Page({
     }
   },
   switchTab(event) {
-    console.log(event)
+    //console.log(event)
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
     this.setData({
@@ -69,7 +69,7 @@ Page({
   clickTab: function (e) {
     var uid = app.globalData.uid;
     var idx = e.currentTarget.dataset.current;
-    console.log(idx)
+    //console.log(idx)
     var that = this;
     if (idx == 0) {
       that.getData(uid, 0,1,'')
@@ -111,7 +111,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/diyOrder', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

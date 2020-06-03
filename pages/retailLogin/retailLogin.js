@@ -68,7 +68,7 @@ Page({
       wx.showLoading();
       ajax.wxRequest('POST', 'Login/sendSMS', item,
         (res) => {
-          console.log(res)
+          //console.log(res)
           if (res.code == 200) {
             wx.hideLoading();
             wx.showToast({
@@ -103,7 +103,7 @@ Page({
           }
         },
         (err) => {
-          console.log(err)
+          //console.log(err)
           wx.hideLoading();
           wx.showToast({
             title: '数据加载失败' + err,
@@ -136,7 +136,7 @@ Page({
     ajax.wxRequest('POST', 'Login/merchantLogin', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           app.globalData.uid = res.data.merchid;
@@ -163,7 +163,7 @@ Page({
 
       },
       (err) => {
-        console.log(err)
+        //console.log(err)
         wx.hideLoading();
         wx.showToast({
           title: '数据加载失败' + err,

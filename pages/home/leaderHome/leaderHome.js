@@ -30,7 +30,7 @@ Page({
     ajax.wxRequest('POST', 'Index/HomePage', item,
       (res) => {
         wx.hideLoading({ mask: 'true' });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

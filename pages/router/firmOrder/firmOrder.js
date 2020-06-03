@@ -25,7 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
+    //console.log(options)
     var item = JSON.parse(options.item)
     this.getData(item);
   },
@@ -56,19 +56,19 @@ Page({
             insure: insure,
             code:res.code
           }
-          console.log(item)
+          //console.log(item)
           wx.showLoading({
             mask: 'true'
           });
           ajax.wxRequest('POST', 'Travel/signUp', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 var data = JSON.parse(res.data.parameters);
                 var oid = res.data.oid;
-                console.log(data)
+                //console.log(data)
                 wx.requestPayment({
                   timeStamp: data.timeStamp,
                   nonceStr: data.nonceStr,
@@ -131,14 +131,14 @@ Page({
       insure: insure,
       oid: oid
     }
-    console.log(item)
+    //console.log(item)
     wx.showLoading({
       mask: 'true'
     });
     ajax.wxRequest('POST', 'Travel/signUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         // var data = JSON.stringify(res.data);
         app.globalData.successData = res.data;
         if (res.code == 200) {
@@ -161,7 +161,7 @@ Page({
     ajax.wxRequest('POST', 'Travel/signUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var member = [];

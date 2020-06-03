@@ -38,7 +38,7 @@ Page({
     var spic = e.currentTarget.dataset.pic;
     var sid = e.currentTarget.dataset.id;
     var type = e.currentTarget.dataset.type;
-    console.log(stitle, spic, sid)
+    //console.log(stitle, spic, sid)
     this.setData({
       showModal: true,
       stitle: stitle,
@@ -60,7 +60,7 @@ Page({
     ajax.wxRequest('POST', 'User/orderInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -117,7 +117,7 @@ Page({
           ajax.wxRequest('POST', 'User/orderRefund', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 var uid = app.globalData.uid;
@@ -150,7 +150,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     // var uid = 9;
     var uid = app.globalData.uid;
     var oid = options.id;
@@ -211,7 +211,7 @@ Page({
       title: that.data.stitle,
       path: '/pages/router/routerDetails/routerDetails?tid=' + tid,
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         wx.showToast({
           title: '转发成功！',
         })
@@ -262,7 +262,7 @@ Page({
     wx.showLoading();
     ajax.wxRequest('POST', 'Travel/getWxacode', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         var url = res.data.acode_url;
         // var qrbg = res.data.qrcode_bg;
         //获取网络图片本地路径
@@ -282,7 +282,7 @@ Page({
                 let bg = that.data.newbackpic;
                 let qr = that.data.newpicstr;
                 that.getImageAll([bg, qr]).then((res) => {
-                  console.log(res)
+                  //console.log(res)
                   const ctx = wx.createCanvasContext('shareCanvas')
                   ctx.fillStyle = '#ffffff';
                   ctx.fillRect(0, 0, 315, 500)
@@ -316,7 +316,7 @@ Page({
 
       },
       (err) => {
-        console.log(err)
+        //console.log(err)
         wx.hideLoading();
         wx.showToast({
           title: '数据加载失败' + err,
@@ -331,7 +331,7 @@ Page({
     wx.canvasToTempFilePath({ //canvas 生成图片 生成临时路径
       canvasId: 'shareCanvas',
       success: function (res) {
-        //console.log(res)
+        ////console.log(res)
         wx.saveImageToPhotosAlbum({ //下载图片
           filePath: res.tempFilePath,
           success: function () {

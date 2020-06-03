@@ -30,7 +30,7 @@ Page({
     ajax.wxRequest('POST', 'User/apply_status', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 400) {
           wx.hideLoading();
           that.setData({
@@ -58,7 +58,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     var uid = app.globalData.uid;
     var phone = options.phone;
     this.setData({

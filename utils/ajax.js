@@ -43,7 +43,7 @@ function uploadimg(imgpath, callback) {
     },
     success: function(res) {
       var res = JSON.parse(res.data)
-      console.log(res)
+      //console.log(res)
       if (res.code == 200) {
         callback(res);
       } else {
@@ -55,11 +55,11 @@ function uploadimg(imgpath, callback) {
 
     },
     fail: function(res) {
-      console.log(res);
+      //console.log(res);
       wx.hideLoading();
     },
     complete: function(res) {
-      console.log(res);
+      //console.log(res);
       wx.hideLoading();
     }
   })
@@ -82,7 +82,7 @@ function uploadimgRetail(imgpath, callback) {
     },
     success: function (res) {
       var res = JSON.parse(res.data)
-      console.log(res)
+      //console.log(res)
       if (res.code == 200) {
         callback(res);
       } else {
@@ -94,11 +94,11 @@ function uploadimgRetail(imgpath, callback) {
 
     },
     fail: function (res) {
-      console.log(res);
+      //console.log(res);
       wx.hideLoading();
     },
     complete: function (res) {
-      console.log(res);
+      //console.log(res);
       wx.hideLoading();
     }
   })
@@ -108,7 +108,7 @@ function uploadimgRetail(imgpath, callback) {
 function uploadimages(tempFilePaths,callback){
   var promise = Promise.all(tempFilePaths.map((tempFilePath, index) => {
     return new Promise(function (resolve, reject) {
-      console.log(tempFilePath)
+      //console.log(tempFilePath)
       wx.uploadFile({
         url: serverPath + 'User/uploadImg',
         filePath: tempFilePath,
@@ -126,10 +126,10 @@ function uploadimages(tempFilePaths,callback){
     });
   }));
   promise.then(function (results) {
-    // console.log(results);
+    // //console.log(results);
     callback(results)
   }).catch(function (err) {
-    console.log(err);
+    //console.log(err);
     wx.showToast({
       title: '上传失败，请重试',
       icon:'none'
@@ -141,7 +141,7 @@ function uploadimages(tempFilePaths,callback){
 function checkLogin(title,callback) {
   var uid = app.globalData.uid;
   if(uid==null||uid==''){
-  console.log(uid)
+  //console.log(uid)
     wx.showToast({
       title: title,
       icon:"none"

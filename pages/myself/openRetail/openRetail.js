@@ -13,7 +13,7 @@ Page({
     type: '1L'
   },
   checked(e) {
-    console.log(e)
+    //console.log(e)
     var cid = e.currentTarget.dataset.cid;
     var type = e.currentTarget.dataset.type;
     this.setData({
@@ -49,7 +49,7 @@ Page({
     });
     ajax.wxRequest('POST', 'User/bdwx', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var type = that.data.type;
@@ -85,7 +85,7 @@ Page({
         wx.hideLoading({
           mask: 'true'
         });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           if (action == '') {

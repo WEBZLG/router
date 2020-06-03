@@ -25,7 +25,7 @@ var ajax = require("../../../utils/ajax.js");
 //       sizeType: ['original', 'compressed'], //可选择原图或压缩后的图片
 //       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
 //       success: res => {
-//         console.log(res)
+//         //console.log(res)
 //         this.setData({
 //           images: res.tempFilePaths,
 //         })
@@ -62,12 +62,12 @@ var ajax = require("../../../utils/ajax.js");
 //     ajax.uploadimages(images, function(res) {
 //       var array = res;
 //       var newImages = [];
-//       console.log(res)
+//       //console.log(res)
 //       for (var idx in array) {
 //         var data = JSON.parse(array[idx]);
 //         newImages.push(data.data.path)
 //       }
-//       console.log(newImages)
+//       //console.log(newImages)
 //       var jsonData = that.data.jsonData;
 //       jsonData.introduce = that.data.textarea;
 //       jsonData.images2 = newImages;
@@ -203,7 +203,7 @@ Page({
   format(e) {
     let { name, value } = e.target.dataset
     if (!name) return
-    // console.log('format', name, value)
+    // //console.log('format', name, value)
     this.editorCtx.format(name, value)
 
   },
@@ -214,14 +214,14 @@ Page({
   insertDivider() {
     this.editorCtx.insertDivider({
       success: function () {
-        console.log('insert divider success')
+        //console.log('insert divider success')
       }
     })
   },
   clear() {
     this.editorCtx.clear({
       success: function (res) {
-        console.log("clear success")
+        //console.log("clear success")
       }
     })
   },
@@ -243,7 +243,7 @@ Page({
       ajax.uploadimages(res.tempFilePaths, function(resp) {
       var array = resp;
       var newImages = [];
-        console.log(array)
+        //console.log(array)
       for (var idx in array) {
         var data = JSON.parse(array[idx]);
         newImages.push(ajax.resPath + data.data.path)
@@ -252,7 +252,7 @@ Page({
           data: {},
           width: '100%',
           success: function (res) {
-            console.log(res)
+            //console.log(res)
           }
         })
       }
@@ -262,7 +262,7 @@ Page({
   },
   getInput(e){
     var html = e.detail.html;
-    console.log(html)
+    //console.log(html)
     this.setData({
       newData:html
     })

@@ -29,7 +29,7 @@ Component({
       this.triggerEvent('close')
     },
     handleClickMask(e) {
-      // console.log(e)
+      // //console.log(e)
       if (e.target.dataset.type !== 'unclose') this.close()
     }
   }

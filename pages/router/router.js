@@ -46,7 +46,7 @@ Page({
   },
   // 线路详情
   routerDetails(e){
-    console.log(e)
+    //console.log(e)
     var tid = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: './routerDetails/routerDetails?tid='+tid,
@@ -69,7 +69,7 @@ Page({
     }
   },
   switchTab(event) {
-    console.log(event)
+    //console.log(event)
     var that =this;
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
@@ -96,7 +96,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var navdata = res.data.unshift({ id: 0, name: '热门推荐' })
@@ -139,7 +139,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getTrip', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

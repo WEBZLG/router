@@ -27,7 +27,7 @@ Page({
     ajax.wxRequest('POST', 'User/merchProduct', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var obj = res.data.dataList;

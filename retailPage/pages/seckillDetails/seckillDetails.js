@@ -30,7 +30,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/seckillInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -99,7 +99,7 @@ Page({
           ajax.wxRequest('POST', 'Merchant/delSeckill', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 wx.showToast({

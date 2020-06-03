@@ -72,7 +72,7 @@ Page({
       wx.showLoading();
       ajax.wxRequest('POST', 'Login/sendSMS', item,
         (res) => {
-          console.log(res)
+          //console.log(res)
           if (res.code == 200) {
             wx.hideLoading();
             wx.showToast({
@@ -107,7 +107,7 @@ Page({
           }
         },
         (err) => {
-          console.log(err)
+          //console.log(err)
           wx.hideLoading();
           wx.showToast({
             title: '数据加载失败' + err,
@@ -141,7 +141,7 @@ Page({
     ajax.wxRequest('POST', 'Login/register', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({
@@ -160,7 +160,7 @@ Page({
 
       },
       (err) => {
-        console.log(err)
+        //console.log(err)
         wx.hideLoading();
         wx.showToast({
           title: '数据加载失败' + err,
@@ -174,7 +174,7 @@ Page({
     var that = this;
     wx.login({
       success(res) {
-        console.log(res)
+        //console.log(res)
         if (res.code) {
           var item = {
             'code': res.code
@@ -183,7 +183,7 @@ Page({
           ajax.wxRequest('POST', 'Login/code', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 that.open();
@@ -198,7 +198,7 @@ Page({
 
             },
             (err) => {
-              console.log(err)
+              //console.log(err)
               wx.hideLoading();
               wx.showToast({
                 title: '数据加载失败' + err,
@@ -206,7 +206,7 @@ Page({
               })
             })
         } else {
-          console.log('登录失败！' + res.errMsg)
+          //console.log('登录失败！' + res.errMsg)
         }
       }
     })
@@ -222,7 +222,7 @@ Page({
     } else {
       wx.getUserInfo({
         success: function(res) {
-          console.log(res)
+          //console.log(res)
           that.setData({
             rawData: res.rawData
           })
@@ -236,8 +236,8 @@ Page({
   },
   getPhoneNumber: function(e) {
     var that = this;
-    console.log(e)
-    console.log(e.detail.errMsg == "getPhoneNumber:ok");
+    //console.log(e)
+    //console.log(e.detail.errMsg == "getPhoneNumber:ok");
     if (e.detail.errMsg == "getPhoneNumber:ok") {
       that.close();
       // wx.request({
@@ -250,7 +250,7 @@ Page({
       //   },
       //   method: "post",
       //   success: function(res) {
-      //     console.log(res);
+      //     //console.log(res);
       //   }
       // })
     }

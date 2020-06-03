@@ -62,7 +62,7 @@ Page({
         statTime: that.data.startTime
       }
       travelInfo = JSON.stringify(travelInfo)
-      console.log(travelInfo);
+      //console.log(travelInfo);
       if (that.data.startTime == '') {
         wx.showToast({
           title: '请选择出发时间',
@@ -111,7 +111,7 @@ Page({
     ajax.wxRequest('POST', 'Index/travelDetail', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -174,7 +174,7 @@ Page({
       ajax.wxRequest('POST', 'Chat/createGroup', item,
         (res) => {
           wx.hideLoading();
-          console.log(res)
+          //console.log(res)
           if (res.code == 200) {
             wx.hideLoading();
             var gid = res.data.group_id
@@ -230,7 +230,7 @@ Page({
       tid: tid,
       winHeight: wx.getSystemInfoSync().windowHeight,
     })
-    console.log(options)
+    //console.log(options)
     this.getData(tid);
   },
 
@@ -286,7 +286,7 @@ Page({
       title: that.data.travelInfo.title,
       path: '/pages/router/routerDetails/routerDetails?tid=' + tid,
       success: function(res) {
-        console.log(res)
+        //console.log(res)
         wx.showToast({
           title: '转发成功！',
         })
@@ -338,7 +338,7 @@ Page({
     wx.showLoading();
     ajax.wxRequest('POST', 'Travel/getWxacode', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         var url = res.data.acode_url;
         // var qrbg = res.data.qrcode_bg;
         //获取网络图片本地路径
@@ -358,7 +358,7 @@ Page({
                 let bg = that.data.newbackpic;
                 let qr = that.data.newpicstr;
                 that.getImageAll([bg, qr]).then((res) => {
-                  console.log(res)
+                  //console.log(res)
                   const ctx = wx.createCanvasContext('shareCanvas')
                   ctx.fillStyle = '#ffffff';
                   ctx.fillRect(0, 0, 315, 500)
@@ -392,7 +392,7 @@ Page({
 
       },
       (err) => {
-        console.log(err)
+        //console.log(err)
         wx.hideLoading();
         wx.showToast({
           title: '数据加载失败' + err,
@@ -407,7 +407,7 @@ Page({
     wx.canvasToTempFilePath({ //canvas 生成图片 生成临时路径
       canvasId: 'shareCanvas',
       success: function(res) {
-        //console.log(res)
+        ////console.log(res)
         wx.saveImageToPhotosAlbum({ //下载图片
           filePath: res.tempFilePath,
           success: function() {

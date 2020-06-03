@@ -22,7 +22,7 @@ Page({
     ajax.wxRequest('POST', 'User/tourMember', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -59,7 +59,7 @@ Page({
     ajax.wxRequest('POST', 'User/pastPinkList', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -103,7 +103,7 @@ Page({
     }else{
       this.getOldInformation(uid,1);
     }
-    console.log(tab)
+    //console.log(tab)
   },
   /**
    * 生命周期函数--监听页面加载

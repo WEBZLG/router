@@ -74,7 +74,7 @@ Page({
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function(res) {
-        console.log(res)
+        //console.log(res)
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths[0];
         if (tid == 0) {
@@ -83,7 +83,7 @@ Page({
             isShow1: true,
             upimages1: tempFilePaths
           })
-          console.log(that.data.isShow1)
+          //console.log(that.data.isShow1)
         } else if (tid == 1) {
           that.setData({
             images2: tempFilePaths,
@@ -180,31 +180,31 @@ Page({
         // images1: ajax.resPath + res.data.path,
         upimages1:res.data.path
       });
-      console.log('成功1')
+      //console.log('成功1')
       ajax.uploadimg(that.data.images2, function (res) {
         that.setData({
           // images2: ajax.resPath + res.data.path,
           upimages2:res.data.path
         });
-        console.log('成功2')
+        //console.log('成功2')
         ajax.uploadimg(that.data.images3, function (res) {
           that.setData({
             // images3: ajax.resPath + res.data.path,
             upimages3:res.data.path
           });
-          console.log('成功3')
+          //console.log('成功3')
           ajax.uploadimg(that.data.images4, function (res) {
             that.setData({
               // images4: ajax.resPath + res.data.path,
               upimages4:res.data.path
             });
-            console.log('成功4')
+            //console.log('成功4')
             ajax.uploadimg(that.data.images5, function (res) {
               that.setData({
                 // images5: ajax.resPath + res.data.path,
                 upimages5:res.data.path
               });
-              console.log('成功5');
+              //console.log('成功5');
               // wx.hideLoading();
               var item = {
                 'uid': uid,
@@ -225,7 +225,7 @@ Page({
               ajax.wxRequest('POST', 'User/apply', item,
                 (res) => {
                   wx.hideLoading();
-                  console.log(res)
+                  //console.log(res)
                   if (res.code == 200) {
                     wx.showToast({
                       title: res.msg,
@@ -270,7 +270,7 @@ Page({
     ajax.wxRequest('POST', 'User/apply_status', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 400) {
           wx.hideLoading();
           var dataList = res.data;
@@ -314,7 +314,7 @@ Page({
    */
   onLoad: function(options) {
     var that = this;
-    console.log(options.phone)
+    //console.log(options.phone)
     var uid = app.globalData.uid;
     if (options.phone){
       that.getData(uid,options.phone)

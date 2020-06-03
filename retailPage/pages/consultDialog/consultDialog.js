@@ -38,7 +38,7 @@ Page({
     ajax.wxRequest('POST', 'Chat/sendMessage', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.getData(item.uid, that.data.gid, 1)
@@ -97,26 +97,26 @@ Page({
     var uid = app.globalData.uid;
     SocketTask.onOpen(res => {
       socketOpen = true;
-      console.log('监听 WebSocket 连接打开事件。', res)
+      //console.log('监听 WebSocket 连接打开事件。', res)
     })
     SocketTask.onClose(onClose => {
-      console.log('监听 WebSocket 连接关闭事件。', onClose)
+      //console.log('监听 WebSocket 连接关闭事件。', onClose)
       socketOpen = false;
       this.webSocket()
     })
     SocketTask.onError(onError => {
-      console.log('监听 WebSocket 错误。错误信息', onError)
+      //console.log('监听 WebSocket 错误。错误信息', onError)
       socketOpen = false
     })
     SocketTask.onMessage(onMessage => {
-      console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+      //console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
       that.bindUser(uid, onMessage_data.client_id)
       // if (onMessage_data.cmd == 1) {
       //   that.setData({
       //     link_list: text
       //   })
-      //   console.log(text, text instanceof Array)
+      //   //console.log(text, text instanceof Array)
       //   // 是否为数组
       //   if (text instanceof Array) {
       //     for (var i = 0; i < text.length; i++) {
@@ -143,13 +143,13 @@ Page({
       },
       method: 'post',
       success: function(res) {
-        console.log('WebSocket连接创建', res)
+        //console.log('WebSocket连接创建', res)
       },
       fail: function(err) {
         wx.showToast({
           title: '网络异常！',
         })
-        console.log(err)
+        //console.log(err)
       },
     })
   },
@@ -185,7 +185,7 @@ Page({
 
   onHide: function() {
     SocketTask.close(function(close) {
-      console.log('关闭 WebSocket 连接。', close)
+      //console.log('关闭 WebSocket 连接。', close)
     })
   },
 
@@ -210,7 +210,7 @@ Page({
     ajax.wxRequest('POST', 'Chat/getChatRecord', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -254,7 +254,7 @@ Page({
     ajax.wxRequest('POST', 'Chat/bind', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -283,10 +283,10 @@ Page({
 //通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。
 function sendSocketMessage(msg) {
   var that = this;
-  console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
+  //console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
   SocketTask.send({
     data: JSON.stringify(msg)
   }, function(res) {
-    console.log('已发送', res)
+    //console.log('已发送', res)
   })
 }

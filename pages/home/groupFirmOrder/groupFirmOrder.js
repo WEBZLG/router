@@ -45,14 +45,14 @@ Page({
             insure: insure,
             code: res.code
           }
-          console.log(item)
+          //console.log(item)
           wx.showLoading({
             mask: 'true'
           });
           ajax.wxRequest('POST', 'travel/pinkSignUp', item,
             (res) => {
               wx.hideLoading();
-              console.log(res)
+              //console.log(res)
               if (res.code == 200) {
                 wx.hideLoading();
                 var data = JSON.parse(res.data.parameters);
@@ -125,14 +125,14 @@ Page({
       oid: oid,
       sign_rule: 2
     }
-    console.log(item)
+    //console.log(item)
     wx.showLoading({
       mask: 'true'
     });
     ajax.wxRequest('POST', 'travel/pinkSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         // var data = JSON.stringify(res.data);
         // if (res.code == 200) {
         //   wx.navigateTo({
@@ -169,7 +169,7 @@ Page({
     ajax.wxRequest('POST', 'travel/pinkSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           this.setData({
@@ -180,7 +180,7 @@ Page({
               choose: that.data.choose.concat(res.data.members[i].id)
             })
           }
-          console.log(that.data.choose)
+          //console.log(that.data.choose)
           // var data = JSON.stringify(res.data);
           // wx.navigateTo({
           //   url: '../groupFirmOrder/groupFirmOrder?data=' + data

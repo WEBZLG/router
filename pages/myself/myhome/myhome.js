@@ -43,12 +43,12 @@ Page({
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
             sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
             success: function (res) {
-              console.log(res)
+              //console.log(res)
               // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
               var tempFilePaths = res.tempFilePaths;
               if (id == 0) {
                 ajax.uploadimg(tempFilePaths[0],function(res){
-                  console.log(res)
+                  //console.log(res)
                   that.saveBg(that.data.uid, res.data.path);
                   that.setData({
                     homeBgImg: ajax.resPath + res.data.path
@@ -56,7 +56,7 @@ Page({
                 })
               } else if (id == 1) {
                 ajax.uploadimg(tempFilePaths[0], function (res) {
-                  console.log(res)
+                  //console.log(res)
                   that.saveHeadimg(that.data.uid, res.data.path);
                   that.setData({
                     headImgUrl: ajax.resPath + res.data.path
@@ -81,7 +81,7 @@ Page({
     ajax.wxRequest('POST', 'User/saveBackgroud', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({
@@ -120,7 +120,7 @@ Page({
     ajax.wxRequest('POST', 'User/editInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({
@@ -153,7 +153,7 @@ Page({
     ajax.wxRequest('POST', 'User/myHomePage', item,
       (res) => {
         wx.hideLoading({ mask: 'true' });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -193,7 +193,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(app.globalData.uid)
+    //console.log(app.globalData.uid)
   },
 
   /**

@@ -20,14 +20,14 @@ Page({
       that.setData({
         checkTags: that.data.checkTags.concat(item.id)
       })
-      console.log(that.data.checkTags)
+      //console.log(that.data.checkTags)
     } else if (!item.isSelected) {
       that.setData({
         checkTags: that.data.checkTags.filter(function (msg) {
           return msg != item.id
         })
       })
-      console.log(that.data.checkTags)
+      //console.log(that.data.checkTags)
     }
     that.setData({
       tagList: this.data.tagList,
@@ -43,7 +43,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           var array = res.data;
           wx.hideLoading();
@@ -52,7 +52,7 @@ Page({
             obj.isSelected = false;
             array[idx] = obj;
             var check = that.data.checkTags;
-            console.log(check)
+            //console.log(check)
             for (var j in check){
               if (array[idx].id==check[j]){
                 obj.isSelected = true;
@@ -94,7 +94,7 @@ Page({
     ajax.wxRequest('POST', 'User/skill', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           var array = res.data;
           wx.hideLoading();
@@ -130,7 +130,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var skill = JSON.parse(options.skill);
-    console.log(skill)
+    //console.log(skill)
     for(var i in skill){
       this.setData({
         checkTags:that.data.checkTags.concat(skill[i].id)

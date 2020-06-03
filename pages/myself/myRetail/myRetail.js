@@ -51,7 +51,7 @@ Page({
     ajax.wxRequest('POST', 'User/brokerage', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -84,7 +84,7 @@ Page({
     ajax.wxRequest('POST', 'User/myFans', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200 || res.code == 400) {
           wx.hideLoading();
           that.setData({

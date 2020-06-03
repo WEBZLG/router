@@ -9,6 +9,13 @@ Page({
   data: {
     dataList: ""
   },
+  goTv(){
+    ajax.checkLogin('您未登录无法进入', function() {
+      wx.navigateTo({
+        url: './tvList/tvList',
+      })
+    })
+  },
   consultList() {
     ajax.checkLogin('您未登录无法咨询', function() {
       wx.navigateTo({
@@ -24,8 +31,8 @@ Page({
     })
   },
   handleContact(e) {
-    console.log(e.detail.path)
-    console.log(e.detail.query)
+    //console.log(e.detail.path)
+    //console.log(e.detail.query)
   },
 
   getData(uid, type) {
@@ -40,7 +47,7 @@ Page({
     ajax.wxRequest('POST', 'Chat/index', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

@@ -26,7 +26,7 @@ Page({
     ajax.wxRequest('POST', 'Index/companyHomePage', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -66,7 +66,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log(app.globalData.uid)
+    //console.log(app.globalData.uid)
   },
 
   /**

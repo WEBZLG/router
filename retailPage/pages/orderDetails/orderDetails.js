@@ -27,7 +27,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/orderInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -66,7 +66,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    //console.log(options)
     var uid = app.globalData.uid;
     var oid = options.id;
     this.getData(uid, oid) 

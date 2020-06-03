@@ -29,7 +29,7 @@ Page({
     ajax.wxRequest('POST', 'Index/guideTravel', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

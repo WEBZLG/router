@@ -64,7 +64,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/productInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -108,7 +108,7 @@ Page({
       tid: tid,
       winHeight: wx.getSystemInfoSync().windowHeight,
     })
-    console.log(options)
+    //console.log(options)
     this.getData(tid);
   },
   scroll(e) {

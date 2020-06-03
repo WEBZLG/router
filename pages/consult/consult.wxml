@@ -8,7 +8,7 @@
     <text>线路咨询</text>
   </view>
   <view class="item service right">
-    <button open-type="contact" bindcontact="handleContact">
+    <button open-type="contact" >
       <view class="iconimg">
         <image src="../../images/servce.png"></image>
       </view>
@@ -22,5 +22,11 @@
     </view>
     <text>通告通知</text>
   </view>
-
+  <view class="item notice right" catchtap="goTv">
+    <!-- <view class="messageNum">{{dataList.notice}}</view> -->
+    <view class="iconimg">
+      <image src="../../images/tv.jpg"></image>
+    </view>
+    <text>直播</text>
+  </view>
 </view>

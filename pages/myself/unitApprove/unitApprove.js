@@ -33,7 +33,7 @@ Page({
     ajax.wxRequest('POST', 'User/setCompany', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.showToast({
             title: res.msg
@@ -72,7 +72,7 @@ Page({
     ajax.wxRequest('POST', 'User/getCompany', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -85,7 +85,7 @@ Page({
               showBtnStatus2: true
             });
             this.data.adapterSource.forEach(function (e) {
-              console.log(e)
+              //console.log(e)
               if (e.name.indexOf(prefix) != -1) { //返回某个指定的字符串值在字符串中首次出现的位置,如果要检索的字符串值没有出现，则该方法返回 -1
                 newSource.push(e)
               }
@@ -147,7 +147,7 @@ Page({
   },
   //点击选型确定input值
   itemtap: function (e) {
-    console.log(e)
+    //console.log(e)
     var currentInputStatu = e.currentTarget.dataset.statu;
     this.setData({
       inputValue: e.currentTarget.dataset.name,
@@ -176,7 +176,7 @@ Page({
 
   },
   change(e) { ///自定义方法
-    console.log('change', e.detail.id)
+    //console.log('change', e.detail.id)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

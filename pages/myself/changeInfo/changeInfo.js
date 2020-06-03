@@ -48,7 +48,7 @@ Page({
     ajax.wxRequest('POST', 'User/userinfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -97,7 +97,7 @@ Page({
     ajax.wxRequest('POST', 'User/editInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           wx.showToast({

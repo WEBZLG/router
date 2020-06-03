@@ -147,7 +147,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/seckill', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -186,7 +186,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var dataList = res.data;

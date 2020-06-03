@@ -115,7 +115,7 @@ Page({
   // 产品详情
   marketDetails(e){
     var tid = e.currentTarget.dataset.id;
-    console.log(tid)
+    //console.log(tid)
     wx.navigateTo({
       url: '../marketDetails/marketDetails?tid='+tid,
     })
@@ -157,7 +157,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/market', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -196,7 +196,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var dataList = res.data;

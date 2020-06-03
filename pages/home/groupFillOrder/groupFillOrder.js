@@ -53,7 +53,7 @@ Page({
     this.setData({
       showModal: true
     })
-    console.log(this.data.showModal)
+    //console.log(this.data.showModal)
   },
   chooseTime(e) {
     var tid = e.currentTarget.dataset.tid
@@ -103,7 +103,7 @@ Page({
       insure: insure,
       sign_rule:'2'
     }
-    console.log(item)
+    //console.log(item)
     var item = JSON.stringify(item);
     wx.navigateTo({
       url: '../groupFirmOrder/groupFirmOrder?item=' + item
@@ -114,7 +114,7 @@ Page({
     // ajax.wxRequest('POST', 'travel/pinkSignUp', item,
     //   (res) => {
     //     wx.hideLoading();
-    //     console.log(res)
+    //     //console.log(res)
     //     if (res.code == 200) {
     //       wx.hideLoading();
     //       var data = JSON.stringify(res.data);
@@ -156,7 +156,7 @@ Page({
     ajax.wxRequest('POST', 'travel/pinkSignUp', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -194,7 +194,7 @@ Page({
     ajax.wxRequest('POST', 'User/usedInformation', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -222,7 +222,7 @@ Page({
             // totalPrice: that.data.updata.currentTerm.man_price * man.length + that.data.updata.currentTerm.children_price * child.length
             totalPrice:choose.length*that.data.unitPrice
           })
-          console.log(that.data.chooseList)
+          //console.log(that.data.chooseList)
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -264,7 +264,7 @@ Page({
    */
   onShow: function () {
     var uid = app.globalData.uid;
-    console.log(this.data.choosePerson)
+    //console.log(this.data.choosePerson)
     this.peopleList(uid)
   },
 

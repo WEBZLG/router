@@ -79,7 +79,7 @@ Page({
     var that = this;
     var type = e.currentTarget.dataset.type;
     var newDate = new Date(e.detail.value).getTime();
-    console.log(newDate)
+    //console.log(newDate)
     if (type == 0) {
       if (newDate < that.data.dateStr1 ||newDate == that.data.dateStr1) {
         wx.showToast({
@@ -132,15 +132,15 @@ Page({
         })
       }
     }
-    console.log(e.detail.value)
+    //console.log(e.detail.value)
   },
   // 选择签到日期
   signDateChange: function(e) {
     var that = this;
     var type = e.currentTarget.dataset.type;
     var newDate = new Date(e.detail.value).getTime();
-    console.log(newDate)
-    console.log(that.data.dateStr2)
+    //console.log(newDate)
+    //console.log(that.data.dateStr2)
     if (type == 0) {
       if (newDate > that.data.dateStr2) {
         wx.showToast({
@@ -239,14 +239,14 @@ Page({
       that.setData({
         checkTags: that.data.checkTags.concat(item.id)
       })
-      console.log(that.data.checkTags)
+      //console.log(that.data.checkTags)
     } else if (!item.isSelected) {
       that.setData({
         checkTags: that.data.checkTags.filter(function(msg) {
           return msg != item.id
         })
       })
-      console.log(that.data.checkTags)
+      //console.log(that.data.checkTags)
     }
     that.setData({
       tagList: this.data.tagList,
@@ -261,7 +261,7 @@ Page({
   //选择地点
   pickAddress(e) {
     var type = e.currentTarget.dataset.type;
-    console.log(type)
+    //console.log(type)
     this.setData({
       visible: true,
       cilckType: type
@@ -323,7 +323,7 @@ Page({
           this.data.value[2] = 0
         }
       } catch (error) {
-        console.log('adress select something error')
+        //console.log('adress select something error')
       }
       this.setData({
         region: region,
@@ -341,7 +341,7 @@ Page({
           this.data.value[2] = 0
         }
       } catch (error) {
-        console.log('adress select something error')
+        //console.log('adress select something error')
       }
       this.setData({
         endRegion: endRegion,
@@ -356,7 +356,7 @@ Page({
       sizeType: ['original', 'compressed'], //可选择原图或压缩后的图片
       sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
       success: res => {
-        console.log(res)
+        //console.log(res)
         this.setData({
           images: res.tempFilePaths,
         })
@@ -383,7 +383,7 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           var array = res.data;
           wx.hideLoading();
@@ -506,12 +506,12 @@ Page({
         ajax.uploadimages(images, function(res) {
           var array = res;
           var newImages = [];
-          console.log(res)
+          //console.log(res)
           for (var idx in array) {
             var data = JSON.parse(array[idx]);
             newImages.push(data.data.path)
           }
-          console.log(newImages)
+          //console.log(newImages)
           var jsonData = {
             title: title,
             tags: tags,
@@ -546,7 +546,7 @@ Page({
     ajax.wxRequest('POST', 'User/myHomePage', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           if (res.data.userInfo.is_real == 0) {

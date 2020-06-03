@@ -12,7 +12,7 @@ Page({
   },
   // 旅行社主页
   travelHome(e) {
-    console.log(e)
+    //console.log(e)
     var cateid = e.currentTarget.dataset.cateid
     wx.navigateTo({
       url: '../travelHome/travelHome?aid=' + cateid,
@@ -60,7 +60,7 @@ Page({
     ajax.wxRequest('POST', 'Index/search', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

@@ -42,14 +42,14 @@ Page({
     }
   },
   switchTab(event) {
-    console.log(event)
+    //console.log(event)
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
     this.setData({
       currentTab: cur,
       navScrollLeft: (cur - 2) * singleNavWidth
     });
-    console.log(cur)
+    //console.log(cur)
     if (cur == 0) {
       this.setData({
         cid: '',
@@ -69,14 +69,14 @@ Page({
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var navdata = res.data.unshift({ id: 0, name: '推荐' })
           that.setData({
             navData: res.data,
           });
-          console.log(that.data.navData)
+          //console.log(that.data.navData)
           that.getData('', 1);
         } else {
           wx.hideLoading();
@@ -107,7 +107,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/supply', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

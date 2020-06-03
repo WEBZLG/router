@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     var data = JSON.parse(options.data);
-    console.log(data)
+    //console.log(data)
     this.setData({
       dataList: data[0]
     })

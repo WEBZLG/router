@@ -102,14 +102,14 @@ Page({
       num: num,
       start_time: start_time
     }
-    console.log(item)
+    //console.log(item)
     wx.showLoading();
     ajax.wxRequest('POST', 'Merchant/setSeckill', item,
       (res) => {
         wx.hideLoading({
           mask: 'true'
         });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           if (action == '') {

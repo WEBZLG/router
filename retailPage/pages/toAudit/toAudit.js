@@ -26,7 +26,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/staffToPass', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

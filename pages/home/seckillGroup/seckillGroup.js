@@ -89,7 +89,7 @@ Page({
     ajax.wxRequest('POST', 'Index/seckill', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -165,7 +165,7 @@ Page({
     var oldTime5 = new Date(time5).getTime();
     var oldTime6 = new Date(time6).getTime();
     if (timestamp > oldTime1 && oldTime2 > timestamp) {
-      // console.log("1")
+      // //console.log("1")
       this.setData({
         idx: 0,
         middleIdx: 0,
@@ -189,7 +189,7 @@ Page({
       })
     } else
     if (timestamp > oldTime2 && oldTime3 > timestamp) {
-      // console.log("2")
+      // //console.log("2")
       this.setData({
         idx: 1,
         middleIdx: 1,
@@ -213,7 +213,7 @@ Page({
       })
     } else
     if (timestamp > oldTime3 && oldTime4 > timestamp) {
-      // console.log("3")
+      // //console.log("3")
       this.setData({
         idx: 2,
         middleIdx: 2,
@@ -237,7 +237,7 @@ Page({
       })
     } else
     if (timestamp > oldTime4 && oldTime5 > timestamp) {
-      // console.log("4")
+      // //console.log("4")
       this.setData({
         idx: 3,
         middleIdx: 3,
@@ -261,7 +261,7 @@ Page({
       })
     } else
     if (timestamp > oldTime5 && oldTime6 > timestamp) {
-      // console.log("5")
+      // //console.log("5")
       this.setData({
         idx: 4,
         middleIdx: 4,

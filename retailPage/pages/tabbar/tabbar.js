@@ -64,7 +64,7 @@ Page({
     wx.hideHomeButton();
   },
   toAudit(){
-    console.log('chufale');
+    //console.log('chufale');
     wx.navigateTo({
       url: '../retailPage/toAudit/toAudit',
     })

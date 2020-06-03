@@ -43,7 +43,7 @@ Page({
     this.setData({
       date: e.detail.value
     })
-    console.log(e.detail.value)
+    //console.log(e.detail.value)
   },
   //初始化图表
   init_echarts: function () {
@@ -165,7 +165,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/myRecord', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

@@ -47,7 +47,7 @@ Component({
   /* 组件的方法列表 */
   methods: {
     consultList() {
-      console.log(9999)
+      //console.log(9999)
       // ajax.checkLogin('您未登录无法咨询', function () {
       wx.navigateTo({
         url: '../consultList/consultList',
@@ -55,8 +55,8 @@ Component({
       // })
     },
     handleContact(e) {
-      console.log(e.detail.path)
-      console.log(e.detail.query)
+      //console.log(e.detail.path)
+      //console.log(e.detail.query)
     },
 
     getData(uid, type) {
@@ -71,7 +71,7 @@ Component({
       ajax.wxRequest('POST', 'Chat/index', item,
         (res) => {
           wx.hideLoading();
-          console.log(res)
+          //console.log(res)
           if (res.code == 200) {
             wx.hideLoading();
             that.setData({

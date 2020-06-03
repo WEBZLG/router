@@ -34,7 +34,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/diyInfo', item,
       (res) => {
         wx.hideLoading({ mask: 'true' });
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           if(action==''){
             wx.hideLoading();

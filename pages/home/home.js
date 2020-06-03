@@ -74,7 +74,7 @@ Page({
     wx.getStorage({
       key: 'status',
       success: function (res) {
-        console.log(res)
+        //console.log(res)
         if(res.data==undefined){
           wx.navigateTo({
             url: './traderApply/traderApply',
@@ -149,7 +149,7 @@ Page({
   powerDrawer: function(e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
-    console.log(currentStatu)
+    //console.log(currentStatu)
   },
   util: function(currentStatu) {
     /* 动画部分 */
@@ -196,7 +196,7 @@ Page({
     wx.showLoading({ mask: 'true' });
     ajax.wxRequest('POST', 'Index/getCategory', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           // var navdata = res.data.unshift({ id: 0, name: '热门推荐' })
@@ -231,7 +231,7 @@ Page({
     });
     ajax.wxRequest('POST', 'Index/index', item,
       (res) => {
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({

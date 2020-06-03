@@ -52,7 +52,7 @@ App({
         data;
       if (view) {
         data = view.data;
-        console.log('是否重写分享方法', data.isOverShare);
+        //console.log('是否重写分享方法', data.isOverShare);
         if (!data.isOverShare) {
           data.isOverShare = true;
           view.onShareAppMessage = function () {

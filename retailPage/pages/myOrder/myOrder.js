@@ -53,7 +53,7 @@ Page({
     }
   },
   switchTab(event) {
-    console.log(event)
+    //console.log(event)
     var cur = event.detail.current;
     var singleNavWidth = this.data.windowWidth / 5;
     this.setData({
@@ -67,7 +67,7 @@ Page({
     // var uid = 9;
     var uid = app.globalData.uid;
     var idx = e.currentTarget.dataset.current;
-    console.log(idx)
+    //console.log(idx)
     var that = this;
     if (idx == 0) {
       that.getData(uid, '')
@@ -111,7 +111,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/orderList', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -150,7 +150,7 @@ Page({
     ajax.wxRequest('POST', 'User/orderCheckIn', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           var uid = app.globalData.uid;
@@ -179,7 +179,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var uid = app.globalData.uid;
-    console.log(options.type)
+    //console.log(options.type)
     if (options.type==1){
       that.setData({
         status: '',

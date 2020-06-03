@@ -12,7 +12,7 @@ Page({
     checkShow:false
   },
   checkboxChange: function (e) {
-    console.log(e)
+    //console.log(e)
     var arr = e.detail.value;
     this.setData({
       choosePerson: arr
@@ -27,7 +27,7 @@ Page({
   },
 
   getinfo(e){
-    console.log(e)
+    //console.log(e)
   },
   chooseOk(){
     var that = this;
@@ -55,7 +55,7 @@ Page({
     ajax.wxRequest('POST', 'User/usedInformation', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -82,12 +82,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.show)
+    //console.log(options.show)
     if(options.show =="true"){
       this.setData({
         checkShow:true
       })
-      console.log(this.data.checkShow)
+      //console.log(this.data.checkShow)
     }
   },
 

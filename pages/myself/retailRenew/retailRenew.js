@@ -7,7 +7,7 @@ Page({
     showId: '0'
   },
   checked(e) {
-    console.log(e)
+    //console.log(e)
     var cid = e.currentTarget.dataset.cid;
     this.setData({
       showId: cid

@@ -71,7 +71,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/info', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -114,7 +114,7 @@ Page({
    */
   onShow: function () {
     var uid = app.globalData.uid
-    console.log(uid)
+    //console.log(uid)
     this.getInformation(uid);
   },
 

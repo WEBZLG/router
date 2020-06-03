@@ -111,7 +111,7 @@ Page({
     }else{
       wx.showLoading({ mask: "true" })
       ajax.uploadimgRetail(images, function (res) {
-        console.log(res)
+        //console.log(res)
         var pic = res.data.path;
         var tid = that.data.tid;
         var vTime = endTime;
@@ -143,7 +143,7 @@ Page({
     ajax.wxRequest('POST', 'Merchant/retail', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           if (action==''){

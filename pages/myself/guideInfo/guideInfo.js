@@ -49,7 +49,7 @@ Page({
     ajax.wxRequest('POST', 'User/scene', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
@@ -78,7 +78,7 @@ Page({
   onLoad: function (options) {
     var uid = app.globalData.uid;
     var tid = options.oid;
-    console.log(tid)
+    //console.log(tid)
     this.setData({
       tid : tid,
       uid:uid
@@ -119,7 +119,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('下')
+    //console.log('下')
     var that = this;
     var uid = that.data.uid;
     var tid = that.data.tid;
@@ -132,7 +132,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    console.log('上')
+    //console.log('上')
     var that = this;
     var uid = that.data.uid;
     var tid = that.data.tid;

@@ -23,7 +23,7 @@ Page({
     ajax.wxRequest('POST', 'index/customerInfo', item,
       (res) => {
         wx.hideLoading();
-        console.log(res)
+        //console.log(res)
         if (res.code == 200) {
           this.setData({
             dataList: res.data
