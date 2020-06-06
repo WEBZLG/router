@@ -109,7 +109,7 @@ Page({
       socketOpen = false
     })
     SocketTask.onMessage(onMessage => {
-      //console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+      console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
       that.bindUser(uid, onMessage_data.client_id)
       // if (onMessage_data.cmd == 1) {
@@ -287,6 +287,6 @@ function sendSocketMessage(msg) {
   SocketTask.send({
     data: JSON.stringify(msg)
   }, function(res) {
-    //console.log('已发送', res)
+    console.log('已发送', res)
   })
 }

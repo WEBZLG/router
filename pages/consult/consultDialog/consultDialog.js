@@ -1,146 +1,106 @@
 var app = getApp();
 var ajax = require("../../../utils/ajax.js");
 var socketOpen = false;
-var frameBuffer_Data, session, SocketTask;
+var SocketTask;
 var url = 'wss://travel.liaofankeji.com/wss';
 Page({
   data: {
-    user_input_text: '', //用户输入文字
-    inputValue: '',
-    returnValue: '',
-    addImg: false,
-    allContentList: [],
-    num: 0,
-    dataList: [],
-    gid: '',
-    uid: '',
-    inputText:'',
-    type:'',
-    toid:''
-  },
-  inputText(e){
-    this.setData({
-      inputText:e.detail.value
-    })
-  },
-  submit(){
-    var that = this;
-    var item = {
-      uid: that.data.uid,
-      group_id:that.data.gid,
-      toid: that.data.toid,
-      type:that.data.type,
-      message:that.data.inputText
-    }
-    wx.showLoading({
-      mask: 'true'
-    });
-    ajax.wxRequest('POST', 'Chat/sendMessage', item,
-      (res) => {
-        wx.hideLoading();
-        //console.log(res)
-        if (res.code == 200) {
-          wx.hideLoading();
-          that.getData(item.uid, that.data.gid, 1)
-          this.setData({
-            inputText:''
-          })
-        } else {
-          wx.hideLoading();
-          wx.showToast({
-            title: res.msg,
-            icon: "none"
-          })
-        }
-
-      },
-      (err) => {
-        wx.hideLoading();
-        wx.showToast({
-          title: '数据加载失败' + err,
-          icon: "none"
-        })
-      })
-  },
-  cancel(){
-    this.setData({
-      inputText:''
-    })
-  },
-  // 页面加载
-  onLoad: function(options) {
-    //console.log(options)
-    var gid = options.id;
-    var toid = options.tid;
-    if (options.type){
-    var type = options.type;
-      this.setData({
-        type: type
-      })
-    }
-    this.setData({
-      gid: gid,
-      toid: toid
-    })
-    this.bottom();
-  },
-  onShow: function(e) {
-    var that = this;
-    var uid = app.globalData.uid;
-    this.setData({
-      uid:uid
-    })
-    if (!socketOpen) {
-      this.webSocket()
-    }
-    if (that.data.dataList==''){
-
-    that.getData(uid, that.data.gid, 1)
-    }
+    inputText: '', //内容
+    dataList:[],//聊天记录
+    gid: '', //对话id
+    uid: '', //发送者
+    toid: '', //接受者
+    type: '', //接收对象类型 0-团长 1-分销商
+    pageIndex:'1'//页码
   },
   // 页面加载完成
-  onReady: function() {
+  onReady: function () {
     var that = this;
     var uid = app.globalData.uid;
     SocketTask.onOpen(res => {
       socketOpen = true;
-      //console.log('监听 WebSocket 连接打开事件。', res)
+      console.log('监听 WebSocket 连接打开事件。', res)
     })
     SocketTask.onClose(onClose => {
-      //console.log('监听 WebSocket 连接关闭事件。', onClose)
+      console.log('监听 WebSocket 连接关闭事件。', onClose)
       socketOpen = false;
       this.webSocket()
     })
     SocketTask.onError(onError => {
-      //console.log('监听 WebSocket 错误。错误信息', onError)
+      console.log('监听 WebSocket 错误。错误信息', onError)
       socketOpen = false
     })
     SocketTask.onMessage(onMessage => {
-      //console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
+      console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
-      that.bindUser(uid, onMessage_data.client_id)
-      // if (onMessage_data.cmd == 1) {
-      //   that.setData({
-      //     link_list: text
-      //   })
-      //   //console.log(text, text instanceof Array)
-      //   // 是否为数组
-      //   if (text instanceof Array) {
-      //     for (var i = 0; i < text.length; i++) {
-      //       text[i]
-      //     }
-      //   } else {
-
-      //   }
-      //   that.data.allContentList.push({ is_ai: true, text: onMessage_data.body });
-      //   that.setData({
-      //     allContentList: that.data.allContentList
-      //   })
-      //   that.bottom()
-      // }
+      that.bindUser(uid, onMessage_data.client_id,0)
+      that.bottom()
     })
   },
-  webSocket: function() {
+  // 页面加载
+  onLoad: function (options) {
+    var that = this;
+    //console.log(options)
+    this.setData({
+      gid: options.id,
+      toid: options.tid
+    })
+    if (options.type) {
+      var type = options.type;
+      that.setData({
+        type: type
+      })
+    }
+
+    this.bottom();
+  },
+  onShow: function (e) {
+    var that = this;
+    var uid = app.globalData.uid;
+    this.setData({
+      uid: uid
+    })
+    if (!socketOpen) {
+      this.webSocket()
+    }
+  },
+
+  onHide: function () {
+    // SocketTask.close(function (close) {
+    //   console.log('关闭 WebSocket 连接。', close)
+    // })
+  },
+    /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function() {
+    SocketTask.close(function (close) {
+      console.log('关闭 WebSocket 连接。', close)
+    })
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+    var that = this;
+    var uid = app.globalData.uid;
+    this.getData(uid, that.data.gid, 1)
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function() {
+    var that = this;
+    var uid = app.globalData.uid;
+    this.setData({
+      pageIndex : that.data.pageIndex*1 + 1
+    })
+    console.log(this.data.pageIndex)
+    that.getData(uid, that.data.gid, that.data.pageIndex)
+  },
+  webSocket: function () {
     // 创建Socket
     SocketTask = wx.connectSocket({
       url: url,
@@ -149,55 +109,25 @@ Page({
         'content-type': 'application/json'
       },
       method: 'post',
-      success: function(res) {
-        //console.log('WebSocket连接创建', res)
+      success: function (res) {
+        console.log('WebSocket连接创建', res)
       },
-      fail: function(err) {
+      fail: function (err) {
         wx.showToast({
-          title: '网络异常！',
+          title: err,
         })
-        //console.log(err)
       },
     })
   },
 
-  // 提交文字
-  submitTo: function(e) {
-    let that = this;
-    var data = {
-      body: that.data.inputValue,
-    }
-
-    if (socketOpen) {
-      // 如果打开了socket就发送数据给服务器
-      sendSocketMessage(data)
-      this.data.allContentList.push({
-        is_my: {
-          text: this.data.inputValue
-        }
-      });
-      this.setData({
-        allContentList: this.data.allContentList,
-        inputValue: ''
-      })
-
-      that.bottom()
-    }
-  },
-  bindKeyInput: function(e) {
+  // 输入内容
+  inputText(e) {
     this.setData({
-      inputValue: e.detail.value
+      inputText: e.detail.value
     })
   },
-
-  onHide: function() {
-    SocketTask.close(function(close) {
-      //console.log('关闭 WebSocket 连接。', close)
-    })
-  },
-
   // 获取hei的id节点然后屏幕焦点调转到这个节点  
-  bottom: function() {
+  bottom: function () {
     var that = this;
     this.setData({
       scrollTop: 1000000
@@ -217,15 +147,15 @@ Page({
     ajax.wxRequest('POST', 'Chat/getChatRecord', item,
       (res) => {
         wx.hideLoading();
-        //console.log(res)
+        console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
           that.setData({
             dataList: res.data
           })
-          for (var i in res.data){
-            if (res.data[i].fromid!=that.data.uid){
-              this.setData({
+          for (var i in res.data) {
+            if (res.data[i].fromid != that.data.uid) {
+              that.setData({
                 type: res.data[i].type
               })
             }
@@ -247,7 +177,7 @@ Page({
         })
       })
   },
-  // 绑定
+  // 绑定uid
   bindUser(uid, cid) {
     var that = this;
     var item = {
@@ -285,15 +215,60 @@ Page({
         })
       })
   },
-})
 
-//通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。
-function sendSocketMessage(msg) {
-  var that = this;
-  //console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
-  SocketTask.send({
-    data: JSON.stringify(msg)
-  }, function(res) {
-    //console.log('已发送', res)
-  })
-}
+  // 发送消息
+  sendMessage() {
+    var that = this;
+    var item = {
+      uid: that.data.uid,
+      group_id: that.data.gid,
+      toid: that.data.toid,
+      type: that.data.type,
+      message: that.data.inputText
+    }
+    wx.showLoading({
+      mask: 'true'
+    });
+    ajax.wxRequest('POST', 'Chat/sendMessage', item,
+      (res) => {
+        wx.hideLoading();
+        console.log(res)
+        if (res.code == 200) {
+          wx.hideLoading();
+          // that.getData(item.uid, that.data.gid, 1)
+          if (socketOpen) {
+            // 如果打开了socket就发送数据给服务器
+            sendSocketMessage(that.data.inputText)
+            that.bottom()
+          }
+          this.setData({
+            inputText: ''
+          })
+        } else {
+          wx.hideLoading();
+          wx.showToast({
+            title: res.msg,
+            icon: "none"
+          })
+        }
+      },
+      (err) => {
+        wx.hideLoading();
+        wx.showToast({
+          title: '数据加载失败' + err,
+          icon: "none"
+        })
+      })
+  },
+
+  //通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。
+  sendSocketMessage(msg) {
+    var that = this;
+    console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
+    SocketTask.send({
+      data: JSON.stringify(msg)
+    }, function (res) {
+      console.log('已发送', res)
+    })
+  }
+})

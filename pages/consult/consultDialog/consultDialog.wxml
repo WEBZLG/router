@@ -1,46 +1,41 @@
 <!--pages/consult/consultDialog/consultDialog.wxml-->
 <view>
-  <view class="list clearfix">
-    <!-- <view class="lastdate">上一次聊天记录 2019.12.20  12:09:29</view> -->
-    <block wx:for="{{dataList}}" wx:key='index'>
-      <view class="leftWord" wx:if="{{item.fromid!=uid}}">
-        <view class="headImg">
-          <image src="{{item.to_headimgurl}}"></image>
-        </view>
-        <view class="dialog">
-          <view class="info displayFlexBet graycolor">
-            <view class="name">{{item.nick}}</view>
-            <view class="time">{{item.add_time}}</view>
-          </view>
-          <view class="content">
-            {{item.content}}
-          </view>
-        </view>
-      </view>
+	<view class="list clearfix">
+		<!-- <view class="lastdate">上一次聊天记录 2019.12.20  12:09:29</view> -->
+		<block wx:for="{{dataList}}" wx:key='index'>
+			<view class="leftWord" wx:if="{{item.fromid!=uid}}">
+				<view class="headImg">
+					<image src="{{item.to_headimgurl}}"></image>
+				</view>
+				<view class="dialog">
+					<view class="info displayFlexBet graycolor">
+						<view class="name">{{item.nick}}</view>
+						<view class="time">{{item.add_time}}</view>
+					</view>
+					<view class="content">
+						{{item.content}}
+					</view>
+				</view>
+			</view>
 
-      <view class="rightWord" wx:if="{{item.fromid==uid}}">
-        <view class="dialog2">
-          <view class="info displayFlexBet graycolor">
-            <view class="name2">{{item.nick}}</view>
-            <view class="time2">{{item.add_time}}</view>
-          </view>
-          <view class="content2">
-            {{item.content}}
-          </view>
-        </view>
-        <view class="headImg">
-          <image src="{{item.headimgurl}}"></image>
-        </view>
-      </view>
-    </block>
-  </view>
-  <view class="iptbox">
-    <view class="textarea">
-      <textarea placeholder="说两句吧..." maxlength="200" bindinput="inputText" value="{{inputText}}"></textarea>
-    </view>
-    <view class="btnbox">
-      <button class="cancel" catchtap="cancel">重新输入</button>
-      <button catchtap="submit">发送</button>
-    </view>
-  </view>
+			<view class="rightWord" wx:if="{{item.fromid==uid}}">
+				<view class="dialog2">
+					<view class="info displayFlexBet graycolor">
+						<view class="name2">{{item.nick}}</view>
+						<view class="time2">{{item.add_time}}</view>
+					</view>
+					<view class="content2">
+						{{item.content}}
+					</view>
+				</view>
+				<view class="headImg">
+					<image src="{{item.headimgurl}}"></image>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="iptbox">
+		<input class="iptText" placeholder="说两句吧..." bindinput="inputText" value="{{inputText}}"></input>
+		<button catchtap="submit">发送</button>
+	</view>
 </view>

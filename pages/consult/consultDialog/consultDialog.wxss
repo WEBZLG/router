@@ -81,42 +81,39 @@
   text-align: center;
   padding: 30rpx 0;
 }
-textarea{
+.iptText{
+  flex: 1;
   background-color: #ffffff;
-  padding: 30rpx;
-  width: 100%;
-  box-sizing: border-box;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
 }
-.textarea{
-  margin: 0 40rpx 30rpx;
-}
-.btnbox{
-  margin-bottom: 30rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
+
 button{
   height: 60rpx;
-  width: 200rpx !important;
+  width: 110rpx !important;
   padding: 0;
   margin: 0;
   font-size: 30rpx;
   font-weight: 400;
-  border-radius: 60rpx;
+  border-top-right-radius: 30rpx;
+  border-bottom-right-radius: 30rpx;
   text-align: center;
   line-height: 60rpx;
   color: #ffffff;
   min-height: inherit !important;
   background-color: #06BB6E;
 }
-.cancel{
-  background-color: #CFCCCF;
-}
 .iptbox{
-position: fixed;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: #eee;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eee;
+  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

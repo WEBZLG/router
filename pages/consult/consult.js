@@ -30,10 +30,6 @@ Page({
       })
     })
   },
-  handleContact(e) {
-    //console.log(e.detail.path)
-    //console.log(e.detail.query)
-  },
 
   getData(uid, type) {
     var that = this;

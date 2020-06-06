@@ -10,13 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList:[],
-    user_input_text: '',//用户输入文字
-    inputValue: '',
-    returnValue: '',
-    addImg: false,
-    allContentList: [],
-    num: 0,
     dataList: []
   },
   consultDialog(e){
@@ -82,9 +75,6 @@ Page({
   onShow: function () {
     var uid = app.globalData.uid;
     this.getData(uid);
-    // if (!socketOpen) {
-    //   this.webSocket()
-    // }
   },
 
   /**
