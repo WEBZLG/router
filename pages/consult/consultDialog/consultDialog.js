@@ -11,36 +11,48 @@ Page({
     uid: '', //发送者
     toid: '', //接受者
     type: '', //接收对象类型 0-团长 1-分销商
-    pageIndex:'1'//页码
+    pageIndex:'1',//页码
+    toUserName:'淘淘趣游'
   },
   // 页面加载完成
-  onReady: function () {
+  onReady: function() {
     var that = this;
     var uid = app.globalData.uid;
     SocketTask.onOpen(res => {
       socketOpen = true;
-      console.log('监听 WebSocket 连接打开事件。', res)
+      //console.log('监听 WebSocket 连接打开事件。', res)
     })
     SocketTask.onClose(onClose => {
-      console.log('监听 WebSocket 连接关闭事件。', onClose)
+      //console.log('监听 WebSocket 连接关闭事件。', onClose)
       socketOpen = false;
-      this.webSocket()
     })
     SocketTask.onError(onError => {
-      console.log('监听 WebSocket 错误。错误信息', onError)
+      //console.log('监听 WebSocket 错误。错误信息', onError)
       socketOpen = false
     })
     SocketTask.onMessage(onMessage => {
       console.log('监听WebSocket接受到服务器的消息事件。服务器返回的消息', JSON.parse(onMessage.data))
       var onMessage_data = JSON.parse(onMessage.data)
-      that.bindUser(uid, onMessage_data.client_id,0)
-      that.bottom()
+      if(onMessage_data.type){
+        that.bindUser(uid, onMessage_data.client_id,'download')
+      }else{
+        let onMessage = {
+          add_time:onMessage_data.add_time,
+          content:onMessage_data.message,
+          nick:onMessage_data.name,
+          headimgurl:onMessage_data.headimgurl
+        }
+        that.setData({
+          dataList:that.data.dataList.concat(onMessage)
+        })
+        that.pageScrollToBottom();
+      }
     })
   },
   // 页面加载
   onLoad: function (options) {
     var that = this;
-    //console.log(options)
+    console.log(options)
     this.setData({
       gid: options.id,
       toid: options.tid
@@ -51,8 +63,6 @@ Page({
         type: type
       })
     }
-
-    this.bottom();
   },
   onShow: function (e) {
     var that = this;
@@ -61,7 +71,7 @@ Page({
       uid: uid
     })
     if (!socketOpen) {
-      this.webSocket()
+      that.webSocket()
     }
   },
 
@@ -85,21 +95,12 @@ Page({
   onPullDownRefresh: function() {
     var that = this;
     var uid = app.globalData.uid;
-    this.getData(uid, that.data.gid, 1)
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function() {
-    var that = this;
-    var uid = app.globalData.uid;
     this.setData({
       pageIndex : that.data.pageIndex*1 + 1
     })
-    console.log(this.data.pageIndex)
-    that.getData(uid, that.data.gid, that.data.pageIndex)
+    that.getData(uid, that.data.gid, that.data.pageIndex,'upload')
   },
+
   webSocket: function () {
     // 创建Socket
     SocketTask = wx.connectSocket({
@@ -126,15 +127,17 @@ Page({
       inputText: e.detail.value
     })
   },
-  // 获取hei的id节点然后屏幕焦点调转到这个节点  
-  bottom: function () {
-    var that = this;
-    this.setData({
-      scrollTop: 1000000
-    })
+
+  pageScrollToBottom: function () {
+    wx.createSelectorQuery().select('#list').boundingClientRect(function (rect) {
+      // 使页面滚动到底部
+      wx.pageScrollTo({
+        scrollTop: rect.bottom
+      })
+    }).exec()
   },
   // 获取聊天记录
-  getData(uid, gid, page) {
+  getData(uid, gid, page,type) {
     var that = this;
     var item = {
       uid: uid,
@@ -150,16 +153,36 @@ Page({
         console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
-          that.setData({
-            dataList: res.data
-          })
+          if(type=='upload'){
+            if(res.data.length==0){
+              wx.showToast({
+                title: '木有数据了~',
+                icon:'none'
+              })
+            }
+            that.setData({
+              dataList:res.data.concat(that.data.dataList)
+            })
+            wx.stopPullDownRefresh();
+            
+          }else{
+            that.setData({
+              dataList: res.data
+            })
+            that.pageScrollToBottom();
+          }
           for (var i in res.data) {
             if (res.data[i].fromid != that.data.uid) {
               that.setData({
-                type: res.data[i].type
+                type: res.data[i].type,
+                toUserName:res.data[i].nick
+              })
+              wx.setNavigationBarTitle({
+                title: res.data[i].nick
               })
             }
           }
+          
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -197,7 +220,7 @@ Page({
           that.setData({
             isBand: true
           })
-          that.getData(uid, that.data.gid, 1)
+          that.getData(uid, that.data.gid,1,'download')
         } else {
           wx.hideLoading();
           wx.showToast({
@@ -219,11 +242,18 @@ Page({
   // 发送消息
   sendMessage() {
     var that = this;
+    if(that.data.inputText.replace(/\s+/g,"")==''){
+      wx.showToast({
+        title: '发送内容不能为空',
+        icon: "none"
+      })
+      return false;
+    }
     var item = {
       uid: that.data.uid,
       group_id: that.data.gid,
       toid: that.data.toid,
-      type: that.data.type,
+      type: 1,
       message: that.data.inputText
     }
     wx.showLoading({
@@ -235,11 +265,9 @@ Page({
         console.log(res)
         if (res.code == 200) {
           wx.hideLoading();
-          // that.getData(item.uid, that.data.gid, 1)
           if (socketOpen) {
             // 如果打开了socket就发送数据给服务器
-            sendSocketMessage(that.data.inputText)
-            that.bottom()
+            that.sendSocketMessage(that.data.inputText)
           }
           this.setData({
             inputText: ''
@@ -264,11 +292,13 @@ Page({
   //通过 WebSocket 连接发送数据，需要先 wx.connectSocket，并在 wx.onSocketOpen 回调之后才能发送。
   sendSocketMessage(msg) {
     var that = this;
-    console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
+    // console.log('通过 WebSocket 连接发送数据', JSON.stringify(msg))
     SocketTask.send({
-      data: JSON.stringify(msg)
-    }, function (res) {
-      console.log('已发送', res)
+      data:msg,
+      success:function(res){
+        console.log('发送数据', res)
+        that.getData(that.data.uid, that.data.gid,1,'download')
+      }
     })
   }
 })

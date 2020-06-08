@@ -1,46 +1,52 @@
 /* pages/consult/consultDialog/consultDialog.wxss */
-.list{
+.list {
   font-size: 24rpx;
   padding: 30rpx 40rpx;
-  margin-bottom: 400rpx;
+  margin-bottom: 120rpx;
 }
 
-.headImg{
+.headImg {
   height: 90rpx;
   width: 90rpx;
   border-radius: 50%;
   overflow: hidden;
-  background-color:#D38E8E;
+  background-color: #D38E8E;
   display: inline-block;
   vertical-align: top;
 }
-.dialog{
+
+.dialog {
   display: inline-block;
   max-width: 444rpx;
   line-height: 48rpx;
   background-color: #fff;
-  padding: 30rpx 0;
+  padding: 12rpx;
+  border-radius: 5px;
 }
-.dialog2{
+
+.dialog2 {
   display: inline-block;
   max-width: 444rpx;
   line-height: 48rpx;
   background-color: #01BF6C;
-  padding: 30rpx 0;
+  padding: 12rpx;
+  border-radius: 5px;
 }
-.leftWord{
+
+.leftWord {
   float: left;
   margin-bottom: 30rpx;
 }
 
-.leftWord .headImg{
+.leftWord .headImg {
   margin-right: 24rpx;
 }
 
-.rightWord .headImg{
+.rightWord .headImg {
   margin-left: 24rpx;
 }
-.rightWord{
+
+.rightWord {
   float: right;
   margin-bottom: 30rpx;
 }
@@ -48,42 +54,45 @@
 .name {
   color: #999;
   font-size: 20rpx;
-  padding-left: 30rpx;
+  margin-right: 10rpx;
 }
+
 .time {
   color: #999;
   font-size: 20rpx;
-  padding-right: 30rpx;
 }
+
 .name2 {
   color: #ffffff;
   font-size: 20rpx;
-  padding-left: 30rpx;
+  margin-right: 10rpx;
 }
+
 .time2 {
   color: #ffffff;
   font-size: 20rpx;
-  padding-right: 30rpx;
 }
-.content{
+
+.content {
   color: #333;
-  padding: 0 30rpx;
   text-align: left;
 }
-.content2{
+
+.content2 {
   color: #fff;
-  padding: 0 30rpx;
   text-align: left;
 }
-.lastdate{
+
+.lastdate {
   color: #999;
   font-size: 24rpx;
   text-align: center;
   padding: 30rpx 0;
 }
-.iptText{
+
+.iptText {
   flex: 1;
-  background-color: #ffffff;
+  background-color: #eeeeee;
   height: 60rpx;
   line-height: 60rpx;
   padding: 0 30rpx;
@@ -91,7 +100,7 @@
   border-bottom-left-radius: 30rpx;
 }
 
-button{
+.button {
   height: 60rpx;
   width: 110rpx !important;
   padding: 0;
@@ -106,12 +115,13 @@ button{
   min-height: inherit !important;
   background-color: #06BB6E;
 }
-.iptbox{
+
+.iptbox {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #eee;
+  background-color: #ffffff;
   padding: 30rpx;
   display: flex;
   align-items: center;

@@ -1,6 +1,6 @@
 <!--pages/consult/consultDialog/consultDialog.wxml-->
 <view>
-  <view class="list clearfix">
+  <view class="list clearfix" id="list">
     <!-- <view class="lastdate">上一次聊天记录 2019.12.20  12:09:29</view> -->
     <block wx:for="{{dataList}}" wx:key='index'>
       <view class="leftWord" wx:if="{{item.fromid!=uid}}">
@@ -34,13 +34,8 @@
       </view>
     </block>
   </view>
-  <view class="iptbox">
-    <view class="textarea">
-      <textarea placeholder="说两句吧..." maxlength="200" bindinput="inputText" value="{{inputText}}"></textarea>
-    </view>
-    <view class="btnbox">
-      <button class="cancel" catchtap="cancel">重新输入</button>
-      <button catchtap="submit">发送</button>
-    </view>
-  </view>
+	<view class="iptbox">
+		<input class="iptText" placeholder="说两句吧..." bindinput="inputText" value="{{inputText}}"></input>
+		<view catchtap="sendMessage" class="button">发送</view>
+	</view>
 </view>

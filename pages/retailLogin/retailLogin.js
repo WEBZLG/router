@@ -7,10 +7,10 @@ Page({
    */
   data: {
     codename: '获短信取验证码',
-    // phone: '13114508618', //手机号
-    // code: '123456', //验证码
-    phone:'',
-    code:'',
+    phone: '16603634001', //手机号
+    code: '123456', //验证码
+    // phone:'',
+    // code:'',
     iscode: null //用于存放验证码接口里获取到的code
   },
 

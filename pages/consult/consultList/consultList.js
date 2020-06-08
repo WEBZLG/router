@@ -1,8 +1,6 @@
 // pages/consult/consultList/consultList.js
 var app = getApp();
 var ajax = require("../../../utils/ajax.js");
-var socketOpen = false;
-var frameBuffer_Data, session, SocketTask;
 var url = 'wss://travel.liaofankeji.com/wss';
 Page({
 

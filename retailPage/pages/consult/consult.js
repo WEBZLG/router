@@ -22,7 +22,7 @@ Component({
   lifetimes: {
     created: function () {
       var uid = app.globalData.uid;
-      this.getData(uid, 0)
+      this.getData(uid, 1)
     },
     attached: function () {
 
@@ -38,7 +38,7 @@ Component({
   pageLifetimes: {
     show: function () {
       var uid = app.globalData.uid;
-      this.getData(uid, 0)
+      this.getData(uid, 1)
     },
     hide: function () { },
     resize: function () { },

@@ -1,8 +1,6 @@
 // pages/consult/consultList/consultList.js
 var app = getApp();
 var ajax = require("../../../utils/ajax.js");
-var socketOpen = false;
-var frameBuffer_Data, session, SocketTask;
 var url = 'wss://travel.liaofankeji.com/wss';
 Page({
 
@@ -10,13 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataList:[],
-    user_input_text: '',//用户输入文字
-    inputValue: '',
-    returnValue: '',
-    addImg: false,
-    allContentList: [],
-    num: 0,
+
     dataList: []
   },
   consultDialog(e){
@@ -30,7 +22,7 @@ Page({
     var that = this;
     var item = {
       uid: uid,
-      type: 0
+      type: 1
     }
     wx.showLoading({
       mask: 'true'
